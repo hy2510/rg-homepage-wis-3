@@ -1,0 +1,19 @@
+.review_contents {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  .contents {
+    border-bottom: 1.5px solid var(--gray3);
+    padding: var(--space-l);
+    padding-top: var(--space-xxs);
+    @media (prefers-color-scheme: dark) {
+      border-bottom: 1.5px solid rgba($color: #ffffff, $alpha: 0.15);
+    }
+  }
+  .group_back_button {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: var(--space-m);
+  }
+}

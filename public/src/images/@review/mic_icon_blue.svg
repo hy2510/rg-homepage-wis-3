@@ -1,0 +1,8 @@
+<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="flat_icon_24x24">
+<path id="Union" d="M12.7168 0C11.6559 0 10.6385 0.395088 9.88837 1.09835C9.13822 1.80161 8.7168 2.75544 8.7168 3.75V11.25C8.7168 12.2446 9.13822 13.1984 9.88837 13.9017C10.6385 14.6049 11.6559 15 12.7168 15C13.7777 15 14.7951 14.6049 15.5452 13.9017C16.2954 13.1984 16.7168 12.2446 16.7168 11.25V3.75C16.7168 2.75544 16.2954 1.80161 15.5452 1.09835C14.7951 0.395088 13.7777 0 12.7168 0Z" fill="#3AB6FF"/>
+<path id="Vector" d="M19.7168 9V11C19.7168 12.8565 18.9793 14.637 17.6665 15.9497C16.3538 17.2625 14.5733 18 12.7168 18C10.8603 18 9.0798 17.2625 7.76705 15.9497C6.45429 14.637 5.7168 12.8565 5.7168 11V9" stroke="#3AB6FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M12.7168 18V22" stroke="#3AB6FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M8.7168 22H16.7168" stroke="#3AB6FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

@@ -1,0 +1,49 @@
+.home {
+  background-image: url('/src/images/@home/home_bg.svg');
+  background-repeat: repeat-x;
+  animation: linear 200s infinite cloud;
+  @keyframes cloud {
+    0% {
+      background-position: top -30px right 0;
+    }
+    100% {
+      background-position: top -30px right -5187px;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    background-image: none;
+  }
+}
+
+.home_nav_bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-m);
+  padding: var(--space-m);
+  overflow-x: scroll;
+  white-space: nowrap;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.home_nav_item {
+  color: var(--white);
+  font-size: 1.3em;
+  font-weight: 500;
+  position: relative;
+  opacity: 0.6;
+  &.active {
+    opacity: 1;
+    &::after {
+      content: '';
+      width: 5px;
+      height: 5px;
+      background-color: var(--white);
+      border-radius: var(--round-full);
+      position: absolute;
+      bottom: 100%;
+      left: calc(50% - 2.5px);
+    }
+  }
+}

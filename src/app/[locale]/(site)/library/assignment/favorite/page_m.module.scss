@@ -1,0 +1,23 @@
+.favorite {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  .favorite_sort {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .favorite_sort_container {
+      display: flex;
+      gap: var(--space-s);
+    }
+    .txt_l {
+      cursor: pointer;
+      color: var(--blue);
+    }
+  }
+  .favorite_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-s);
+  }
+}

@@ -1,0 +1,25 @@
+.nav_bar {
+  width: 100%;
+  display: flex;
+  gap: var(--space-s);
+}
+
+.nav_item {
+  cursor: pointer;
+  padding: var(--space-xs) var(--space-m);
+  font-size: var(--text-m);
+  font-weight: 500;
+  color: var(--white);
+  background-color: rgba($color: #ffffff, $alpha: 0.15);
+  border-radius: var(--round-full);
+  transition: all 0.2s;
+
+  &.active {
+    background-color: rgba($color: #ffffff, $alpha: 1);
+    color: var(--blue);
+    @media (prefers-color-scheme: dark) {
+      background-color: rgba($color: #ffffff, $alpha: 0.85);
+      color: #0c0541;
+    }
+  }
+}

@@ -1,0 +1,309 @@
+// 영어독서왕 스코어보드
+.challenge_board {
+  margin-top: var(--space-xxs);
+  .header {
+    height: 80px;
+    padding: var(--space-s);
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: var(--space-xxs);
+    // background-color: #98cbe5;
+    background-color: var(--blue);
+    position: relative;
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--dark-blue);
+    }
+    .txt_h {
+      color: var(--white);
+      font-size: var(--text-m);
+      font-weight: 600;
+    }
+    .line {
+      display: none;
+    }
+    .challenge_symbol {
+      position: absolute;
+      right: 0;
+      bottom: -15px;
+      img {
+        width: 120px;
+        height: auto;
+      }
+    }
+    .challenge_period {
+      color: var(--white);
+      font-size: var(--text-m);
+    }
+  }
+  .body {
+    // border: 2px solid #98cbe5;
+    border: 2px solid var(--blue);
+    border-radius: 0 0 15px 15px;
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    padding: var(--space-s);
+    @media (prefers-color-scheme: dark) {
+      border: 2px solid var(--dark-blue);
+    }
+  }
+}
+
+// 영어독서왕 스코어보드 > 나의목표설정
+.my_goal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  img {
+    position: relative;
+    z-index: 1;
+    margin: auto;
+  }
+  .txt_h {
+    font-size: var(--text-d-1);
+    font-weight: 600;
+  }
+  .goal {
+    min-height: 250px;
+    padding: var(--space-s);
+    border-radius: var(--round-m);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: var(--space-s);
+    position: relative;
+    overflow: hidden;
+    .goal_container {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xxs);
+      position: relative;
+      z-index: 1;
+      .goal_name {
+        font-size: var(--text-m);
+        font-weight: 700;
+        padding-left: var(--space-xxs);
+        // color: #000;
+      }
+    }
+    .goal_set_button {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+    }
+    .goal_info {
+      font-size: var(--text-s);
+      color: var(--gray1);
+      margin-bottom: var(--space-xxs);
+      position: relative;
+      z-index: 1;
+    }
+    section {
+      position: absolute;
+      width: 100%;
+      background-color: var(--blue);
+      // opacity: 0.8;
+      overflow: hidden;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      @media (prefers-color-scheme: dark) {
+        z-index: 0;
+        opacity: 0.2;
+      }
+      .air {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background-image: url("/src/images/@challenge-board/wave.png");
+        background-size: 1000px 100px;
+        background-repeat: repeat-x;
+        &.air1 {
+          animation: wave 30s linear infinite;
+          z-index: 1000;
+          opacity: 1;
+          animation-delay: 0s;
+          bottom: 0;
+        }
+        &.air2 {
+          animation: wave2 15s linear infinite;
+          z-index: 999;
+          opacity: 0.5;
+          animation-delay: -5s;
+          bottom: 10px;
+        }
+        &.air3 {
+          animation: wave 30s linear infinite;
+          z-index: 998;
+          opacity: 0.2;
+          animation-delay: -2s;
+          bottom: 15px;
+        }
+        &.air4 {
+          animation: wave2 5s linear infinite;
+          z-index: 997;
+          opacity: 0.7;
+          animation-delay: -5s;
+          bottom: 20px;
+        }
+      }
+    }
+    @keyframes wave {
+      0% {
+        background-position-x: 0px;
+      }
+      100% {
+        background-position-x: 1000px;
+      }
+    }
+    @keyframes wave2 {
+      0% {
+        background-position-x: 0px;
+      }
+      100% {
+        background-position-x: -1000px;
+      }
+    }
+  }
+}
+
+// 영어독서왕 스코어보드 > 나의목표 > 목표설정 팝업
+.set_my_goal {
+  padding: var(--space-s);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+}
+
+// 영어독서왕 스코어보드 > 나의목표 > 목표설정 아이템
+.set_my_goal_item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--space-m);
+  border: 1.5px solid var(--gray2);
+  border-radius: var(--round-m);
+  padding: var(--space-s);
+  &.active {
+    background-color: var(--light);
+    border: 1.5px solid var(--blue);
+    color: var(--blue);
+    @media (prefers-color-scheme: dark) {
+      background-color: rgba($color: #000000, $alpha: 0.3);
+    }
+  }
+  .col_a,
+  .col_b,
+  .col_c {
+    display: block;
+    .txt_h {
+      font-size: var(--text-m);
+      font-weight: 600;
+      margin-bottom: var(--space-xxs);
+    }
+    .txt_p {
+      font-size: var(--space_m);
+    }
+  }
+}
+
+// 영어독서왕 스코어보드 > 챌린지 참여현황
+.my_progress {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  height: 280px;
+  font-size: 0.9em;
+  .txt_h {
+    font-size: var(--text-d-1);
+    font-weight: 600;
+  }
+  .progress_group {
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: var(--space-s);
+  }
+}
+
+// 영어독서왕 스코어보드 > 챌린지 참여현황 > 프로그래스
+.challenge_progress {
+  background-color: var(--gray2);
+  border-radius: var(--round-m);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  @media (prefers-color-scheme: dark) {
+    background-color: rgba($color: #ffffff, $alpha: 0.15);
+  }
+  .progress_info {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--space-xxs);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: var(--white);
+    padding: 0 var(--space-s);
+    font-weight: 500;
+    font-size: var(--text-s);
+    z-index: 1;
+    .row_a,
+    .row_b {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xxs);
+    }
+    .txt_d {
+      font-size: var(--text-xl);
+    }
+    .comment {
+      opacity: 0.7;
+    }
+  }
+  .progress_bar {
+    height: 100%;
+    min-width: 1%;
+    border-radius: var(--round-m);
+    transition: width 1s;
+    background: repeating-linear-gradient(
+      45deg,
+      #606dbc25,
+      #606dbc25 5%,
+      #46529825 5%,
+      #46529825 10%
+    );
+    background-size: 100px 100px;
+    animation: move-it 2s linear infinite;
+    &.green {
+      background-color: var(--green);
+    }
+    &.blue {
+      background-color: var(--blue);
+    }
+    &.orange {
+      background-color: var(--orange);
+    }
+  }
+  @keyframes move-it {
+    0% {
+      background-position: initial;
+    }
+    100% {
+      background-position: 100px 0px;
+    }
+  }
+}

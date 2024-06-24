@@ -1,0 +1,37 @@
+.search_result {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  .row_a,
+  .row_b {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    .txt_h {
+      font-size: var(--text-l);
+      font-weight: 600;
+    }
+    .book_list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-m);
+    }
+    .more {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      button {
+        background-color: rgba($color: #000000, $alpha: 0.15);
+        padding: var(--space-xs) var(--space-m);
+        color: var(--white);
+        font-weight: 500;
+        font-size: var(--text-m);
+        border-radius: var(--round-full);
+        @media (prefers-color-scheme: dark) {
+          background-color: rgba($color: #ffffff, $alpha: 0.15);
+        }
+      }
+    }
+  }
+}

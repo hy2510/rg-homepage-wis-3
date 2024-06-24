@@ -1,0 +1,23 @@
+.to_do {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  .to_do_sort {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .to_do_sort_container {
+      display: flex;
+      gap: var(--space-s);
+    }
+    .txt_l {
+      cursor: pointer;
+      color: var(--blue);
+    }
+  }
+  .to_do_list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-m);
+  }
+}

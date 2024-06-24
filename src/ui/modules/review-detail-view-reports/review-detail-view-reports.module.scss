@@ -1,0 +1,255 @@
+.detailed_reports_list {
+  display: grid;
+  gap: var(--space-l);
+}
+
+.detailed_report_item {
+  position: relative;
+  transform: none;
+  .book_cover {
+    height: fit-content;
+    width: fit-content;
+    display: inline-block;
+    padding: 0 20px 20px 20px;
+    position: relative;
+    z-index: 1;
+    img {
+      border-radius: var(--round-l);
+      overflow: hidden;
+      cursor: pointer;
+      filter: contrast(103%);
+      border-radius: var(--round-l);
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+  }
+  .report {
+    min-height: 180px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0 0 var(--round-m) var(--round-l);
+    z-index: 0;
+    &.pass {
+      background-color: var(--light);
+      border-top: 2px solid var(--blue);
+      @media (prefers-color-scheme: dark) {
+        background-color: #15b5f120;
+      }
+    }
+    &.fail {
+      background-color: #f9eeee;
+      border-top: 2px solid var(--red);
+      @media (prefers-color-scheme: dark) {
+        background-color: #ff274f20;
+      }
+    }
+    .report_container {
+      cursor: pointer;
+      position: absolute;
+      bottom: 25%;
+      left: calc(140px + 50px);
+      right: 20px;
+      display: grid;
+      grid-template-columns: 2fr 1.5fr;
+      gap: var(--space-m);
+      .col1 {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xxs);
+        .book_code {
+          font-size: var(--text-m);
+          color: var(--gray1);
+        }
+        .title {
+          max-width: 420px;
+          font-size: var(--text-d-1);
+          font-weight: 500;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      .col2 {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: var(--space-xs);
+        .label {
+          font-size: var(--text-m);
+          color: var(--gray1);
+        }
+        .contents {
+          font-size: var(--text-m);
+          font-weight: 500;
+          // color: var(--black);
+        }
+      }
+    }
+  }
+}
+
+.speak_reports_list {
+  display: grid;
+  gap: var(--space-l);
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.speak_report_item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
+  align-items: center;
+  justify-content: flex-end;
+  .book_cover {
+    position: relative;
+    margin-bottom: var(--space-l);
+    .book_cover_img {
+      cursor: pointer;
+      filter: contrast(103%);
+      border-radius: var(--round-l);
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+    @mixin mark {
+      width: 50px;
+      height: 50px;
+      border-radius: 100px;
+      border: 2px solid var(--white);
+      position: absolute;
+      bottom: -25px;
+      left: calc(50% - 25px);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 30px;
+    }
+    .pass_mark {
+      @include mark;
+      background-color: var(--blue);
+      background-image: url("/src/images/check-icons/check_white.svg");
+    }
+    .fail_mark {
+      @include mark;
+      background-color: var(--red);
+      background-image: url("/src/images/delete-icons/x_white.svg");
+    }
+  }
+  .result {
+    text-align: center;
+    font-weight: 600;
+    .label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xxs);
+      .pass {
+        color: var(--blue);
+      }
+      .fail {
+        color: var(--red);
+      }
+    }
+  }
+  .date {
+    text-align: center;
+    font-size: var(--text-s);
+    &.pass {
+      color: var(--blue);
+    }
+    &.fail {
+      color: var(--red);
+    }
+  }
+}
+
+.writing_reports_list {
+  display: grid;
+  gap: var(--space-l);
+}
+
+.writing_report_item {
+  position: relative;
+  .book_cover {
+    height: fit-content;
+    width: fit-content;
+    display: inline-block;
+    padding: 0 20px 20px 20px;
+    position: relative;
+    z-index: 1;
+    img {
+      border-radius: var(--round-l);
+      overflow: hidden;
+      cursor: pointer;
+      filter: contrast(103%);
+      border-radius: var(--round-l);
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+  }
+  .report {
+    min-height: 160px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0 0 var(--round-m) var(--round-l);
+    z-index: 0;
+    &.pass {
+      background-color: var(--light);
+      border-top: 2px solid var(--blue);
+      @media (prefers-color-scheme: dark) {
+        background-color: #15b5f120;
+      }
+    }
+    &.fail {
+      background-color: #f9eeee;
+      border-top: 2px solid var(--red);
+      @media (prefers-color-scheme: dark) {
+        background-color: #ff274f20;
+      }
+    }
+    .report_container {
+      cursor: pointer;
+      position: absolute;
+      bottom: 12%;
+      left: calc(140px + 50px);
+      right: 20px;
+      display: grid;
+      grid-template-columns: 2fr 1.5fr;
+      gap: var(--space-m);
+      .col1 {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xxs);
+        .book_code {
+          font-size: var(--text-m);
+          color: var(--gray1);
+        }
+        .title {
+          max-width: 420px;
+          font-size: var(--text-d-1);
+          font-weight: 500;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      .col2 {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: var(--space-xs);
+        .label {
+          font-size: var(--text-m);
+          color: var(--gray1);
+        }
+        .contents {
+          font-size: var(--text-m);
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

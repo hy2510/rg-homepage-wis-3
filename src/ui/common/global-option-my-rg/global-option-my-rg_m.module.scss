@@ -1,0 +1,1143 @@
+// My RG 모달
+.my_rg_modal {
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+// My Rg
+.my_rg {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  .log_out {
+    padding: var(--space-m);
+    // margin-top: var(--space-l);
+  }
+}
+
+// My RG > 남은기간
+.my_rg_use_end_date {
+  display: flex;
+  gap: var(--space-xxs);
+  background-color: var(--gray3);
+  font-size: var(--text-s);
+  padding: var(--space-xs);
+  justify-content: center;
+  margin-top: var(--space-xs);
+  @media (prefers-color-scheme: dark) {
+    background-color: rgba($color: #ffffff, $alpha: 0.15);
+  }
+}
+
+// My RG > 사용자정보
+.my_rg_user_card {
+  cursor: pointer;
+  padding: 0 var(--space-m);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .user_info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-m);
+    .user_avatar {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: var(--round-full);
+      overflow: hidden;
+      background-color: var(--gray3);
+    }
+    .user_grade {
+      color: var(--gray1);
+      font-size: var(--text-s);
+      font-weight: 500;
+    }
+    .user_name {
+      color: var(--black);
+      font-size: var(--text-xl);
+      font-weight: 700;
+    }
+  }
+}
+
+// My RG > 과제정보
+.my_rg_assignment_info {
+  padding: 0 var(--space-s);
+  .assignment_info_container {
+    min-height: 90px;
+    padding: var(--space-m) 0;
+    // background-color: var(--blue);
+    background-color: var(--blue);
+    color: var(--white);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: var(--round-m);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--dark-blue);
+    }
+    .to_do {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xxs);
+      position: relative;
+      &::after {
+        content: "";
+        width: 2px;
+        height: 100%;
+        background-color: var(--white);
+        position: absolute;
+        right: -1px;
+        border-radius: 100px;
+        opacity: 0.3;
+      }
+      .txt_l {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: var(--text-s);
+        font-weight: 500;
+      }
+      .count_num {
+        color: var(--white);
+        font-size: var(--text-xl);
+        font-weight: 600;
+      }
+    }
+    .favorite {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xxs);
+      .txt_l {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: var(--text-s);
+        font-weight: 500;
+      }
+      .count_num {
+        color: var(--white);
+        font-size: var(--text-xl);
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+// My RG > 학습목표
+.my_rg_goal_info {
+  padding: 0 var(--space-s);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-s);
+  .col_a,
+  .col_b {
+    cursor: pointer;
+    min-height: 90px;
+    padding: var(--space-s);
+    background-color: var(--light);
+    border-radius: var(--round-m);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    @media (prefers-color-scheme: dark) {
+      background-color: rgba($color: #ffffff, $alpha: 0.15);
+    }
+    .txt_l {
+      color: var(--gray-dark);
+      font-size: var(--text-s);
+      font-weight: 500;
+      @media (prefers-color-scheme: dark) {
+        color: var(--gray1);
+      }
+    }
+    .contents {
+      text-align: end;
+      font-size: var(--text-l);
+      font-weight: 700;
+    }
+  }
+}
+
+// My RG > 기타
+.my_rg_etc {
+  padding: 0 var(--space-m);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-m);
+  height: 100px;
+  .etc_item {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    .txt_l {
+      font-size: var(--text-s);
+    }
+  }
+}
+
+// 나의 프로필
+.my_profile {
+  padding: var(--space-m);
+}
+
+// 나의 프로필 > 학습 총점
+.total_study_score {
+  color: var(--white);
+  // margin-bottom: var(--space-l);
+  padding: 0 var(--space-s);
+  .student_info {
+    background-color: var(--blue);
+    padding: var(--space-m);
+    position: relative;
+    border-radius: var(--round-m) var(--round-m) 0 0;
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--dark-blue);
+    }
+    .user_grade {
+      font-size: var(--text-s);
+      opacity: 0.7;
+    }
+    .student_name {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xxs);
+      min-height: 50px;
+      .txt_l {
+        font-size: var(--text-xl);
+        font-weight: 600;
+      }
+    }
+    .user_avatar {
+      width: 120px;
+      height: 120px;
+      position: absolute;
+      right: 10px;
+      bottom: 0;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .edit_button {
+      cursor: pointer;
+      position: absolute;
+      right: 8px;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      img {
+        display: block;
+      }
+    }
+  }
+  .total_score_container {
+    // background-color: #319ddd;
+    background-color: #096ba3;
+    border-radius: 0 0 var(--round-m) var(--round-m);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @media (prefers-color-scheme: dark) {
+      background-color: #319ddd25;
+    }
+    .col_a,
+    .col_b {
+      position: relative;
+      padding: var(--space-s);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-s);
+      .txt_l {
+        opacity: 0.7;
+        font-size: var(--text-s);
+      }
+      .txt_d {
+        font-size: var(--text-d-2);
+        font-weight: 600;
+        text-align: end;
+      }
+    }
+    .col_a::after {
+      content: "";
+      width: 1.5px;
+      background-color: var(--white);
+      position: absolute;
+      right: 0;
+      top: 20px;
+      bottom: 20px;
+      border-radius: var(--round-full);
+      opacity: 0.3;
+    }
+  }
+}
+
+// 나의 프로필 > 어워드 리스트
+.award_list_container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--space-m);
+}
+
+// 나의 프로필 > 어워드 아이템
+.award_list_item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-s) 0;
+  .col_a {
+    display: flex;
+    align-items: center;
+    gap: var(--space-m);
+    .txt_l {
+      min-width: 70px;
+      font-size: var(--text-s);
+      color: var(--gray1);
+      font-weight: 500;
+    }
+    .txt_p {
+      font-size: var(--text-l);
+      font-weight: 500;
+    }
+  }
+  .arrow_icon {
+    width: 24px;
+    height: 24px;
+    background-image: url("/src/images/arrow-icons/chv_right.svg");
+    background-repeat: no-repeat;
+    background-size: 24px;
+    background-position: center;
+    @media (prefers-color-scheme: dark) {
+      background-image: url("/src/images/arrow-icons/chv_right_white.svg");
+    }
+  }
+}
+
+// 프로필 수정
+.edit_profile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  padding: var(--space-m);
+  .user_avatar {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+    .user_avatar_image {
+      width: 150px;
+      height: 150px;
+      overflow: hidden;
+      border-radius: var(--round-full);
+      background-color: var(--gray3);
+    }
+    .edit_button {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--round-full);
+      background-color: var(--gray-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      cursor: pointer;
+    }
+  }
+}
+
+// 아바타 수정
+.choose_avatar {
+  padding: var(--space-m);
+  .choose_avatar_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: var(--space-m);
+    margin-bottom: var(--space-xl);
+  }
+}
+
+// 아바타 수정 > 아바타 아이템
+.avatar_item {
+  display: block;
+  cursor: pointer;
+  .avatar {
+    background-color: var(--gray3);
+    border-radius: var(--round-full);
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    margin-bottom: var(--space-s);
+    position: relative;
+    filter: grayscale(1);
+    opacity: 0.5;
+    &.selected {
+      border: 3px solid var(--blue);
+      filter: grayscale(0);
+      opacity: 1;
+    }
+    &.check {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(0, 170, 255, 0.2);
+        background-image: url("/assets/images/icon/@review/pass_check_white.svg");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 40px;
+      }
+    }
+    .avatar_image {
+      width: 120px;
+      height: 120px;
+      background-position: top 10px center;
+      background-repeat: no-repeat;
+      background-size: 130px;
+    }
+  }
+  .avatar_name {
+    text-align: center;
+    color: var(--gray1);
+    font-size: var(--text-m);
+    font-weight: 500;
+    &.selected {
+      color: var(--blue);
+      font-weight: 600;
+    }
+  }
+}
+
+// 매일 목표 달성
+.daily_goal_award {
+  padding: var(--space-m);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+  .daily_goal_award_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-s);
+  }
+}
+
+// 매일 목표 달성 > 어워드 아이템
+.award_daily_goal_item {
+  .row_a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .award_image {
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      border-radius: var(--round-l);
+      position: relative;
+      z-index: 2;
+      background-color: var(--white);
+    }
+    .award_image_bg {
+      width: 100%;
+      position: absolute;
+      background-color: var(--gray3);
+      top: 50%;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      border-radius: var(--round-m) var(--round-m) 0 0;
+      @media (prefers-color-scheme: dark) {
+        background-color: rgba($color: #ffffff, $alpha: 0.15);
+      }
+    }
+  }
+  .row_b {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gray3);
+    padding: var(--space-m);
+    border-radius: 0 0 var(--round-m) var(--round-m);
+    gap: var(--space-xxs);
+    text-align: center;
+    @media (prefers-color-scheme: dark) {
+      background-color: rgba($color: #ffffff, $alpha: 0.15);
+    }
+    .txt_l1 {
+      font-style: normal;
+      font-weight: 600;
+    }
+    .txt_l2 {
+      color: var(--gray1);
+      font-size: var(--text-xs);
+      font-style: normal;
+      font-weight: 500;
+    }
+  }
+}
+
+// 연속 학습 달성 어워드
+.streak_award {
+  padding: var(--space-m);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+  .streak_award_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-s);
+  }
+}
+
+// 연속 학습 달성 어워드 > 어워드 아이템
+.streak_award_item {
+  .row_a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .award_image {
+      position: relative;
+      z-index: 2;
+    }
+    .award_image_bg {
+      width: 100%;
+      position: absolute;
+      background-color: var(--gray3);
+      top: 50%;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      border-radius: var(--round-m) var(--round-m) 0 0;
+      @media (prefers-color-scheme: dark) {
+        background-color: rgba($color: #ffffff, $alpha: 0.15);
+      }
+    }
+  }
+  .row_b {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gray3);
+    padding: var(--space-m);
+    border-radius: 0 0 var(--round-m) var(--round-m);
+    gap: var(--space-xxs);
+    text-align: center;
+    @media (prefers-color-scheme: dark) {
+      background-color: rgba($color: #ffffff, $alpha: 0.15);
+    }
+    .txt_l1 {
+      font-style: normal;
+      font-weight: 600;
+    }
+    .txt_l2 {
+      color: var(--gray1);
+      font-size: var(--text-xs);
+      font-style: normal;
+      font-weight: 500;
+    }
+  }
+}
+
+// 챌린지(영어 독서왕 시상) 어워드
+.challenge_award {
+  padding: var(--space-m);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+  .challenge_award_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-s);
+  }
+}
+
+// 챌린지(영어 독서왕 시상) 어워드 > 어워드 아이템
+.challenge_award_item {
+  .row_a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .award_image {
+      position: relative;
+      z-index: 2;
+    }
+    .award_image_bg {
+      width: 100%;
+      position: absolute;
+      background-color: var(--gray3);
+      top: 50%;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      border-radius: var(--round-m) var(--round-m) 0 0;
+      @media (prefers-color-scheme: dark) {
+        background-color: rgba($color: #ffffff, $alpha: 0.15);
+      }
+    }
+  }
+  .row_b {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gray3);
+    padding: var(--space-m);
+    border-radius: 0 0 var(--round-m) var(--round-m);
+    gap: var(--space-xxs);
+    text-align: center;
+    @media (prefers-color-scheme: dark) {
+      background-color: rgba($color: #ffffff, $alpha: 0.15);
+    }
+    .txt_l1 {
+      font-style: normal;
+      font-weight: 600;
+    }
+    .txt_l2 {
+      color: var(--gray1);
+      font-size: var(--text-xs);
+      font-style: normal;
+      font-weight: 500;
+    }
+  }
+}
+
+// 레벨마스터 어워드
+.level_master_award {
+  padding: var(--space-m);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+  .level_master_award_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-s);
+  }
+}
+
+// 레벨마스터 어워드 > 아이템
+.level_master_award_item {
+  .row_a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .award_image {
+      position: relative;
+      z-index: 2;
+    }
+    .award_image_bg {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      border-radius: var(--round-m) var(--round-m) 0 0;
+    }
+  }
+  .row_b {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-m);
+    border-radius: 0 0 var(--round-m) var(--round-m);
+    gap: var(--space-xxs);
+    text-align: center;
+    .txt_l1 {
+      font-style: normal;
+      font-weight: 600;
+    }
+    .txt_l2 {
+      color: var(--gray1);
+      font-size: var(--text-xs);
+      font-style: normal;
+      font-weight: 500;
+    }
+  }
+}
+
+// 일일 목표 설정
+.daily_goal_setting {
+  padding: 0 var(--space-s);
+  padding-top: var(--space-xxs);
+  padding-bottom: var(--space-m);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  .row_a,
+  .row_b,
+  .row_c {
+    .txt_h {
+      font-size: var(--text-d-1);
+      font-weight: 600;
+      margin-bottom: var(--space-m);
+    }
+  }
+  .row_a_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: var(--space-s);
+    .point,
+    .passed {
+      width: 100%;
+      border: 2px solid var(--gray2);
+      border-radius: var(--round-m);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: var(--space-m);
+      gap: var(--space-s);
+      cursor: pointer;
+      @media (prefers-color-scheme: dark) {
+        border: 2px solid rgba($color: #ffffff, $alpha: 0.15);
+      }
+      .icon {
+        width: 90px;
+        height: 90px;
+      }
+      .text_l {
+        color: var(--gray-dark);
+        font-weight: 500;
+        @media (prefers-color-scheme: dark) {
+          color: var(--gray1);
+        }
+      }
+      &.active {
+        background-color: var(--blue);
+        border-color: var(--blue);
+        .text_l {
+          color: var(--white);
+        }
+      }
+    }
+  }
+  .row_b_container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+    gap: var(--space-m);
+    .counter {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--space-xxs);
+      border: 2px solid var(--gray2);
+      border-radius: var(--round-m);
+      @media (prefers-color-scheme: dark) {
+        border: 2px solid rgba($color: #ffffff, $alpha: 0.15);
+      }
+      .minus_button,
+      .plus_button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 24px;
+      }
+      .minus_button {
+        background-image: url("/src/images/@daily-goal-setting/minus.svg");
+        @media (prefers-color-scheme: dark) {
+          background-image: url("/src/images/@daily-goal-setting/minus_white.svg");
+        }
+      }
+      .plus_button {
+        background-image: url("/src/images/@daily-goal-setting/plus.svg");
+        @media (prefers-color-scheme: dark) {
+          background-image: url("/src/images/@daily-goal-setting/plus_white.svg");
+        }
+      }
+      .number {
+        font-size: var(--text-l);
+        font-weight: 500;
+      }
+    }
+    .save_button {
+      width: 100%;
+      height: auto;
+      .txt_l {
+        color: var(--gray1);
+      }
+    }
+  }
+  .row_c_container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    border-top: 1px solid var(--gray2);
+    padding: var(--space-m) 0;
+    @media (prefers-color-scheme: dark) {
+      border-top: 1px solid rgba($color: #ffffff, $alpha: 0.15);
+    }
+  }
+}
+
+// 일일 목표 설정 > 목표 설정 히스토리 아이템
+.daily_goal_set_history_item {
+  display: grid;
+  grid-template-columns: 1.5fr 4fr 1fr;
+  align-items: center;
+  .set_date {
+    color: var(--gray1);
+    font-size: var(--text-s);
+    font-weight: 500;
+  }
+  .comment {
+    color: var(--gray-dark);
+    font-weight: 700;
+    @media (prefers-color-scheme: dark) {
+      color: var(--gray1);
+    }
+  }
+  .set_goal {
+    display: flex;
+    justify-content: end;
+    color: var(--blue);
+    font-weight: 700;
+  }
+}
+
+// 나의 학습 레벨
+.my_study_level {
+  position: relative;
+  .row_a {
+    width: 100%;
+  }
+  .row_b {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+// 나의 학습 레벨 > 진행중인 전체 학습 레벨
+.current_study_level {
+  padding: var(--space-s);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  .txt_h {
+    font-size: var(--text-d-1);
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+  }
+  .txt_p {
+    color: var(--gray1);
+    font-size: var(--text-s);
+    margin-bottom: var(--space-s);
+  }
+  .current_study_level_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-s);
+  }
+}
+.change_current_study_level {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  background-color: var(--light);
+  padding: var(--space-m);
+  padding-bottom: calc(env(safe-area-inset-bottom) + var(--space-m));
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top: 2px solid var(--gray2);
+  @media (prefers-color-scheme: dark) {
+    background-color: #0c0541;
+    border-top: 2px solid rgba($color: #ffffff, $alpha: 0.15);
+  }
+  .txt_p {
+    font-size: var(--text-l);
+  }
+  .confirm {
+    display: flex;
+    gap: var(--space-s);
+    justify-content: end;
+    .button {
+      cursor: pointer;
+      padding: var(--space-xs) var(--space-m);
+      background-color: var(--gray2);
+      border-radius: var(--round-m);
+      font-weight: 500;
+      @media (prefers-color-scheme: dark) {
+        background-color: var(--gray-dark);
+      }
+    }
+  }
+}
+
+// 나의 학습 레벨 > 진행중인 전체 학습 레벨 > 레벨별 학습상태 아이템
+.leveled_study_status_item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  .level_master_image {
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: 55px;
+    background-position: top 10% center;
+  }
+  .level_name {
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-d-3);
+    font-weight: 600;
+    // color: var(--black);
+    // &.student_level {
+    //   color: var(--blue);
+    //   position: relative;
+    //   &::after {
+    //     content: "";
+    //     width: 50%;
+    //     height: 3px;
+    //     border-radius: var(--round-full);
+    //     background-color: var(--blue);
+    //     position: absolute;
+    //     top: 73%;
+    //     left: 25%;
+    //   }
+    // }
+  }
+  .leveled_study_status {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: var(--text-xs);
+    letter-spacing: -1px;
+    color: var(--gray1);
+    b {
+      color: var(--blue);
+    }
+  }
+}
+
+// 나의 학습 레벨 > 레벨 테스트 이력
+.level_test_history {
+  padding: var(--space-s);
+  margin-bottom: calc(env(safe-area-inset-bottom) + 180px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  .txt_h {
+    font-size: var(--text-d-1);
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+  }
+  .txt_p {
+    color: var(--gray1);
+    font-size: var(--text-s);
+    // margin-bottom: var(--space-s);
+  }
+}
+.level_test_ready {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  background-color: var(--light);
+  padding: var(--space-m);
+  padding-bottom: calc(env(safe-area-inset-bottom) + var(--space-m));
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top: 2px solid var(--gray2);
+  @media (prefers-color-scheme: dark) {
+    background-color: #0c0541;
+    border-top: 2px solid rgba($color: #ffffff, $alpha: 0.15);
+  }
+  .txt_p {
+    font-size: var(--text-l);
+  }
+}
+
+// 나의 학습 레벨 > 레벨 테스트 이력 > 레벨 테스트 결과 아이템
+.level_test_history_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: rgba($color: #000000, $alpha: 0.05);
+  padding: var(--space-s);
+  border-radius: var(--round-m);
+  @media (prefers-color-scheme: dark) {
+    background-color: rgba($color: #ffffff, $alpha: 0.15);
+  }
+  .col_a {
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+    .level_symbol_box {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--deep-blue);
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--white);
+      border-radius: var(--round-m);
+      border-top: 1px solid var(--dark-blue);
+      border-right: 1px solid var(--dark-blue);
+      border-bottom: 4px solid var(--dark-blue);
+      border-left: 1px solid var(--dark-blue);
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+    .test_result_info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .txt_l {
+        font-size: var(--text-m);
+        font-weight: 500;
+        margin-bottom: var(--space-xxs);
+        color: var(--gray1);
+      }
+      .txt_p2 {
+        font-size: var(--text-m);
+      }
+    }
+  }
+  .col_b {
+    font-size: var(--text-s);
+    font-weight: 600;
+    color: var(--blue);
+  }
+}
+
+// 학습 설정
+.set_study_mode {
+  padding: var(--space-m);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+  .row_a,
+  .row_b,
+  .row_c {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    .txt_h {
+      font-size: var(--text-d-1);
+      font-weight: 600;
+    }
+    .choose_study_mode {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-xs);
+      background-color: var(--gray3);
+      border-radius: var(--round-m);
+      padding: var(--space-xxs);
+      @media (prefers-color-scheme: dark) {
+        background-color: rgba($color: #ffffff, $alpha: 0.15);
+      }
+    }
+  }
+}
+
+// 학습 설정 > 학습 모드 선택 아이템
+.choose_study_mode_item {
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex: 1 0 0;
+  color: var(--gray1);
+  font-size: var(--text-l);
+  font-weight: 600;
+  cursor: pointer;
+  &.active {
+    border-radius: 10px;
+    border-top: 1px solid #289ee4;
+    border-right: 1px solid #289ee4;
+    border-bottom: 4px solid #289ee4;
+    border-left: 1px solid #289ee4;
+    background: #3ab6ff;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.6);
+    color: var(--white);
+  }
+  .gray_filter {
+    filter: grayscale(1);
+  }
+}
+
+// 학습 설정 > 학습 옵션 설정 아이템
+.set_study_option_item {
+  padding: var(--space-s);
+  border: 2px solid var(--gray2);
+  border-radius: var(--round-m);
+  cursor: pointer;
+  @media (prefers-color-scheme: dark) {
+    border: 2px solid rgba($color: #ffffff, $alpha: 0.15);
+  }
+  &.checked {
+    border-color: var(--blue);
+    background-color: var(--light);
+    @media (prefers-color-scheme: dark) {
+      background-color: transparent;
+    }
+  }
+  .row_a1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-xs);
+    .txt_h1 {
+      font-size: var(--text-m);
+      font-weight: 600;
+    }
+  }
+  .row_b {
+    color: var(--gray1);
+    font-size: var(--text-s);
+  }
+}

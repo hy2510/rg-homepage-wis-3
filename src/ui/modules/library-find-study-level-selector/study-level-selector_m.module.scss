@@ -1,0 +1,33 @@
+.study_level_selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  border: 2px solid var(--gray3);
+  border-radius: var(--round-m);
+  padding: var(--space-xs);
+  background-color: #fbfdff;
+  @media (prefers-color-scheme: dark) {
+    border: 2px solid rgba($color: #fff, $alpha: 0.15);
+    background-color: #0c0541;
+  }
+  .level_select_button {
+    cursor: pointer;
+    font-size: var(--text-xl);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xxs);
+    padding-left: var(--space-xxs);
+    .arrow_icon {
+      width: 20px;
+      height: 20px;
+      background-image: url("/src/images/arrow-icons/chv_down.svg");
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+      @media (prefers-color-scheme: dark) {
+        background-image: url("/src/images/arrow-icons/chev_down_white.svg");
+      }
+    }
+  }
+}

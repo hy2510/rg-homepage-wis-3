@@ -1,0 +1,93 @@
+.sign_up_box {
+  width: 500px;
+  margin: auto;
+  margin-top: var(--space-l);
+}
+
+.step1 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+}
+
+.check_field {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.sign_up_form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  .comment {
+    font-size: var(--text-s);
+  }
+}
+
+.sending_message {
+  font-size: var(--text-s);
+}
+
+.step2 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+  .sending_message {
+    font-size: var(--text-s);
+  }
+  .link_button_container {
+    display: flex;
+    justify-content: center;
+    .link_button {
+      cursor: pointer;
+      color: var(--blue);
+      font-size: var(--text-m);
+      font-weight: 500;
+    }
+  }
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+  .txt_title {
+    font-size: var(--text-xl);
+    font-weight: 500;
+  }
+  .txt_sub_title {
+    font-size: var(--text-l);
+    font-weight: 500;
+  }
+  .member_info_box {
+    border: 2px solid var(--gray2);
+    border-radius: var(--round-l);
+    padding: var(--space-m);
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    row-gap: var(--space-s);
+    div {
+      font-weight: 500;
+      &:nth-child(odd) {
+        font-weight: 400;
+        color: var(--gray1);
+      }
+    }
+  }
+  .comment {
+    font-size: var(--text-s);
+    display: flex;
+    gap: var(--space-xxs);
+  }
+  .link_button_container {
+    display: flex;
+    justify-content: center;
+    .link_button {
+      cursor: pointer;
+      color: var(--blue);
+      font-size: var(--text-m);
+      font-weight: 500;
+    }
+  }
+}

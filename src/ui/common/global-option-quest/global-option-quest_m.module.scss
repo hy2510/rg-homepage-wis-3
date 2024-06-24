@@ -1,0 +1,336 @@
+// 퀘스트 모달
+.quest_modal {
+  .quest_modal_body {
+    padding: 0 var(--space-s);
+    margin-bottom: calc(env(safe-area-inset-bottom) + 120px);
+    .comment {
+      margin-top: var(--space-m);
+      color: var(--gray-dark);
+      font-size: var(--text-l);
+      font-weight: 500;
+    }
+  }
+  .quest_modal_bottom {
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    box-shadow: 0px -2px 2px 0px rgba(0, 0, 0, 0.1);
+    padding: var(--space-s);
+    padding-bottom: calc(env(safe-area-inset-bottom) + var(--space-s));
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: var(--space-s);
+    background-color: var(--white);
+    align-items: center;
+    @media (prefers-color-scheme: dark) {
+      background-color: #0c0541;
+      border-top: 2px solid rgba($color: #ffffff, $alpha: 0.15);
+    }
+  }
+}
+
+// 퀘스트 모달 > 도도 앤 프렌즈
+.dodo_and_friends {
+  .intro_button,
+  .ending_button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-s);
+    border-radius: var(--round-l);
+    background-color: var(--yellow);
+    color: var(--white);
+    font-size: var(--text-l);
+    font-weight: 600;
+  }
+  .bridge {
+    background-color: var(--yellow);
+    height: 20px;
+    width: 2px;
+    margin: auto;
+  }
+}
+
+// 퀘스트 모달 > 도도 앤 프렌즈 > 프렌즈 소개(시놉시스)
+.friends_entry {
+  border-radius: var(--round-l);
+  border: 2px solid var(--yellow);
+  background-color: #fffae4;
+  padding: var(--space-s);
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--space-s);
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--yellow);
+  }
+  .friends_entry_image {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .friends_entry_text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxs);
+    .title {
+      font-size: var(--text-l);
+      font-weight: 500;
+      color: var(--black);
+    }
+    .story {
+      font-size: var(--text-s);
+      color: var(--gray-dark);
+    }
+  }
+}
+
+// 퀘스트 모달 > 도도 앤 프렌즈 > 프렌즈 스토리
+.friends_story {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  border: 2px solid var(--yellow);
+  border-radius: var(--round-full);
+  overflow: hidden;
+  position: relative;
+  transition: width 0.2s, height 0.2s;
+  &.open {
+    width: 300px;
+    height: 300px;
+    border-radius: 0;
+    border: none;
+    transition: width 0.2s, height 0.2s;
+  }
+  &.lock {
+    img {
+      filter: grayscale(1) blur(3px);
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      background-image: url("/src/images/lock-icons/lock_white.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 50px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+  .delete_button {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+}
+.unlock_point_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .unlock_point {
+    width: 100px;
+    padding: var(--space-xxs) var(--space-m);
+    text-align: center;
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: var(--round-full);
+    margin-top: var(--space-xxs);
+    font-size: var(--text-s);
+    font-weight: 600;
+    position: relative;
+    &::before {
+      content: "";
+      border-style: solid;
+      border-width: 6px;
+      border-color: transparent transparent black transparent;
+      position: absolute;
+      bottom: calc(100% - 1px);
+      left: calc(50% - 6px);
+    }
+  }
+}
+.friends_story_text {
+  width: 300px;
+  margin: auto;
+  background-color: var(--black);
+  position: relative;
+  color: var(--white);
+  border-radius: var(--round-m);
+  padding: var(--space-s);
+  margin-top: 10px;
+  &::before {
+    content: "";
+    border-style: solid;
+    border-width: 8px;
+    border-color: transparent transparent black transparent;
+    position: absolute;
+    bottom: calc(100% - 1px);
+    left: calc(50% - 8px);
+  }
+  .title {
+    font-size: var(--text-l);
+    font-weight: 500;
+  }
+  .story {
+    font-size: var(--text-s);
+    color: var(--gray-dark);
+  }
+}
+
+// 퀘스트 모달 > 도도 앤 프렌즈 > 진행상태 (하단 고정)
+.current_unit {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--round-full);
+  overflow: hidden;
+}
+.status {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xs);
+  .comment {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+// 퀘스트 모달 > 레벨 마스터
+.level_master_progress {
+  .comment {
+    margin: var(--space-m) 0;
+  }
+  .level_master_lists {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+  }
+  .tabs {
+    display: flex;
+    border-radius: var(--round-l);
+    background: var(--gray2);
+    padding: var(--space-xxs);
+    @media (prefers-color-scheme: dark) {
+      background: rgba($color: #fff, $alpha: 0.15);
+    }
+    .tab_item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xxs);
+      padding: var(--space-xs);
+      color: var(--white);
+      font-size: var(--text-l);
+      font-weight: 700;
+      opacity: 0.7;
+      cursor: pointer;
+      &.active {
+        opacity: 1;
+        color: var(--blue);
+        border-radius: var(--round-m);
+        background: var(--white);
+        @media (prefers-color-scheme: dark) {
+          background: rgba($color: #0c0541, $alpha: 0.8);
+        }
+        // border-top: 1px solid #e7e7e7;
+        // border-right: 1px solid #e7e7e7;
+        // border-bottom: 4px solid #e7e7e7;
+        // border-left: 1px solid #e7e7e7;
+        // box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+  .level_master_progress_lists {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+  }
+  .level_master_award_item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+    min-height: 400px;
+  }
+}
+
+// 퀘스트 모달 > 레벨 마스터 > 레벨 마스터 상태 아이템
+.level_master_progress_item {
+  padding: var(--space-s);
+  border-radius: var(--round-l);
+  margin-top: var(--space-s);
+  .info {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: var(--space-m);
+    margin-bottom: var(--space-xxs);
+    &.master {
+      margin-bottom: 0;
+    }
+    .symbol {
+      position: relative;
+      width: 80px;
+      &.master {
+        width: 80px;
+      }
+      .symbol_image {
+        position: absolute;
+        bottom: 3px;
+        width: 80px;
+        &.master {
+          bottom: -10px;
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .status {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xs);
+      font-weight: 500;
+      text-align: end;
+      &.master {
+        margin-bottom: 0;
+      }
+      .label {
+        color: var(--gray-dark);
+        text-align: start;
+      }
+    }
+  }
+}
+
+// 퀘스트 모달 > 레벨 마스터 > 진행상태 (하단 고정)
+.current_progress {
+  width: 80px;
+}
+.progress_status {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xs);
+  .comment {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--text-l);
+    font-weight: 500;
+  }
+}

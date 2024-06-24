@@ -1,0 +1,10 @@
+.ranking_nav_bar {
+  position: sticky;
+  top: 18px;
+  z-index: 10;
+  .txt_h {
+    font-size: var(--text-d-2);
+    font-weight: 600;
+    margin: var(--space-m) 0;
+  }
+}

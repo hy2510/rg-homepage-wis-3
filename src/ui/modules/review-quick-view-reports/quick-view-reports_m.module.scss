@@ -1,0 +1,69 @@
+.quick_reports_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: end;
+  gap: var(--space-s);
+}
+
+.quick_report_item {
+  display: grid;
+  gap: var(--space-xxs);
+  .book_cover {
+    position: relative;
+    margin-bottom: var(--space-m);
+    .book_cover_img {
+      cursor: pointer;
+      filter: contrast(103%);
+      border-radius: var(--round-m);
+      border: 1.2px solid rgba($color: #000000, $alpha: 0.15);
+      @media (prefers-color-scheme: dark) {
+        border: 1.2px solid rgba($color: #ffffff, $alpha: 0.2);
+      }
+      // box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+      //   rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+      //   rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+    @mixin mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 100px;
+      border: 2px solid var(--white);
+      position: absolute;
+      bottom: -15px;
+      left: calc(50% - 20px);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 25px;
+    }
+    .pass_mark {
+      @include mark;
+      background-color: var(--blue);
+      background-image: url("/src/images/check-icons/check_white.svg");
+    }
+    .fail_mark {
+      @include mark;
+      background-color: var(--red);
+      background-image: url("/src/images/delete-icons/x_white.svg");
+    }
+  }
+  .result {
+    text-align: center;
+    font-weight: 600;
+    .pass {
+      color: var(--blue);
+    }
+    .fail {
+      color: var(--red);
+    }
+  }
+  .date {
+    text-align: center;
+    font-size: var(--text-s);
+    &.pass {
+      color: var(--blue);
+    }
+    &.fail {
+      color: var(--red);
+    }
+  }
+}

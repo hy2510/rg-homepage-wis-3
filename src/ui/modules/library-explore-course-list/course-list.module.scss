@@ -1,0 +1,336 @@
+// 코스 리스트
+.course_list {
+  display: block;
+}
+.row_a {
+  display: flex;
+  justify-content: space-between;
+  .row_a_container {
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+    .txt_h {
+      font-size: var(--text-d-1);
+      font-weight: 600;
+    }
+    .completed_status {
+      display: flex;
+      align-items: center;
+      font-size: var(--text-l);
+      font-weight: 500;
+      .txt_l1 {
+        font-size: var(--text-m);
+        color: var(--orange);
+      }
+      .txt_l2 {
+        font-size: var(--text-m);
+        color: var(--gray1);
+      }
+    }
+  }
+}
+.intro_movie {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+  .video_wraper {
+    min-width: 420px;
+    min-height: 245px;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: var(--round-xl);
+    overflow: hidden;
+    padding: var(--space-xs);
+    margin: auto;
+    margin-top: 130px;
+    position: relative;
+    z-index: 1;
+    video {
+      display: block;
+      width: 400px;
+      border-radius: var(--round-l);
+      overflow: hidden;
+    }
+  }
+}
+.outro_movie {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-s);
+  position: relative;
+  .video_wraper {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: var(--round-xl);
+    overflow: hidden;
+    padding: var(--space-xs);
+    margin: auto;
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
+    video {
+      display: block;
+      width: 400px;
+      border-radius: var(--round-l);
+      overflow: hidden;
+    }
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .course_bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -3;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.15;
+  }
+}
+
+// 코스 아이템
+.course_item {
+  min-height: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &:nth-child(1) {
+    .streak_front {
+      display: none;
+    }
+  }
+  &:nth-last-child(1) {
+    .streak_back {
+      display: none;
+    }
+  }
+  .col_a {
+    display: flex;
+    align-items: center;
+    gap: var(--space-l);
+    position: relative;
+    .check_study {
+      height: 100%;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .status,
+    .cover {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .status {
+      position: relative;
+      min-height: 200px;
+      img {
+        position: relative;
+        z-index: 1;
+      }
+      .streak_front,
+      .streak_back {
+        position: absolute;
+        width: 10px;
+      }
+      .streak_front {
+        top: 0;
+        bottom: 50%;
+        background-color: var(--gray3);
+        &.prev_passed {
+          background-color: var(--blue);
+          //   background: linear-gradient(var(--blue), var(--gray3));
+        }
+      }
+      .streak_back {
+        top: 50%;
+        bottom: 0;
+        background-color: var(--gray3);
+        &.passed {
+          background-color: var(--blue);
+        }
+      }
+    }
+    .cover {
+      border-radius: var(--round-l);
+      overflow: hidden;
+      margin: var(--space-s) 0;
+      .ready {
+        filter: grayscale(1);
+      }
+      .done {
+        filter: none;
+      }
+    }
+    .txt_h {
+      font-size: 1.6em;
+      font-weight: 600;
+    }
+  }
+  .col_b {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    min-width: 150px;
+    .button {
+      border-radius: var(--round-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-m);
+      font-weight: 600;
+      min-height: 50px;
+      cursor: pointer;
+      &:active {
+        transform: scale(0.98);
+      }
+      &.voca_download {
+        border: 1.5px solid;
+        color: var(--blue);
+      }
+      &.voca_download_ready {
+        border: 1.5px solid;
+        color: var(--gray3);
+        img {
+          filter: grayscale(1);
+        }
+      }
+      &.start {
+        color: var(--white);
+        background-color: var(--blue);
+        border-bottom: 3px solid #289ee4;
+        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+      }
+      &.start_ready {
+        color: var(--gray1);
+        background-color: var(--gray3);
+      }
+      &.review {
+        color: var(--blue);
+        background-color: var(--light);
+      }
+    }
+  }
+}
+
+.heartbeat {
+  -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+  animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+@-webkit-keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+.pulsate_fwd {
+  -webkit-animation: pulsate-fwd 0.5s ease-in-out infinite both;
+  animation: pulsate-fwd 0.5s ease-in-out infinite both;
+}
+@-webkit-keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}

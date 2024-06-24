@@ -1,0 +1,35 @@
+// 공통하단
+.g_footer {
+  padding: var(--space-m) 0;
+  // padding-bottom: 80px;
+  margin-top: var(--space-xl);
+  border-top: 1.2px solid var(--gray3);
+  @media (prefers-color-scheme: dark) {
+    border-top: 1.2px solid rgba(255, 255, 255, 0.05);
+  }
+  .row_a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    span {
+      &:nth-child(2) {
+        font-size: var(--text-d-2);
+        font-weight: bold;
+      }
+    }
+  }
+  .row_b {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 10px;
+    font-weight: 500;
+    color: var(--gray1);
+    margin-bottom: 10px;
+  }
+  .row_c {
+    font-size: var(--text-s);
+    color: var(--gray1);
+  }
+}

@@ -1,0 +1,15 @@
+.box_user_info {
+  border: 2px solid var(--gray2);
+  border-radius: var(--round-l);
+  padding: var(--space-m);
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  row-gap: var(--space-s);
+  div {
+    font-weight: 500;
+    &:nth-child(odd) {
+      font-weight: 400;
+      color: var(--gray1);
+    }
+  }
+}

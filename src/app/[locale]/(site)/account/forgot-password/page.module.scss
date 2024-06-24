@@ -1,0 +1,11 @@
+.forgot {
+  width: 500px;
+  margin: auto;
+  margin-top: var(--space-l);
+}
+
+.forgot_password {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+}

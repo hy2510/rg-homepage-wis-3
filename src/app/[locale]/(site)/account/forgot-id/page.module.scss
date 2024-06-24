@@ -1,0 +1,40 @@
+.forgot {
+  width: 500px;
+  margin: auto;
+  margin-top: var(--space-l);
+}
+
+.forgot_id {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+}
+
+.forgot_id_group {
+  width: 500px;
+  margin: auto;
+  margin-top: var(--space-l);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+}
+
+.forgot_id_form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  .group_select_grade {
+    display: flex;
+    gap: var(--space-m);
+  }
+}
+
+.txt_heading {
+  font-size: var(--text-l);
+  font-weight: 500;
+}
+.forgot_id_find_result {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+}

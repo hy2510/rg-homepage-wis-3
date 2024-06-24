@@ -1,0 +1,19 @@
+// 학습메인 > 사용자의 학습레벨의 시리즈 리스트
+.series_list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  .txt_h {
+    font-size: var(--text-d-1);
+    font-weight: 600;
+  }
+  .series_list_container {
+    display: flex;
+    gap: var(--space-m);
+    overflow-x: auto;
+    white-space: nowrap;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

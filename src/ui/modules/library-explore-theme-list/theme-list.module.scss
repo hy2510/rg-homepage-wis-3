@@ -1,0 +1,39 @@
+// 학습메인 > 사용자의 학습레벨의 주제 리스트
+.theme_list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  .txt_h {
+    font-size: var(--text-d-1);
+    font-weight: 600;
+  }
+  .theme_list_container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-m);
+  }
+}
+
+// 학습메인 > 사용자의 학습레벨의 주제 아이템
+.theme_list_item {
+  width: 100%;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: var(--round-l);
+  position: relative;
+  .txt_title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.1em;
+    text-shadow: 0 0 5px var(--black);
+  }
+}

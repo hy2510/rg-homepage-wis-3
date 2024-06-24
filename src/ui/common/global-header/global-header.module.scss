@@ -1,0 +1,198 @@
+// 공통상단
+.global_header {
+  width: 100vw;
+  height: var(--header-height);
+  // background-color: #3ab6ff;
+  background-color: #00a0fd;
+  display: flex;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  @media (prefers-color-scheme: dark) {
+    background-color: #0c0541;
+  }
+  .global_header_container {
+    min-width: 1024px;
+    height: var(--header-height);
+    padding: 0 15px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    @media screen and (max-width: 1024px) {
+      min-width: 768px;
+    }
+    .company_logo {
+      display: flex;
+      align-items: center;
+      min-width: 150px;
+      justify-content: start;
+    }
+  }
+}
+.global_header_back_spcae {
+  height: var(--header-height);
+  @media (pointer: coarse) {
+    height: calc(var(--header-height) - 10px);
+  }
+}
+
+// 공통상단 > 로그오프 상태의 메뉴
+.gnb_log_off {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-l);
+}
+.sign_buttons {
+  min-width: 150px;
+  color: var(--white);
+  font-weight: 500;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: var(--space-m);
+}
+
+// 공통상단 > 로그온 상태의 메뉴
+.gnb_log_on {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-l);
+}
+.option_buttons {
+  min-width: 250px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: var(--space-s);
+}
+
+// 공통상단 > 메뉴 버튼
+.gnb_button {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-weight: 600;
+  font-size: var(--text-l);
+  position: relative;
+  opacity: 0.5;
+  &.active {
+    opacity: 1;
+    &::after {
+      content: "";
+      width: calc(100% + 3px);
+      height: 3px;
+      background-color: #fff;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-radius: 100px;
+    }
+  }
+}
+
+// 옵션 버튼
+.option_button {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  &.avatar {
+    img {
+      border: 2px solid var(--white);
+      border-radius: var(--round-full);
+    }
+  }
+  .calendar {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    .date {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .month {
+        width: 36px;
+        // color: #65b6ff;
+        color: #00a0fd;
+        font-size: var(--text-xxs);
+        font-weight: 800;
+        line-height: 8px;
+        padding: 6px 0 1px 0;
+        @media (prefers-color-scheme: dark) {
+          color: #0c0541;
+        }
+      }
+      .today {
+        width: 36px;
+        // color: #65b6ff;
+        color: #00a0fd;
+        font-size: var(--text-xs);
+        font-weight: 800;
+        line-height: 10px;
+        padding: 2px 0 4px 0;
+        @media (prefers-color-scheme: dark) {
+          color: #0c0541;
+        }
+      }
+    }
+    .calendar_icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .new_dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--red);
+    border-radius: var(--round-full);
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-animation: blink-1 2s infinite both;
+    animation: blink-1 2s infinite both;
+  }
+  @-webkit-keyframes blink-1 {
+    0%,
+    50%,
+    100% {
+      opacity: 1;
+    }
+    25%,
+    75% {
+      opacity: 0;
+    }
+  }
+  @keyframes blink-1 {
+    0%,
+    50%,
+    100% {
+      opacity: 1;
+    }
+    25%,
+    75% {
+      opacity: 0;
+    }
+  }
+}

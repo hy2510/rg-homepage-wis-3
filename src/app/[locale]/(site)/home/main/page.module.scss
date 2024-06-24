@@ -1,0 +1,81 @@
+@mixin layoutItems($col-left-width, $col-left-min-width, $col-right-width) {
+  .item1 {
+    grid-area: main_banner;
+    width: 100%;
+    max-width: $col-left-width;
+    min-width: $col-left-min-width;
+    height: fit-content;
+  }
+  .item2 {
+    grid-area: rg_news;
+    width: 100%;
+    max-width: $col-left-width;
+    min-width: $col-left-min-width;
+    height: fit-content;
+  }
+  .item3 {
+    grid-area: log_in;
+    min-width: $col-right-width;
+    height: fit-content;
+  }
+  .item4 {
+    grid-area: ad_banner;
+    min-width: $col-right-width;
+    height: fit-content;
+  }
+  .item5 {
+    grid-area: rg_post;
+    width: 100%;
+    max-width: $col-left-width;
+    min-width: $col-left-min-width;
+    height: fit-content;
+  }
+}
+
+.home_news {
+  display: grid;
+  grid-template-areas:
+    "main_banner log_in"
+    "main_banner ad_banner"
+    "rg_news ad_banner"
+    "rg_post ad_banner";
+  padding-top: var(--space-xs);
+  gap: var(--space-m);
+  width: 100%;
+  overflow-x: hidden;
+  min-width: 1024px;
+  @media (orientation: landscape) {
+    @media screen and (max-width: 1280px) {
+      @include layoutItems(
+        $col-left-width: 70vw,
+        $col-left-min-width: 700px,
+        $col-right-width: calc(30vw - 50px)
+      );
+    }
+    @media (min-width: 1281px) {
+      @include layoutItems(
+        $col-left-width: 900px,
+        $col-left-min-width: 700px,
+        $col-right-width: 320px
+      );
+    }
+  }
+  @media (orientation: portrait) {
+    min-width: 0;
+    @include layoutItems(
+      $col-left-width: 70vw,
+      $col-left-min-width: 480px,
+      $col-right-width: calc(30vw - 50px)
+    );
+  }
+}
+
+.log_in {
+  width: 100%;
+  background-color: var(--white);
+}
+
+.ad_banners {
+  width: 100%;
+  background-color: var(--white);
+}

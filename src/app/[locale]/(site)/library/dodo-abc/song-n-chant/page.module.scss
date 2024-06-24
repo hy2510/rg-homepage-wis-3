@@ -1,0 +1,51 @@
+.dodo_abc_songn_chant {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+}
+
+.dodo_abc_songn_chant_cover {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  background-color: var(--light);
+  padding: var(--space-m);
+  border-radius: var(--round-l);
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover {
+    transform: scale(1.05);
+  }
+  @media (prefers-color-scheme: dark) {
+    background-color: rgba($color: #ffffff, $alpha: 0.15);
+  }
+  .img_cover {
+    border-radius: var(--space-s);
+    overflow: hidden;
+    img {
+      display: block;
+    }
+  }
+  .txt_title {
+    font-size: var(--text-d-1);
+    font-weight: 600;
+    padding-left: var(--space-xs);
+  }
+  .btn_start {
+    cursor: pointer;
+    width: 100%;
+    min-height: 45px;
+    border: 2px solid var(--blue);
+    border-radius: var(--round-m);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    background-color: var(--blue);
+    color: var(--white);
+    font-weight: 600;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

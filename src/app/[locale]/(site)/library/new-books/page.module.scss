@@ -1,0 +1,26 @@
+.search_result {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+  @media screen and (max-width: 600px) {
+    gap: var(--space-m);
+  }
+  .row_a,
+  .row_b {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    .txt_h {
+      font-size: var(--text-l);
+      font-weight: 600;
+    }
+    .book_list {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: var(--space-m);
+      @media screen and (max-width: 600px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}

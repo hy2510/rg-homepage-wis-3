@@ -1,0 +1,72 @@
+.interview_card_1 {
+  display: block;
+  border-radius: var(--round-m);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.interview_card_2 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  .group_thumbnail_image {
+    border-radius: var(--round-l);
+    overflow: hidden;
+  }
+  .group_thumnail_text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxs);
+    .txt_sub {
+      color: var(--gray1);
+    }
+    .txt_title {
+      font-weight: 600;
+      font-size: var(--text-d-1);
+    }
+    .group_link {
+      display: flex;
+      .btn_link {
+        margin: var(--space-xs) 0;
+        color: #03c75a;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: var(--space-xxs);
+        .ico_arrow_right {
+          width: 20px;
+          height: 20px;
+          background-image: url("/src/images/arrow-icons/chev_right_green.svg");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+.interview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  padding: 0;
+  .group_interview_main_media {
+    display: block;
+  }
+  .group_interview_thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    .txt_label {
+      font-size: var(--text-d-1);
+      font-weight: 600;
+    }
+    .list_thumbnails {
+      display: grid;
+      gap: var(--space-m);
+    }
+  }
+}

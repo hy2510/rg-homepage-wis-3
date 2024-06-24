@@ -1,0 +1,18 @@
+.rg_membership {
+  padding-top: var(--space-xs);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+  .contents_box {
+    min-height: 600px;
+    padding: var(--space-m);
+    background-color: var(--white);
+    border-radius: var(--round-l);
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    @media (prefers-color-scheme: dark) {
+      background-color: rgba($color: #000000, $alpha: 0.3);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+  }
+}

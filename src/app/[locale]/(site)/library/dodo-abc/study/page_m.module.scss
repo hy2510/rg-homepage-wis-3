@@ -1,0 +1,67 @@
+.dodo_abc {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+}
+
+.dodo_abc_book_cover {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  position: relative;
+  .study_status {
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    right: -10px;
+    display: flex;
+    gap: 3px;
+    .assigned_todo,
+    .passed_1,
+    .passed_all {
+      width: 34px;
+      height: 34px;
+    }
+  }
+  .group1 {
+    border-radius: var(--space-s);
+    overflow: hidden;
+    // border-top: 2px solid rgba($color: #000000, $alpha: 0.15);
+    // border-left: 2px solid rgba($color: #000000, $alpha: 0.15);
+    // border-right: 2px solid rgba($color: #000000, $alpha: 0.15);
+    border-bottom: 3px solid rgba($color: #000000, $alpha: 0.5);
+    img {
+      display: block;
+    }
+  }
+  .group2 {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-xxs);
+    position: relative;
+    @mixin btnStyle {
+      cursor: pointer;
+      width: 100%;
+      min-height: 40px;
+      border: 2px dotted var(--gray2);
+      border-radius: var(--round-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .btn_start {
+      @include btnStyle;
+      background-color: var(--blue);
+      color: var(--white);
+      font-weight: 600;
+    }
+    .btn_download {
+      @include btnStyle;
+      background-image: url("/src/images/@course-list/download.svg");
+      background-repeat: no-repeat;
+      background-size: 20px;
+      background-position: center;
+    }
+  }
+}

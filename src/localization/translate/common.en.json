@@ -1,0 +1,10 @@
+{
+  "common": "common",
+  "sample": "common sample",
+  "menu_home": "HOME",
+  "menu_about": "ABOUT",
+  "menu_trial": "TRIAL",
+  "menu_study": "STUDY",
+  "menu_review": "REVIEW",
+  "menu_ranking": "RANKING"
+}

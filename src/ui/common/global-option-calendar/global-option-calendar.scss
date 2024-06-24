@@ -1,0 +1,298 @@
+@mixin carouselButtons(
+  $leftIco: "/src/images/arrow-icons/chv_left.svg",
+  $rightIco: "/src/images/arrow-icons/chv_right.svg"
+) {
+  .carousel_left_button,
+  .carousel_right_button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 32px;
+    cursor: pointer;
+  }
+  .carousel_left_button {
+    background-image: url($leftIco);
+  }
+  .carousel_right_button {
+    background-image: url($rightIco);
+  }
+  .year_carousel {
+    .carousel_left_button,
+    .carousel_right_button {
+      background-size: 24px;
+      opacity: 0.2;
+    }
+  }
+}
+
+.january {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/01/big_img_jan_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/01/big_img_jan_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #e3f6f2;
+  @media (pointer: coarse) {
+    background-position: left -100px center, right -100px center;
+  }
+  .cal_year {
+    color: var(--black);
+  }
+  .cal_month {
+    color: var(--black);
+    &::after {
+      content: "January";
+    }
+  }
+  @include carouselButtons();
+}
+.february {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/02/big_img_feb_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/02/big_img_feb_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #016680;
+  @media (pointer: coarse) {
+    background-position: left -80px center, right -100px center;
+  }
+  .cal_year {
+    color: var(--white);
+  }
+  .cal_month {
+    color: var(--white);
+    &::after {
+      content: "February";
+    }
+  }
+  @include carouselButtons(
+    $leftIco: "/src/images/arrow-icons/chv_left_white.svg",
+    $rightIco: "/src/images/arrow-icons/chv_right_white.svg"
+  );
+}
+.march {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/03/big_img_mar_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/03/big_img_mar_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #efefef;
+  @media (pointer: coarse) {
+    background-position: left -100px center, right -50px center;
+  }
+  .cal_year {
+    color: var(--black);
+  }
+  .cal_month {
+    color: var(--black);
+    &::after {
+      content: "March";
+    }
+  }
+  @include carouselButtons();
+}
+.april {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/04/big_img_apr_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/04/big_img_apr_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #ffecde;
+  @media (pointer: coarse) {
+    background-position: left -80px center, right -100px center;
+  }
+  .cal_year {
+    color: var(--black);
+  }
+  .cal_month {
+    color: var(--black);
+    &::after {
+      content: "April";
+    }
+  }
+  @include carouselButtons();
+}
+.may {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/05/big_img_may_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/05/big_img_may_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #aee387;
+  @media (pointer: coarse) {
+    background-position: left -130px center, right -130px center;
+  }
+  .cal_year {
+    color: var(--black);
+  }
+  .cal_month {
+    color: var(--black);
+    &::after {
+      content: "May";
+    }
+  }
+  @include carouselButtons();
+}
+.june {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/06/big_img_jun_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/06/big_img_jun_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #bed630;
+  @media (pointer: coarse) {
+    background-position: left -150px center, right -100px center;
+  }
+  .cal_year {
+    color: var(--black);
+  }
+  .cal_month {
+    color: var(--black);
+    &::after {
+      content: "June";
+    }
+  }
+  @include carouselButtons();
+}
+.july {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/07/big_img_jul_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/07/big_img_jul_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #ffe0a3;
+  @media (pointer: coarse) {
+    background-position: left -100px center, right -100px center;
+  }
+  .cal_year {
+    color: var(--black);
+  }
+  .cal_month {
+    color: var(--black);
+    &::after {
+      content: "July";
+    }
+  }
+  @include carouselButtons();
+}
+.august {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/08/big_img_aug_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/08/big_img_aug_r.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/08/back.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain, cover;
+  background-position: left center, right center, center;
+  @media (pointer: coarse) {
+    background-position: left -150px center, right -150px center, center;
+  }
+  .cal_year {
+    color: var(--white);
+  }
+  .cal_month {
+    color: var(--white);
+    &::after {
+      content: "August";
+    }
+  }
+  @include carouselButtons(
+    $leftIco: "/src/images/arrow-icons/chv_left_white.svg",
+    $rightIco: "/src/images/arrow-icons/chv_right_white.svg"
+  );
+}
+.september {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/09/big_img_sep_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/09/big_img_sep_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #012548;
+  @media (pointer: coarse) {
+    background-position: left -100px center, right -100px center;
+  }
+  .cal_year {
+    color: var(--white);
+  }
+  .cal_month {
+    color: var(--white);
+    &::after {
+      content: "September";
+    }
+  }
+  @include carouselButtons(
+    $leftIco: "/src/images/arrow-icons/chv_left_white.svg",
+    $rightIco: "/src/images/arrow-icons/chv_right_white.svg"
+  );
+}
+.october {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/10/big_img_oct_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/10/big_img_oct_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #522b28;
+  @media (pointer: coarse) {
+    background-position: left -80px center, right -100px center;
+  }
+  .cal_year {
+    color: var(--white);
+  }
+  .cal_month {
+    color: var(--white);
+    &::after {
+      content: "October";
+    }
+  }
+  @include carouselButtons(
+    $leftIco: "/src/images/arrow-icons/chv_left_white.svg",
+    $rightIco: "/src/images/arrow-icons/chv_right_white.svg"
+  );
+}
+.november {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/11/big_img_nov_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/11/big_img_nov_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #ffe6b8;
+  @media (pointer: coarse) {
+    background-position: left -80px center, right -100px center;
+  }
+  .cal_year {
+    color: var(--black);
+  }
+  .cal_month {
+    color: var(--black);
+    &::after {
+      content: "November";
+    }
+  }
+  @include carouselButtons();
+}
+.december {
+  background-image: url("/src/images/@calendar-modal/calendar-bg/12/big_img_dec_l.svg"),
+    url("/src/images/@calendar-modal/calendar-bg/12/big_img_dec_r.svg");
+  background-repeat: no-repeat;
+  background-size: contain, contain;
+  background-position: left center, right center;
+  background-color: #17173b;
+  @media (pointer: coarse) {
+    background-position: left -50px center, right -100px center;
+  }
+  .cal_year {
+    color: var(--white);
+  }
+  .cal_month {
+    color: var(--white);
+    &::after {
+      content: "December";
+    }
+  }
+  @include carouselButtons(
+    $leftIco: "/src/images/arrow-icons/chv_left_white.svg",
+    $rightIco: "/src/images/arrow-icons/chv_right_white.svg"
+  );
+}

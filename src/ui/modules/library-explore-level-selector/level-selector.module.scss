@@ -1,0 +1,86 @@
+.current_study_level_container {
+  padding: var(--space-xs) var(--space-m) var(--space-m) var(--space-m);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  .level_items {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    row-gap: var(--space-m);
+    flex-wrap: wrap;
+    .label {
+      width: 100%;
+      font-weight: 500;
+      font-size: var(--text-m);
+      padding: var(--space-xs) var(--space-xs) var(--space-s) var(--space-xs);
+      border-bottom: 2px dotted var(--gray3);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @media (prefers-color-scheme: dark) {
+        border-bottom: 2px dotted rgba($color: #ffffff, $alpha: 0.15);
+      }
+      span {
+        font-weight: 400;
+        font-size: var(--text-s);
+        color: var(--gray1);
+      }
+    }
+  }
+}
+
+.leveled_study_status_item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  .level_master_image {
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: 55px;
+    background-position: top 10% center;
+  }
+  .level_name {
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    // width: 100px;
+    // height: 100px;
+    // background-repeat: no-repeat;
+    // background-size: contain;
+    // background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-xxl);
+    // font-size: var(--text-d-3);
+    font-weight: 600;
+  }
+  .level_name_bg {
+    cursor: pointer;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @media (prefers-color-scheme: dark) {
+      opacity: 0.5;
+    }
+  }
+  .leveled_study_status {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: var(--text-xs);
+    letter-spacing: -1px;
+    color: var(--gray1);
+    b {
+      color: var(--blue);
+    }
+  }
+}

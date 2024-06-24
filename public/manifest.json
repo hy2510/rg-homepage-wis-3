@@ -1,0 +1,27 @@
+{
+  "theme_color": "#00a0fd",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/home/main",
+  "name": "RG(베타버전)",
+  "short_name": "RG(베타버전)",
+  "icons": [
+    {
+      "src": "faviconS.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "faviconM.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "faviconL.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

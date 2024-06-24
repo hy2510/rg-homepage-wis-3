@@ -1,0 +1,942 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  letter-spacing: -0.2px;
+}
+
+.police_con .paragraph ol > li .num,
+.membership_pop .table .last_list,
+.membership_pop .num_list li .num_tit .num,
+.membership_pop .num_list li .num,
+.police_con .paragraph .price_table .price .gray-bg span,
+.scholarship_pop .scholarship_table .price .gray-bg span,
+.ranking_pop .ranking .ranking_table .price .gray-bg span,
+.membership_pop .table .all_table .scroll .price_table_dec .price .gray-bg span,
+.membership_pop .table .all_table .price_table_head .price .gray-bg span,
+.membership_pop .price_table .price .gray-bg span {
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
+
+.police_con .paragraph .price_table .head,
+.scholarship_pop .scholarship_table .head,
+.ranking_pop .ranking .ranking_table .head,
+.membership_pop .table .all_table .scroll .price_table_dec .head,
+.membership_pop .table .all_table .price_table_head .head,
+.membership_pop .price_table .head,
+.police_con .paragraph .price_table .head2,
+.scholarship_pop .scholarship_table .head2,
+.ranking_pop .ranking .ranking_table .head2,
+.membership_pop .table .all_table .scroll .price_table_dec .head2,
+.membership_pop .table .all_table .price_table_head .head2,
+.membership_pop .price_table .head2 {
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+}
+
+.police_con .paragraph ol .no_deco ul > li,
+.police_con .paragraph ol .num ul > li,
+.police_con .paragraph ol .kor ul > li,
+.police_con .paragraph ol .dec ul > li,
+.membership_pop .num_list li,
+.ranking_pop .ranking .ranking_table .level-6b,
+.ranking_pop .ranking .ranking_table .level-6a,
+.ranking_pop .ranking .ranking_table .level-5c,
+.ranking_pop .ranking .ranking_table .level-5b,
+.ranking_pop .ranking .ranking_table .level-5a,
+.ranking_pop .ranking .ranking_table .level-4c,
+.ranking_pop .ranking .ranking_table .level-4b,
+.ranking_pop .ranking .ranking_table .level-4a,
+.ranking_pop .ranking .ranking_table .level-3c,
+.ranking_pop .ranking .ranking_table .level-3b,
+.ranking_pop .ranking .ranking_table .level-3a,
+.ranking_pop .ranking .ranking_table .level-2c,
+.ranking_pop .ranking .ranking_table .level-2b,
+.ranking_pop .ranking .ranking_table .level-2a,
+.ranking_pop .ranking .ranking_table .level-1c,
+.ranking_pop .ranking .ranking_table .level-1b,
+.ranking_pop .ranking .ranking_table .level-1a,
+.ranking_pop .ranking .ranking_table .level-kc,
+.ranking_pop .ranking .ranking_table .level-kb,
+.ranking_pop .ranking .ranking_table .level-ka,
+.ranking_pop .ranking .ranking_table .level-prek,
+.police_con .paragraph .price_table .price .gray-bg,
+.scholarship_pop .scholarship_table .price .gray-bg,
+.ranking_pop .ranking .ranking_table .price .gray-bg,
+.membership_pop .table .all_table .scroll .price_table_dec .price .gray-bg,
+.membership_pop .table .all_table .price_table_head .price .gray-bg,
+.membership_pop .price_table .price .gray-bg,
+.membership_info_step03 .coupon_list .coupon02 .coupon_txt p,
+.membership_info_step03 .coupon_list .coupon01 .coupon_txt p {
+  font-size: 1rem;
+  line-height: 1.7rem;
+}
+
+.police_con .paragraph ol > li,
+.police_con .paragraph p,
+.scholarship_pop .level_dec ul,
+.scholarship_pop .level_dec p,
+.scholarship_pop .scholarship_table .price .rating,
+.ranking_pop .ranking .ranking_table .level-6b .tit,
+.ranking_pop .ranking .ranking_table .level-6a .tit,
+.ranking_pop .ranking .ranking_table .level-5c .tit,
+.ranking_pop .ranking .ranking_table .level-5b .tit,
+.ranking_pop .ranking .ranking_table .level-5a .tit,
+.ranking_pop .ranking .ranking_table .level-4c .tit,
+.ranking_pop .ranking .ranking_table .level-4b .tit,
+.ranking_pop .ranking .ranking_table .level-4a .tit,
+.ranking_pop .ranking .ranking_table .level-3c .tit,
+.ranking_pop .ranking .ranking_table .level-3b .tit,
+.ranking_pop .ranking .ranking_table .level-3a .tit,
+.ranking_pop .ranking .ranking_table .level-2c .tit,
+.ranking_pop .ranking .ranking_table .level-2b .tit,
+.ranking_pop .ranking .ranking_table .level-2a .tit,
+.ranking_pop .ranking .ranking_table .level-1c .tit,
+.ranking_pop .ranking .ranking_table .level-1b .tit,
+.ranking_pop .ranking .ranking_table .level-1a .tit,
+.ranking_pop .ranking .ranking_table .level-kc .tit,
+.ranking_pop .ranking .ranking_table .level-kb .tit,
+.ranking_pop .ranking .ranking_table .level-ka .tit,
+.ranking_pop .ranking .ranking_table .level-prek .tit,
+.police_con .paragraph .price_table .price,
+.scholarship_pop .scholarship_table .price,
+.ranking_pop .ranking .ranking_table .price,
+.membership_pop .table .all_table .scroll .price_table_dec .price,
+.membership_pop .table .all_table .price_table_head .price,
+.membership_pop .price_table .price {
+  font-size: 1.15rem;
+  line-height: 1.8rem;
+}
+
+.scholarship_pop .level_dec h2,
+.ranking_pop p,
+.membership_info_step02 .txt_box {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+.police_con .paragraph h2 {
+  font-size: 1.65rem;
+  line-height: 2.4rem;
+}
+
+.scholarship_pop .tit_bar .tit h1,
+.ranking_pop .tit_bar .tit h1,
+.membership_pop .tit_bar .tit h1 {
+  font-size: 1.75rem;
+  line-height: 2.4rem;
+}
+
+.membership_info_step03 .coupon_list .coupon02 .coupon_txt h2,
+.membership_info_step03 .coupon_list .coupon01 .coupon_txt h2 {
+  font-size: 2.15rem;
+  line-height: 2.1rem;
+}
+
+.police_con .police_tit,
+.membership_info_step03 .bottom_txt h2,
+.membership_info_step03 .tit h1 {
+  font-size: 2.3rem;
+  line-height: 2.8rem;
+}
+
+.membership_info_step03 .coupon_list .coupon02,
+.membership_info_step03 .coupon_list .coupon01 {
+  display: flex;
+  width: 100%;
+}
+.membership_info_step03 .coupon_list .coupon02 .coupon_txt,
+.membership_info_step03 .coupon_list .coupon01 .coupon_txt {
+  width: 100%;
+  background: repeat-x center url(img/cou_02.svg);
+  padding: 40px 20px 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.membership_info_step03 .coupon_list .coupon02 .coupon_txt h2,
+.membership_info_step03 .coupon_list .coupon01 .coupon_txt h2 {
+  color: #40de68;
+  font-family: "JalnanGothic";
+  font-style: normal;
+  font-weight: 400;
+}
+.membership_info_step03 .coupon_list .coupon02 .coupon_txt p,
+.membership_info_step03 .coupon_list .coupon01 .coupon_txt p {
+  color: #40de68;
+  font-style: normal;
+  font-weight: 500;
+  height: 112px;
+}
+
+.scholarship_pop,
+.ranking_pop,
+.membership_pop {
+  padding: 15px;
+  width: 100%;
+  background: #fff;
+  margin: 0 auto;
+}
+
+.police_con .paragraph .price_table .head,
+.scholarship_pop .scholarship_table .head,
+.ranking_pop .ranking .ranking_table .head,
+.membership_pop .table .all_table .scroll .price_table_dec .head,
+.membership_pop .table .all_table .price_table_head .head,
+.membership_pop .price_table .head,
+.police_con .paragraph .price_table .head2,
+.scholarship_pop .scholarship_table .head2,
+.ranking_pop .ranking .ranking_table .head2,
+.membership_pop .table .all_table .scroll .price_table_dec .head2,
+.membership_pop .table .all_table .price_table_head .head2,
+.membership_pop .price_table .head2 {
+  background: #000;
+  color: #fff;
+  height: 42px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+  align-items: center;
+  justify-items: center;
+  color: #fff;
+  font-weight: 700;
+}
+.police_con .paragraph .price_table .price,
+.scholarship_pop .scholarship_table .price,
+.ranking_pop .ranking .ranking_table .price,
+.membership_pop .table .all_table .scroll .price_table_dec .price,
+.membership_pop .table .all_table .price_table_head .price,
+.membership_pop .price_table .price {
+  border-bottom: 1px solid #d0d0d0;
+  height: 80px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+  align-items: center;
+  justify-items: end;
+  padding-right: 30px;
+  color: #666;
+  font-style: normal;
+  font-weight: 300;
+}
+.police_con .paragraph .price_table .price .gray-bg,
+.scholarship_pop .scholarship_table .price .gray-bg,
+.ranking_pop .ranking .ranking_table .price .gray-bg,
+.membership_pop .table .all_table .scroll .price_table_dec .price .gray-bg,
+.membership_pop .table .all_table .price_table_head .price .gray-bg,
+.membership_pop .price_table .price .gray-bg {
+  background-color: #f0f0f0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #222;
+  font-weight: 700;
+}
+.police_con .paragraph .price_table .price .gray-bg span,
+.scholarship_pop .scholarship_table .price .gray-bg span,
+.ranking_pop .ranking .ranking_table .price .gray-bg span,
+.membership_pop .table .all_table .scroll .price_table_dec .price .gray-bg span,
+.membership_pop .table .all_table .price_table_head .price .gray-bg span,
+.membership_pop .price_table .price .gray-bg span {
+  color: #fff;
+  font-weight: 400;
+  border-radius: 10px;
+  background: #222;
+  padding: 5px 8px 5px 8px;
+}
+.police_con .paragraph .price_table .price .blue,
+.scholarship_pop .scholarship_table .price .blue,
+.ranking_pop .ranking .ranking_table .price .blue,
+.membership_pop .table .all_table .scroll .price_table_dec .price .blue,
+.membership_pop .table .all_table .price_table_head .price .blue,
+.membership_pop .price_table .price .blue {
+  background-color: #3ab6ff;
+  color: #fff;
+}
+.police_con .paragraph .price_table .blue_line,
+.scholarship_pop .scholarship_table .blue_line,
+.ranking_pop .ranking .ranking_table .blue_line,
+.membership_pop .table .all_table .scroll .price_table_dec .blue_line,
+.membership_pop .table .all_table .price_table_head .blue_line,
+.membership_pop .price_table .blue_line {
+  border: 1px solid #3ab6ff;
+  color: #3ab6ff;
+  background-color: #f4faff;
+  font-weight: 700;
+}
+.police_con .paragraph .price_table .no-line,
+.scholarship_pop .scholarship_table .no-line,
+.ranking_pop .ranking .ranking_table .no-line,
+.membership_pop .table .all_table .scroll .price_table_dec .no-line,
+.membership_pop .table .all_table .price_table_head .no-line,
+.membership_pop .price_table .no-line {
+  border: none;
+}
+
+.ranking_pop .ranking .ranking_table .level-6b,
+.ranking_pop .ranking .ranking_table .level-6a,
+.ranking_pop .ranking .ranking_table .level-5c,
+.ranking_pop .ranking .ranking_table .level-5b,
+.ranking_pop .ranking .ranking_table .level-5a,
+.ranking_pop .ranking .ranking_table .level-4c,
+.ranking_pop .ranking .ranking_table .level-4b,
+.ranking_pop .ranking .ranking_table .level-4a,
+.ranking_pop .ranking .ranking_table .level-3c,
+.ranking_pop .ranking .ranking_table .level-3b,
+.ranking_pop .ranking .ranking_table .level-3a,
+.ranking_pop .ranking .ranking_table .level-2c,
+.ranking_pop .ranking .ranking_table .level-2b,
+.ranking_pop .ranking .ranking_table .level-2a,
+.ranking_pop .ranking .ranking_table .level-1c,
+.ranking_pop .ranking .ranking_table .level-1b,
+.ranking_pop .ranking .ranking_table .level-1a,
+.ranking_pop .ranking .ranking_table .level-kc,
+.ranking_pop .ranking .ranking_table .level-kb,
+.ranking_pop .ranking .ranking_table .level-ka,
+.ranking_pop .ranking .ranking_table .level-prek {
+  display: grid;
+  grid-template-columns: 1.5fr 3fr;
+  height: 60px;
+  list-style-type: none;
+  align-items: center;
+  justify-items: center;
+  background-color: rgba(255, 241, 1, 0.1254901961);
+  color: #666;
+}
+.ranking_pop .ranking .ranking_table .level-6b .tit,
+.ranking_pop .ranking .ranking_table .level-6a .tit,
+.ranking_pop .ranking .ranking_table .level-5c .tit,
+.ranking_pop .ranking .ranking_table .level-5b .tit,
+.ranking_pop .ranking .ranking_table .level-5a .tit,
+.ranking_pop .ranking .ranking_table .level-4c .tit,
+.ranking_pop .ranking .ranking_table .level-4b .tit,
+.ranking_pop .ranking .ranking_table .level-4a .tit,
+.ranking_pop .ranking .ranking_table .level-3c .tit,
+.ranking_pop .ranking .ranking_table .level-3b .tit,
+.ranking_pop .ranking .ranking_table .level-3a .tit,
+.ranking_pop .ranking .ranking_table .level-2c .tit,
+.ranking_pop .ranking .ranking_table .level-2b .tit,
+.ranking_pop .ranking .ranking_table .level-2a .tit,
+.ranking_pop .ranking .ranking_table .level-1c .tit,
+.ranking_pop .ranking .ranking_table .level-1b .tit,
+.ranking_pop .ranking .ranking_table .level-1a .tit,
+.ranking_pop .ranking .ranking_table .level-kc .tit,
+.ranking_pop .ranking .ranking_table .level-kb .tit,
+.ranking_pop .ranking .ranking_table .level-ka .tit,
+.ranking_pop .ranking .ranking_table .level-prek .tit {
+  color: #fff;
+  font-weight: 700;
+  background-color: #fff101;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@font-face {
+  font-family: "JalnanGothic";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.contents {
+  min-width: 1024px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.membership_info_step01 img {
+  width: 100%;
+}
+
+.membership_info_step02 {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+.membership_info_step02 .txt_box {
+  width: 33%;
+  display: flex;
+  padding: 20px 0px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #3fbcf5;
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+  position: relative;
+}
+.membership_info_step02 .txt_box::after {
+  content: url(img/plus.svg);
+  position: absolute;
+  top: 23px;
+  right: -31px;
+}
+.membership_info_step02 .green {
+  background-color: #5de19c;
+  z-index: 101;
+}
+.membership_info_step02 .mint {
+  background-color: #52d4cc;
+  z-index: 100;
+  position: relative;
+}
+.membership_info_step02 .mint::after {
+  content: url(img/plus2.svg);
+  position: absolute;
+  top: 23px;
+  right: -31px;
+}
+.membership_info_step02 .blue::after {
+  display: none;
+}
+
+.membership_info_step03 {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.membership_info_step03 .tit {
+  display: flex;
+  justify-content: center;
+}
+.membership_info_step03 .tit h1 {
+  color: #222;
+  text-align: right;
+  font-weight: 300;
+}
+.membership_info_step03 .tit .gradation {
+  background: linear-gradient(115deg, #4de774 5.54%, #3ab6ff 72.07%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  margin-left: 10px;
+}
+.membership_info_step03 .coupon_list {
+  margin: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  width: 100%;
+}
+.membership_info_step03 .coupon_list .coupon02 .coupon_txt {
+  background: repeat-x center url(img/cou_05.svg);
+}
+.membership_info_step03 .coupon_list .coupon02 .coupon_txt h2 {
+  color: #0dc5e5;
+}
+.membership_info_step03 .coupon_list .coupon02 .coupon_txt p {
+  color: #0dc5e5;
+}
+.membership_info_step03 .bottom_txt h2 {
+  color: #222;
+  text-align: center;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.membership_info_step03 .bottom_txt .color_text_list {
+  display: flex;
+}
+.membership_info_step03 .bottom_txt .color_text_list .green {
+  color: #5de19c;
+  font-weight: 700;
+}
+.membership_info_step03 .bottom_txt .color_text_list .blue {
+  color: #3fbcf5;
+  font-weight: 700;
+  padding-left: 10px;
+}
+
+.membership_pop {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.membership_pop .tit_bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.membership_pop .tit_bar .tit h1 {
+  color: #222;
+  font-style: normal;
+  font-weight: 300;
+}
+.membership_pop .tit_bar .tit .bold {
+  font-weight: 700;
+}
+.membership_pop .num_list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.membership_pop .num_list li {
+  display: flex;
+  align-items: flex-start;
+  color: #222;
+  font-style: normal;
+  font-weight: 300;
+}
+.membership_pop .num_list li .num {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-style: normal;
+  font-weight: 700;
+  border-radius: 30px;
+  border: 1px solid #666;
+  margin-right: 10px;
+}
+.membership_pop .num_list li .num_tit {
+  display: flex;
+}
+.membership_pop .num_list li .num_tit .num {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-weight: 700;
+  border-radius: 30px;
+  border: 1px solid #666;
+  margin-right: 10px;
+}
+.membership_pop .num_list li .num_tit .bold {
+  font-weight: 700;
+  margin-right: 10px;
+}
+.membership_pop .num_list li .blue {
+  color: #3ab6ff;
+  font-weight: 700px;
+}
+.membership_pop .price_table {
+  width: 618px;
+  display: grid;
+}
+.membership_pop .price_table .last_list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  height: 27px;
+  align-items: center;
+}
+.membership_pop .table {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+.membership_pop .table .all_table {
+  display: flex;
+}
+.membership_pop .table .all_table .price_table_head .head {
+  grid-template-columns: repeat(1, 1fr);
+  width: 118px;
+}
+.membership_pop .table .all_table .price_table_head .price {
+  grid-template-columns: repeat(1, 1fr);
+  width: 118px;
+  padding: 0;
+}
+.membership_pop .table .all_table .scroll {
+  width: 100vw;
+  overflow-x: auto;
+}
+.membership_pop .table .all_table .scroll .price_table_dec .head {
+  grid-template-columns: repeat(4, 1fr);
+  width: 500px;
+}
+.membership_pop .table .all_table .scroll .price_table_dec .price {
+  grid-template-columns: repeat(4, 1fr);
+  width: 500px;
+}
+.membership_pop .table .last_list {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+}
+.membership_pop .table .last_list .blue-round {
+  background-color: #3ab6ff;
+  color: #fff;
+  width: 119px !important;
+  text-align: center;
+  padding: 10px 0px;
+  border-radius: 0px 0px 10px 0px;
+}
+.membership_pop .table .last_list span {
+  text-align: right;
+  padding: 10px 0px 10px 10px;
+}
+
+.ranking_pop {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.ranking_pop .tit_bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ranking_pop .tit_bar .tit h1 {
+  color: #222;
+  font-style: normal;
+  font-weight: 300;
+}
+.ranking_pop .tit_bar .tit .bold {
+  font-weight: 700;
+}
+.ranking_pop p {
+  color: #666;
+  font-weight: 500;
+}
+.ranking_pop .ranking {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+  background-color: #fff;
+}
+.ranking_pop .ranking .ranking_table {
+  margin: 0px;
+}
+.ranking_pop .ranking .ranking_table .head,
+.ranking_pop .ranking .ranking_table .head2 {
+  display: grid;
+  grid-template-columns: 1.5fr 3fr;
+}
+.ranking_pop .ranking .ranking_table .level-ka {
+  background-color: rgba(251, 206, 42, 0.1254901961);
+}
+.ranking_pop .ranking .ranking_table .level-ka .tit {
+  background-color: #fbce2a;
+}
+.ranking_pop .ranking .ranking_table .level-kb {
+  background-color: rgba(251, 180, 36, 0.1254901961);
+}
+.ranking_pop .ranking .ranking_table .level-kb .tit {
+  background-color: #fbb424;
+}
+.ranking_pop .ranking .ranking_table .level-kc {
+  background-color: rgba(250, 152, 44, 0.1254901961);
+}
+.ranking_pop .ranking .ranking_table .level-kc .tit {
+  background-color: #fa982c;
+}
+.ranking_pop .ranking .ranking_table .level-1a {
+  background-color: rgba(247, 107, 31, 0.1254901961);
+}
+.ranking_pop .ranking .ranking_table .level-1a .tit {
+  background-color: #f76b1f;
+}
+.ranking_pop .ranking .ranking_table .level-1b {
+  background-color: rgba(245, 80, 48, 0.1254901961);
+}
+.ranking_pop .ranking .ranking_table .level-1b .tit {
+  background-color: #f55030;
+}
+.ranking_pop .ranking .ranking_table .level-1c {
+  background-color: rgba(237, 56, 78, 0.1254901961);
+}
+.ranking_pop .ranking .ranking_table .level-1c .tit {
+  background-color: #ed384e;
+}
+.ranking_pop .ranking .ranking_table .level-2a {
+  background-color: rgba(173, 195, 53, 0.1254901961);
+}
+.ranking_pop .ranking .ranking_table .level-2a .tit {
+  background-color: #adc335;
+}
+.ranking_pop .ranking .ranking_table .level-2b {
+  background-color: rgba(128, 193, 51, 0.1254901961);
+}
+.ranking_pop .ranking .ranking_table .level-2b .tit {
+  background-color: #80c133;
+}
+.ranking_pop .ranking .ranking_table .level-2c {
+  background-color: rgba(94, 177, 78, 0.1254901961);
+}
+.ranking_pop .ranking .ranking_table .level-2c .tit {
+  background-color: #5eb14e;
+}
+.ranking_pop .ranking .ranking_table .level-3a {
+  background-color: rgba(96, 176, 173, 0.1254901961);
+}
+.ranking_pop .ranking .ranking_table .level-3a .tit {
+  background-color: #60b0ad;
+}
+.ranking_pop .ranking .ranking_table .level-3b {
+  background-color: rgba(90, 164, 198, 0.1254901961);
+}
+.ranking_pop .ranking .ranking_table .level-3b .tit {
+  background-color: #5aa4c6;
+}
+.ranking_pop .ranking .ranking_table .level-3c {
+  background-color: rgba(83, 144, 209, 0.1254901961);
+}
+.ranking_pop .ranking .ranking_table .level-3c .tit {
+  background-color: #5390d1;
+}
+.ranking_pop .ranking .ranking_table .level-4a {
+  background-color: rgba(124, 109, 204, 0.1254901961);
+}
+.ranking_pop .ranking .ranking_table .level-4a .tit {
+  background-color: #7c6dcc;
+}
+.ranking_pop .ranking .ranking_table .level-4b {
+  background-color: rgba(148, 88, 201, 0.1254901961);
+}
+.ranking_pop .ranking .ranking_table .level-4b .tit {
+  background-color: #9458c9;
+}
+.ranking_pop .ranking .ranking_table .level-4c {
+  background-color: rgba(153, 79, 163, 0.1254901961);
+}
+.ranking_pop .ranking .ranking_table .level-4c .tit {
+  background-color: #994fa3;
+}
+.ranking_pop .ranking .ranking_table .level-5a {
+  background-color: rgba(154, 126, 75, 0.1254901961);
+}
+.ranking_pop .ranking .ranking_table .level-5a .tit {
+  background-color: #9a7e4b;
+}
+.ranking_pop .ranking .ranking_table .level-5b {
+  background-color: rgba(114, 84, 46, 0.1254901961);
+}
+.ranking_pop .ranking .ranking_table .level-5b .tit {
+  background-color: #72542e;
+}
+.ranking_pop .ranking .ranking_table .level-5c {
+  background-color: rgba(88, 64, 36, 0.1254901961);
+}
+.ranking_pop .ranking .ranking_table .level-5c .tit {
+  background-color: #584024;
+}
+.ranking_pop .ranking .ranking_table .level-6a {
+  background-color: rgba(112, 112, 112, 0.1254901961);
+}
+.ranking_pop .ranking .ranking_table .level-6a .tit {
+  background-color: #707070;
+}
+.ranking_pop .ranking .ranking_table .level-6b {
+  background-color: rgba(70, 69, 69, 0.1254901961);
+}
+.ranking_pop .ranking .ranking_table .level-6b .tit {
+  background-color: #464545;
+}
+
+.scholarship_pop {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.scholarship_pop .tit_bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.scholarship_pop .tit_bar .tit h1 {
+  color: #222;
+  font-weight: 300;
+}
+.scholarship_pop .tit_bar .tit .bold {
+  font-weight: 700;
+}
+.scholarship_pop .scholarship_table {
+  margin: 0px;
+}
+.scholarship_pop .scholarship_table .head {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.scholarship_pop .scholarship_table .price {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  height: 60px;
+}
+.scholarship_pop .scholarship_table .price .rating {
+  display: flex;
+  gap: 5px;
+  font-weight: 600;
+  align-items: center;
+}
+.scholarship_pop .scholarship_table .price .rating span {
+  width: 64px;
+}
+.scholarship_pop .scholarship_table .price .bronze {
+  color: #9d7e67;
+}
+.scholarship_pop .scholarship_table .price .sliver {
+  color: #9da3a9;
+}
+.scholarship_pop .scholarship_table .price .gold {
+  color: #daa059;
+}
+.scholarship_pop .scholarship_table .price .platinum {
+  color: #698796;
+}
+.scholarship_pop .scholarship_table .price .titanium {
+  color: #7a769f;
+}
+.scholarship_pop .level_dec h2 {
+  color: #666;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -1.2px;
+}
+.scholarship_pop .level_dec p {
+  color: #666;
+  font-weight: 300;
+}
+.scholarship_pop .level_dec ul {
+  padding-left: 20px;
+  color: #666;
+  font-weight: 300;
+}
+
+.police_con {
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 50px;
+  margin: 0 auto;
+  color: #666;
+}
+.police_con .police_tit {
+  color: #222;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.police_con .paragraph {
+  padding-bottom: 40px;
+}
+.police_con .paragraph p {
+  font-weight: 300;
+}
+.police_con .paragraph .gray_color {
+  color: #a5a5a5;
+}
+.police_con .paragraph h2 {
+  color: #222;
+  font-weight: 600;
+  padding-bottom: 5px;
+}
+.police_con .paragraph ol {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.police_con .paragraph ol > li {
+  display: flex;
+  align-items: flex-start;
+  font-style: normal;
+  font-weight: 300;
+}
+.police_con .paragraph ol > li .num {
+  border-radius: 50px;
+  border: 1px solid #222;
+  width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  margin-top: 5px;
+}
+.police_con .paragraph ol .dec {
+  padding-left: 30px;
+}
+.police_con .paragraph ol .dec p {
+  padding-bottom: 5px;
+}
+.police_con .paragraph ol .dec ul {
+  padding-left: 20px;
+}
+.police_con .paragraph ol .dec ul > li {
+  list-style-type: disc !important;
+}
+.police_con .paragraph ol .kor {
+  padding-left: 30px;
+}
+.police_con .paragraph ol .kor p {
+  padding-bottom: 5px;
+}
+.police_con .paragraph ol .kor ul {
+  padding-left: 20px;
+}
+.police_con .paragraph ol .kor ul > li {
+  list-style-type: hangul;
+}
+.police_con .paragraph ol .num {
+  padding-left: 30px;
+}
+.police_con .paragraph ol .num p {
+  padding-bottom: 5px;
+}
+.police_con .paragraph ol .num ul {
+  padding-left: 20px;
+}
+.police_con .paragraph ol .num ul > li {
+  list-style-type: decimal;
+}
+.police_con .paragraph ol .no_deco {
+  padding: 0 30px;
+}
+.police_con .paragraph ol .no_deco p {
+  padding-bottom: 5px;
+}
+.police_con .paragraph ol .no_deco ul {
+  padding-left: 20px;
+}
+.police_con .paragraph ol .no_deco ul > li {
+  list-style-type: none;
+}
+.police_con .paragraph .White_space {
+  padding: 0px 0px 0px 30px;
+}
+.police_con .paragraph:last-child {
+  padding: 0px;
+}
+.police_con .paragraph .price_table .head {
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+.police_con .paragraph .price_table .price {
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: start;
+  padding-left: 20px;
+  height: 100%;
+  padding: 10px 0;
+}

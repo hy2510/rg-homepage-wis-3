@@ -1,0 +1,387 @@
+// 캘린더 모달
+.calendar_modal {
+  background-color: var(--gray3);
+  padding-bottom: env(safe-area-inset-bottom);
+  @media (prefers-color-scheme: dark) {
+    background-color: #0c0541;
+  }
+  .cal_header {
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-s);
+    position: relative;
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   z-index: 0;
+    // }
+    .cal_header_container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-m);
+      // position: relative;
+      // z-index: 1;
+      .current_month {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .year_carousel {
+          display: grid;
+          grid-template-columns: 40px 100px 40px;
+          align-items: center;
+          justify-items: center;
+          gap: var(--space-l);
+          .cal_year {
+            font-size: var(--text-xl);
+          }
+        }
+        .month_carousel {
+          display: grid;
+          grid-template-columns: 40px 180px 40px;
+          align-items: center;
+          justify-items: center;
+          gap: var(--space-l);
+          .cal_month {
+            font-size: 2.5em;
+            font-weight: 600;
+          }
+        }
+      }
+      .monthly_study_status {
+        min-width: 300px;
+        min-height: 34px;
+        border-radius: var(--round-full);
+        background: rgba(255, 255, 255, 0.9);
+        -webkit-backdrop-filter: blur(2px);
+        backdrop-filter: blur(2px);
+        padding: 6px 18px;
+      }
+    }
+  }
+  .cal_body {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-s) 0;
+    gap: var(--space-s);
+    border-top: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
+    border-bottom: 4px solid #e7e7e7;
+    border-left: 1px solid #e7e7e7;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    background-color: var(--white);
+    border-radius: 0 0 var(--round-l) var(--round-l);
+    margin-bottom: var(--space-s);
+    @media (prefers-color-scheme: dark) {
+      background-color: #0c0541;
+      border-top: 1px solid #000;
+      border-right: 1px solid #000;
+      border-bottom: 4px solid #000;
+      border-left: 1px solid #000;
+    }
+  }
+}
+
+// 캘린더 테이블 헤더 (요일)
+.cal_table_header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+  .col_day {
+    font-size: var(--text-s);
+    font-weight: 500;
+    color: #333;
+    @media (prefers-color-scheme: dark) {
+      color: var(--gray1);
+    }
+    &:nth-child(1) {
+      color: var(--red);
+    }
+    &:nth-child(7) {
+      color: var(--blue);
+    }
+  }
+}
+
+// 캘린더 모달 > 간편보기 > 헤더정보
+.calendar_simple_mode_info {
+  display: flex;
+  gap: var(--space-s);
+  .attend_days,
+  .achieve_goals {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xxs);
+  }
+  .attend_days {
+    color: var(--green);
+    font-weight: 600;
+  }
+  .achieve_goals {
+    color: var(--blue);
+    font-weight: 600;
+  }
+}
+
+// 캘린더 모달 > 간편보기 달력
+.calendar_simple_mode_body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  .cal_item {
+    width: 100%;
+    height: 80px;
+    position: relative;
+    border-bottom: 1px solid var(--gray3);
+    @media (prefers-color-scheme: dark) {
+      border-bottom: 1px solid rgba($color: #fff, $alpha: 0.15);
+    }
+    .date {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 1;
+      color: var(--gray1);
+      font-size: var(--text-s);
+    }
+    .event {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-repeat: no-repeat;
+      background-position: center bottom 5px;
+      background-size: 60% 60%;
+      &.no_attendance {
+        background-image: url("/src/images/@calendar-modal/check_mark_dim.svg");
+      }
+      &.attendance {
+        background-image: url("/src/images/@calendar-modal/check_mark.svg");
+      }
+      &.achieved_goals {
+        background-image: url("/src/images/@calendar-modal/goal_mark.svg");
+      }
+    }
+  }
+}
+
+// 캘린더 모달 > 상세보기 헤더정보
+.calendar_detail_mode_info {
+  .calendar_detail_mode_info_container {
+    display: flex;
+    gap: var(--space-xxs);
+    .goal_point_fail,
+    .goal_point_pass,
+    .goal_passed_fail,
+    .goal_passed_pass,
+    .daily_goal_info {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xxs);
+    }
+    .goal_point_fail,
+    .goal_passed_fail,
+    .daily_goal_info {
+      color: var(--gray1);
+      font-weight: 500;
+      font-size: var(--text-s);
+    }
+    .goal_point_pass,
+    .goal_passed_pass {
+      color: var(--blue);
+      font-weight: 600;
+    }
+  }
+}
+
+// 캘린더 모달 > 상세보기 달력
+.cal_detail_mode_tabs {
+  display: flex;
+  border-radius: var(--round-l);
+  background: var(--gray2);
+  padding: var(--space-xxs);
+  margin: 0 var(--space-xs);
+  @media (prefers-color-scheme: dark) {
+    background: rgba($color: #fff, $alpha: 0.15);
+  }
+  .tab_button {
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xxs);
+    padding: 8px var(--space-xs);
+    color: var(--white);
+    font-size: var(--text-m);
+    font-weight: 700;
+    opacity: 0.7;
+    &.active {
+      opacity: 1;
+      color: var(--blue);
+      border-radius: var(--round-m);
+      background: var(--white);
+      @media (prefers-color-scheme: dark) {
+        background: rgba($color: #0c0541, $alpha: 0.8);
+      }
+      // 입체적인 효과를 주고자 할 때
+      // border-top: 1px solid #e7e7e7;
+      // border-right: 1px solid #e7e7e7;
+      // border-bottom: 4px solid #e7e7e7;
+      // border-left: 1px solid #e7e7e7;
+      // box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    }
+  }
+}
+.cal_detail_mode_body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  .cal_item {
+    width: 100%;
+    height: 80px;
+    position: relative;
+    border-bottom: 1px solid var(--gray3);
+    @media (prefers-color-scheme: dark) {
+      border-bottom: 1px solid rgba($color: #fff, $alpha: 0.15);
+    }
+    .date {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 1;
+      color: var(--gray1);
+      font-size: var(--text-s);
+    }
+    .result {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 15px;
+      gap: 2px;
+      overflow: hidden;
+      .event_dots {
+        position: absolute;
+        bottom: 3px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        gap: 3px;
+        .dot {
+          width: 6px;
+          height: 6px;
+          border-radius: var(--round-full);
+          &.green {
+            background-color: var(--green);
+          }
+          &.orange {
+            background-color: var(--orange);
+          }
+          &.purple {
+            background-color: #ad27ff;
+          }
+        }
+      }
+      .earn_point,
+      .passed {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        font-size: var(--text-s);
+        color: var(--gray1);
+        opacity: 0.25;
+      }
+      .active {
+        opacity: 1;
+        &.earn_point {
+          color: #698eb2;
+        }
+        &.passed {
+          color: #698eb2;
+        }
+        &.goal {
+          &.earn_point {
+            color: var(--blue);
+          }
+          &.passed {
+            color: var(--blue);
+          }
+        }
+      }
+    }
+  }
+}
+
+// 켈린더 모달 > 날짜별 이벤트 (100권 돌파 등...)
+.calendar_event_history {
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  padding-bottom: var(--space-s);
+}
+
+// 켈린더 모달 > 날짜별 이벤트 아이템
+.event_date {
+  padding: var(--space-xs) var(--space-m);
+  border-right: 2px solid var(--gray2);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .month {
+    font-size: var(--text-xs);
+  }
+  .date {
+    font-size: var(--text-l);
+  }
+  .dot {
+    position: absolute;
+    right: -11px;
+    width: 20px;
+    height: 20px;
+    border-radius: var(--round-full);
+    border: 4px solid var(--gray3);
+    &.green {
+      background-color: var(--green);
+    }
+    &.orange {
+      background-color: var(--orange);
+    }
+    &.purple {
+      background-color: #ad27ff;
+    }
+  }
+}
+.description {
+  padding: var(--space-xs) var(--space-m);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  .tag {
+    width: 100%;
+    color: var(--white);
+    padding: var(--space-xs) var(--space-s);
+    border-radius: var(--round-m);
+    &.green {
+      background-color: var(--green);
+    }
+    &.orange {
+      background-color: var(--orange);
+    }
+    &.purple {
+      background-color: #ad27ff;
+    }
+  }
+}

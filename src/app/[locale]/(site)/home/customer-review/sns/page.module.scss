@@ -1,0 +1,49 @@
+.sns_card {
+  background-color: var(--gray3);
+  border-radius: var(--round-l);
+  overflow: hidden;
+  padding: var(--space-m);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-m);
+  min-height: 450px;
+  @media (prefers-color-scheme: dark) {
+    background-color: rgba($color: #ffffff, $alpha: 0.15);
+  }
+  .group_text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    padding: var(--space-xs);
+    .title {
+      font-size: var(--text-d-2);
+      font-weight: 600;
+    }
+    .btn_link {
+      display: flex;
+      gap: var(--space-xxs);
+      align-items: center;
+      color: #03c75a;
+      font-weight: 500;
+      .ico_arrow_right {
+        width: 20px;
+        height: 20px;
+        background-image: url("/src/images/arrow-icons/chev_right_green.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 20px;
+      }
+    }
+  }
+  .symbol {
+    padding: var(--space-m);
+  }
+}
+
+.sns {
+  padding: var(--space-m);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-m);
+}

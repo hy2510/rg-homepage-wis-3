@@ -1,0 +1,157 @@
+.explore {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+}
+
+.game_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-s);
+}
+
+.game_header {
+  width: 100%;
+  height: 240px;
+  background-size: auto 300px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--round-m);
+  &.alphabet {
+    background-image: url("/src/images/@prek-mode/game/alphabet_list_bg.jpg");
+  }
+  &.phonics {
+    background-image: url("/src/images/@prek-mode/game/phonics_list_bg.jpg");
+  }
+  &.sight_word_1 {
+    background-image: url("/src/images/@prek-mode/game/sight_word_1_list_bg.jpg");
+  }
+  &.sight_word_2 {
+    background-image: url("/src/images/@prek-mode/game/sight_word_2_list_bg.jpg");
+  }
+  .symbol_image {
+    width: 190px;
+    height: 220px;
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    &.alphabet {
+      background-image: url("/src/images/@prek-mode/game/alphaber_symbol.png");
+    }
+    &.phonics {
+      background-image: url("/src/images/@prek-mode/game/phonics_symbol.png");
+    }
+    &.sight_word_1 {
+      background-image: url("/src/images/@prek-mode/game/sight_word_1_symbol.png");
+    }
+    &.sight_word_2 {
+      background-image: url("/src/images/@prek-mode/game/sight_word_2_symbol.png");
+    }
+  }
+}
+
+.game_list_item {
+  cursor: pointer;
+  border-radius: var(--round-m);
+  border: 1.2px solid rgba($color: #000000, $alpha: 0.15);
+  position: relative;
+  &.incompleted {
+    filter: grayscale(1);
+    cursor: default;
+  }
+  .completed_label {
+    display: flex;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    .ico_star {
+      width: 30px;
+      height: 30px;
+      background-image: url("/src/images/@dodo-abc-game/icn_star.png");
+      background-size: 24px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+  img {
+    border-radius: var(--round-m);
+  }
+}
+
+.songn_chant_header {
+  width: 100%;
+  height: 240px;
+  background-size: auto 360px;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--round-l);
+  &.nursery_rhyme {
+    background-image: url("/src/images/@prek-mode/songn_chant/nursery_bg.png");
+  }
+  &.alpabet_chant {
+    background-image: url("/src/images/@prek-mode/songn_chant/alphabet_bg.png");
+  }
+  &.phonics_chant {
+    background-image: url("/src/images/@prek-mode/songn_chant/phonics_bg.png");
+  }
+  .symbol_image {
+    width: 190px;
+    height: 220px;
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    &.nursery_rhyme {
+      background-image: url("/src/images/@prek-mode/songn_chant/nursery_symbol.png");
+    }
+    &.alpabet_chant {
+      background-image: url("/src/images/@prek-mode/songn_chant/alphabet_symbol.png");
+    }
+    &.phonics_chant {
+      background-image: url("/src/images/@prek-mode/songn_chant/phonics_symbol.png");
+    }
+  }
+}
+
+.songn_chant_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-s);
+}
+
+.songn_chant_list_item {
+  cursor: pointer;
+  border-radius: var(--round-m);
+  border: 1.2px solid rgba($color: #000000, $alpha: 0.15);
+  overflow: hidden;
+  // background-color: #ffa9c5;
+  // padding: var(--space-s);
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  // &:hover {
+  //   background-color: #da7a99;
+  //   transform: scale(1.05);
+  // }
+  .cover {
+    border-radius: var(--round-m);
+    overflow: hidden;
+  }
+  .title {
+    min-height: 60px;
+    background-color: rgba(200, 15, 74, 0.3);
+    display: flex;
+    align-items: center;
+    padding: 0 var(--space-s);
+    border-radius: var(--round-m);
+    color: var(--white);
+    font-size: var(--text-l);
+    font-weight: 600;
+  }
+}

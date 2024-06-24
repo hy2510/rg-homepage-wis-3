@@ -1,0 +1,279 @@
+.review_assessment_report {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100%;
+  .col_a {
+    min-height: 60vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: var(--space-m);
+    background-position: center;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    position: relative;
+    .col_a_container {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .light_box {
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  .col_b {
+    padding: var(--space-m);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    .col_b_header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .txt_h {
+        font-size: var(--text-d-2);
+        font-weight: 600;
+      }
+      .delete_button {
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url('/src/images/delete-icons/x_black.svg');
+        background-repeat: no-repeat;
+        background-size: 24px;
+        background-position: center;
+        @media (prefers-color-scheme: dark) {
+          background-image: url('/src/images/delete-icons/x_white.svg');
+        }
+      }
+    }
+    .col_b_body {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-m);
+      height: 100%;
+    }
+  }
+}
+
+.sub_title {
+  font-size: var(--text-d-1);
+  font-weight: 500;
+}
+
+.add_assignment {
+  display: flex;
+  justify-content: end;
+  .add_assignment_container {
+    display: flex;
+    gap: var(--space-xxs);
+  }
+}
+
+.add_favorite,
+.add_todo {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  .add_favorite_icon,
+  .add_todo_icon {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .alert {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 250px;
+  }
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  margin-top: var(--space-m);
+  .book_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+    .book_image {
+      border-radius: var(--round-l);
+      overflow: hidden;
+      max-width: 180px;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      border: 2px solid #fff;
+    }
+    .txt_h {
+      text-align: center;
+      color: var(--white);
+      font-size: var(--text-xl);
+      font-weight: 700;
+      line-height: normal;
+      margin-top: var(--space-m);
+    }
+    .txt_l {
+      color: var(--white);
+      font-size: var(--text-s);
+      font-weight: 500;
+      line-height: normal;
+      opacity: 0.5;
+    }
+  }
+  .download {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    margin-bottom: var(--space-l);
+    .download_voca,
+    .download_worksheet {
+      cursor: pointer;
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-xxs);
+    }
+    .download_worksheet {
+      &::after {
+        content: '';
+        width: 1px;
+        height: 15px;
+        background-color: rgba(255, 255, 255, 0.3);
+        position: absolute;
+        left: 0;
+        top: 3px;
+        border-radius: var(--round-full);
+      }
+    }
+  }
+}
+
+.review {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.study_info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  .txt_p {
+    font-size: var(--text-m);
+    color: var(--gray-dark);
+    max-height: 12vh;
+    overflow-y: auto;
+  }
+  .detaild {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border-top: 1.5px solid var(--gray1);
+
+    .detaild_row_b {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+    }
+    .detaild_item {
+      font-size: var(--text-s);
+      border-bottom: 1px solid var(--gray2);
+      &:nth-child(odd) {
+        color: var(--gray1);
+        padding: var(--space-s) var(--space-xxs);
+      }
+      &:nth-child(even) {
+        font-weight: 500;
+        padding: var(--space-s) 0;
+      }
+      &.passed {
+        color: var(--gray1);
+      }
+    }
+  }
+}
+
+.step_info {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1.5px solid var(--gray1);
+  @mixin tableItem {
+    width: 100%;
+    padding: var(--space-xs) 0;
+    border-bottom: 1px solid var(--gray2);
+    min-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .label {
+    @include tableItem;
+    font-size: var(--text-s);
+    color: var(--gray1);
+  }
+  .score {
+    @include tableItem;
+    font-size: var(--text-l);
+  }
+}
+
+.book_resource {
+  height: 100%;
+  display: flex;
+  align-items: end;
+  .book_resource_container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    width: 100%;
+    .txt_h {
+      font-size: var(--text-d-1);
+      font-weight: 600;
+    }
+    .buttons {
+      display: flex;
+      gap: var(--space-s);
+      .speak_button,
+      .movie_button {
+        cursor: pointer;
+        width: 100%;
+        min-height: 50px;
+        border-radius: var(--round-full);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 400;
+      }
+      .speak_button {
+        border: 2px dotted #ff274f50;
+        color: var(--red);
+      }
+      .movie_button {
+        border: 2px dotted #15b5f150;
+        color: var(--blue);
+      }
+    }
+  }
+}

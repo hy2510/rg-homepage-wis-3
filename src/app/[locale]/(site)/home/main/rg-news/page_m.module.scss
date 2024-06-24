@@ -1,0 +1,14 @@
+.rg_news {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  padding: var(--space-xxs) var(--space-s) var(--space-s) var(--space-s);
+  border-radius: var(--round-l);
+  position: sticky;
+  top: 60px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  @media (prefers-color-scheme: dark) {
+    background-color: #0c0541;
+    border: 1.5px solid rgba($color: #ffffff, $alpha: 0.15);
+  }
+}

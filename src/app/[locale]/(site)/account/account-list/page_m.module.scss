@@ -1,0 +1,254 @@
+.account_list {
+  background-image: url("/src/images/@home/home_bg.svg");
+  background-repeat: repeat-x;
+  background-position: center top;
+  background-size: auto;
+  @media (prefers-color-scheme: dark) {
+    background-image: none;
+  }
+  .account_card_list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-m);
+    margin-top: var(--space-l);
+  }
+  .catchphrase {
+    margin: auto;
+    margin-top: calc(env(safe-area-inset-top) + var(--space-s));
+    text-align: center;
+    .brand_name {
+      color: var(--white);
+      text-align: center;
+      font-size: var(--text-d-3);
+      font-weight: 700;
+      margin-bottom: var(--space-xxs);
+    }
+    .sentence {
+      color: var(--white);
+      text-align: center;
+      font-size: var(--text-l);
+      font-weight: 500;
+    }
+  }
+  .add_account {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-l) 0;
+    .add_account_button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xxs);
+      -webkit-tap-highlight-color: transparent;
+      cursor: pointer;
+      .plus_icon {
+        width: 24px;
+        height: 24px;
+        overflow: hidden;
+      }
+      .txt_label {
+        color: var(--blue);
+        font-size: var(--text-l);
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.account_card {
+  width: 300px;
+  min-height: 300px;
+  background-color: var(--white);
+  border-radius: var(--round-l);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-s);
+  padding: var(--space-m);
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  position: relative;
+  @media (prefers-color-scheme: dark) {
+    background-color: #0c0541;
+    border: 2px solid rgba($color: #ffffff, $alpha: 0.15);
+  }
+  .auto_login_lock,
+  .auto_login_unlock {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    opacity: 0.2;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 18px;
+  }
+  .auto_login_lock {
+    background-image: url("/src/images/lock-icons/lock.svg");
+    @media (prefers-color-scheme: dark) {
+      background-image: url("/src/images/lock-icons/lock_white.svg");
+    }
+  }
+  .auto_login_unlock {
+    background-image: url("/src/images/lock-icons/unlock.svg");
+    @media (prefers-color-scheme: dark) {
+      background-image: url("/src/images/lock-icons/unlock_white.svg");
+    }
+  }
+  .user_avatar {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid var(--gray2);
+    border-radius: var(--round-full);
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    padding-top: 30px;
+    background-color: var(--light);
+    @media (prefers-color-scheme: dark) {
+      background-color: rgba($color: #ffffff, $alpha: 0.15);
+    }
+  }
+  .user_info {
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    text-align: center;
+    .user_name {
+      font-size: var(--text-d-2);
+      font-weight: 500;
+    }
+    .user_id {
+      color: var(--gray-dark);
+      font-size: var(--text-s);
+      font-weight: 400;
+    }
+  }
+  .user_info_more {
+    color: var(--gray1);
+    font-weight: 500;
+  }
+  .row_box {
+    padding: var(--space-xs);
+    display: flex;
+    gap: var(--space-m);
+    color: var(--gray-dark);
+    font-weight: 400;
+    font-size: var(--text-m);
+  }
+  .comment {
+    padding: 0 var(--space-xs);
+    display: flex;
+    color: var(--gray1);
+    font-weight: 400;
+    font-size: var(--text-m);
+    margin-bottom: var(--space-m);
+  }
+}
+
+.more_button {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-image: url("/src/images/more-icons/more-vertical-gray.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  .more_items_container {
+    min-width: 280px;
+    background-color: var(--white);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    border: 2px solid var(--gray2);
+    border-radius: var(--round-l);
+    z-index: 3;
+    padding: var(--space-xxs) 0;
+    @media (prefers-color-scheme: dark) {
+      background-color: #0c0541;
+    }
+  }
+  .screen_block {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    cursor: default;
+  }
+}
+
+.more_item {
+  padding: var(--space-xs) var(--space-s);
+  border-bottom: 2px solid var(--gray2);
+
+  &:nth-last-child(1) {
+    border-bottom: none;
+  }
+}
+
+.password_input {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  cursor: default;
+  .password_input_modal {
+    width: calc(100% - 40px);
+    min-height: 300px;
+    background-color: var(--white);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: var(--round-l);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    padding: var(--space-m);
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    @media (prefers-color-scheme: dark) {
+      background-color: #0c0541;
+      border: 2px solid rgba($color: #ffffff, $alpha: 0.15);
+    }
+    .user_info_on_passowrd_input {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+      .user_name {
+        font-size: var(--text-d-2);
+        font-weight: 500;
+      }
+      .user_info_more {
+        color: var(--gray-dark);
+        font-weight: 500;
+      }
+      .user_id {
+        color: var(--gray1);
+        font-size: var(--text-s);
+        font-weight: 500;
+      }
+    }
+  }
+  .screen_block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($color: #000, $alpha: 0.5);
+    cursor: pointer;
+  }
+}

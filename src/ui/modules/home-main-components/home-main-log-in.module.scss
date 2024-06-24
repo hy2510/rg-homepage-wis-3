@@ -1,0 +1,53 @@
+.log_in {
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-m);
+  .row_1 {
+    position: relative;
+    z-index: 3;
+    @mixin txtColor {
+      color: var(--white);
+      font-weight: 600;
+    }
+    .group_1 {
+      .txt_1 {
+        @include txtColor;
+        font-size: var(--text-l);
+      }
+    }
+    .txt_2 {
+      @include txtColor;
+      font-size: var(--text-d-3);
+      text-shadow: 0 2px 2px rgba($color: #000000, $alpha: 0.2);
+    }
+  }
+  .row_2 {
+    position: relative;
+    z-index: 2;
+    .group_1 {
+      position: relative;
+      z-index: 1;
+    }
+    .position_img_1 {
+      position: absolute;
+      z-index: 0;
+      bottom: 0;
+      right: -20px;
+      img {
+        width: 200px;
+        height: 200px;
+      }
+      @media (orientation: portrait) {
+        bottom: 20px;
+        right: -40px;
+        img {
+          width: 150px;
+          height: 150px;
+        }
+      }
+    }
+  }
+}

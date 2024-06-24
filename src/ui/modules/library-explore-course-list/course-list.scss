@@ -1,0 +1,167 @@
+.intro_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  &.alphabet {
+    background-image: url("/src/images/@prek-mode/intro_movie_frame_1.svg"),
+      url("/src/images/@prek-mode/intro_movie_frame_1_left.svg"),
+      url("/src/images/@prek-mode/intro_movie_frame_1_right.svg");
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: contain, 230px, 200px;
+    background-position: center, left 30px bottom, right 40px bottom;
+    @media (pointer: coarse) {
+      background-image: url("/src/images/@prek-mode/intro_movie_frame_1.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center 100%;
+    }
+    @media (prefers-color-scheme: dark) {
+      background-image: url("/src/images/@prek-mode/intro_movie_frame_1_dark.svg"),
+        url("/src/images/@prek-mode/intro_movie_frame_1_left_dark.svg"),
+        url("/src/images/@prek-mode/intro_movie_frame_1_right_dark.svg");
+      @media (pointer: coarse) {
+        background-image: url("/src/images/@prek-mode/intro_movie_frame_1_dark.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center 100%;
+      }
+    }
+  }
+  &.phonics1 {
+    background-image: url("/src/images/@prek-mode/intro_movie_frame_2_left.svg"),
+      url("/src/images/@prek-mode/intro_movie_frame_2_right.svg"),
+      url("/src/images/@prek-mode/intro_movie_frame_2.svg");
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 230px, 200px, contain;
+    background-position: left 40px bottom, right 80px bottom, center;
+    @media (pointer: coarse) {
+      background-image: url("/src/images/@prek-mode/intro_movie_frame_2.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center 100%;
+    }
+    @media (prefers-color-scheme: dark) {
+      background-image: url("/src/images/@prek-mode/intro_movie_frame_2_left_dark.svg"),
+        url("/src/images/@prek-mode/intro_movie_frame_2_right_dark.svg"),
+        url("/src/images/@prek-mode/intro_movie_frame_2_dark.svg");
+      @media (pointer: coarse) {
+        background-image: url("/src/images/@prek-mode/intro_movie_frame_2_dark.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center 100%;
+      }
+    }
+  }
+  &.phonics2 {
+    background-image: url("/src/images/@prek-mode/intro_movie_frame_3_left.svg"),
+      url("/src/images/@prek-mode/intro_movie_frame_3_right.svg"),
+      url("/src/images/@prek-mode/intro_movie_frame_3.svg");
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 230px, 200px, contain;
+    background-position: left 80px bottom, right 110px bottom, center;
+    @media (pointer: coarse) {
+      background-image: url("/src/images/@prek-mode/intro_movie_frame_3.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center 100%;
+    }
+    @media (prefers-color-scheme: dark) {
+      background-image: url("/src/images/@prek-mode/intro_movie_frame_3_dark_left.svg"),
+        url("/src/images/@prek-mode/intro_movie_frame_3_dark_right.svg"),
+        url("/src/images/@prek-mode/intro_movie_frame_3_dark.svg");
+      @media (pointer: coarse) {
+        background-image: url("/src/images/@prek-mode/intro_movie_frame_3_dark.svg");
+        background-repeat: no-repeat;
+        background-size: contain 100%;
+        background-position: center 100%;
+      }
+    }
+  }
+  &.sightWords1 {
+    background-image: url("/src/images/@prek-mode/intro_movie_frame_4_left.svg"),
+      url("/src/images/@prek-mode/intro_movie_frame_4_right.svg"),
+      url("/src/images/@prek-mode/intro_movie_frame_4.svg");
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 230px, 200px, contain;
+    background-position: left 30px bottom, right 30px bottom, center;
+    @media (pointer: coarse) {
+      background-image: url("/src/images/@prek-mode/intro_movie_frame_4.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    @media (prefers-color-scheme: dark) {
+      background-image: url("/src/images/@prek-mode/intro_movie_frame_4_left_dark.svg"),
+        url("/src/images/@prek-mode/intro_movie_frame_4_right_dark.svg"),
+        url("/src/images/@prek-mode/intro_movie_frame_4_dark.svg");
+      @media (pointer: coarse) {
+        background-image: url("/src/images/@prek-mode/intro_movie_frame_4_dark.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center 100%;
+      }
+    }
+  }
+  &.sightWords2 {
+    background-image: url("/src/images/@prek-mode/intro_movie_frame_5.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    @media (pointer: coarse) {
+      background-image: url("/src/images/@prek-mode/intro_movie_frame_5.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    @media (prefers-color-scheme: dark) {
+      background-image: url("/src/images/@prek-mode/intro_movie_frame_5_dark.svg");
+    }
+  }
+}
+
+.outro_bg {
+  overflow: hidden;
+  position: absolute;
+  width: calc(100vw - 5px);
+  top: 0;
+  bottom: -40px;
+  background-repeat: repeat-x;
+  background-size: auto 220px;
+  background-position: center bottom;
+  z-index: 0;
+  opacity: 0.5;
+  @media (pointer: coarse) {
+    width: 100vw;
+    left: -20px;
+    right: 0;
+    bottom: -80px;
+    overflow: hidden;
+  }
+  &.alphabet {
+    background-image: url("/src/images/@prek-mode/bg_item_bottom_1.svg");
+    @media (prefers-color-scheme: dark) {
+      background-image: url("/src/images/@prek-mode/bg_item_bottom_1_dark.svg");
+    }
+  }
+  &.phonics1 {
+    background-image: url("/src/images/@prek-mode/bg_item_bottom_2.svg");
+    @media (prefers-color-scheme: dark) {
+      background-image: url("/src/images/@prek-mode/bg_item_bottom_2_dark.svg");
+    }
+  }
+  &.phonics2 {
+    background-image: url("/src/images/@prek-mode/bg_item_bottom_3.svg");
+    @media (prefers-color-scheme: dark) {
+      background-image: url("/src/images/@prek-mode/bg_item_bottom_3_dark.svg");
+    }
+  }
+  &.sightWords1 {
+    background-image: url("/src/images/@prek-mode/bg_item_bottom_4.svg");
+    @media (prefers-color-scheme: dark) {
+      background-image: url("/src/images/@prek-mode/bg_item_bottom_4_dark.svg");
+    }
+  }
+}

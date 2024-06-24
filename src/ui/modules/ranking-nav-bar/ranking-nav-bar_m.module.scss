@@ -1,0 +1,12 @@
+.ranking_nav_bar {
+  position: sticky;
+  top: calc(env(safe-area-inset-top) + 16px);
+  z-index: 10;
+  .txt_h {
+    font-size: var(--text-d-2);
+    font-weight: 600;
+    // margin: var(--space-m) 0 var(--space-xs);
+    margin-top: var(--space-m);
+    margin-bottom: var(--space-xs);
+  }
+}

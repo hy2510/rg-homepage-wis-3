@@ -1,0 +1,122 @@
+// 연속학습 모달
+.streak_modal {
+  .streak_modal_body {
+    padding: var(--space-s);
+    margin-bottom: calc(env(safe-area-inset-bottom) + 100px);
+    .advance_notice {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: var(--round-full);
+      border: 2px solid var(--blue);
+      padding: var(--space-s);
+      .txt_p {
+        color: var(--blue);
+        font-size: var(--text-d-1);
+        font-weight: 600;
+      }
+    }
+    .start_point {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: var(--round-m);
+      border: 2px solid var(--blue);
+      padding: var(--space-s);
+      margin-bottom: var(--space-s);
+      .txt_p {
+        color: var(--blue);
+        font-size: var(--text-d-1);
+        font-weight: 600;
+      }
+      .date {
+        color: var(--gray1);
+      }
+    }
+  }
+  .streak_modal_bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0px -2px 2px 0px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+    padding-bottom: env(safe-area-inset-bottom);
+    @media (prefers-color-scheme: dark) {
+      border-top: 2px solid rgba($color: #ffffff, $alpha: 0.15);
+      background-color: #0c0541;
+    }
+    .streak_status {
+      min-height: 100px;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: var(--space-xxs);
+      .txt_l {
+        font-size: var(--text-d-1);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: var(--space-xxs);
+      }
+      .score {
+        width: 50px;
+        color: var(--white);
+        background-image: url("/src/images/@streak-modal/blue_fire.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+          font-size: var(--text-xl);
+        }
+      }
+    }
+  }
+}
+
+// 체크포인트
+.check_point {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-m);
+  &:nth-last-child(1) {
+    .check_mark {
+      .line {
+        &:nth-last-child(1) {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+  .check_mark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    .line {
+      width: 2px;
+      height: 100%;
+      background-color: var(--blue);
+    }
+  }
+  .label_image {
+    padding: var(--space-s) 0;
+  }
+  .check_message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .txt_l {
+      font-size: var(--text-d-1);
+    }
+    .date {
+      color: var(--gray1);
+    }
+  }
+}
