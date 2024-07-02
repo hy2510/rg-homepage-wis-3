@@ -89,7 +89,7 @@ const DodoAndFriends = () => {
   // 50000 포인트는 도도프렌즈 카드의 최대 포인트로, 이 포인트를 초과하면 다음에 얻을 카드가 없음
   if (point < 50000) {
     const findIndex = dodofriends.findIndex((value) => point < value.maxPoint)
-    currentPoint = Number(point.toFixed(2))
+    currentPoint = Number(point.toFixed(1))
     if (findIndex >= 0) {
       let minPoint = 0
       let range = 0
@@ -306,7 +306,7 @@ const FriendsBottom = ({
         <div className={style.comment}>
           <span className="color-gray-dark">{t('t155')}</span>
           <span>
-            {currentEarnPoint}/{goalPoint}P
+            {Math.floor(currentEarnPoint * 10) / 10}/{goalPoint}P
           </span>
         </div>
         <ProgressBar slim width={`${progress}%`} />
@@ -485,7 +485,7 @@ const LevelMasterProgressItem = ({
         <div className={`${style.status} ${!viewProgress && style.master}`}>
           <div className={style.label}>{t('t160')}</div>
           <div className={style.data}>
-            {currentEarnPoint}/{goalPoint}P
+            {Math.floor(currentEarnPoint * 10) / 10}/{goalPoint}P
           </div>
           <div className={style.label}>{t('t161')}</div>
           <div className={style.data}>{t('t023', { num: passed })}</div>
@@ -523,7 +523,8 @@ const LevelMasterProgressBottom = ({
         <div className={style.comment}>
           <span>{t('t043')}</span>
           <span>
-            {currentEarnPoint}/{goalPoint}P
+            {/* {currentEarnPoint}/{goalPoint}P */}
+            {Math.floor(currentEarnPoint * 10) / 10}/{goalPoint}P
           </span>
         </div>
         {levelName !== '6C' && <ProgressBar slim width={`${progress}%`} />}

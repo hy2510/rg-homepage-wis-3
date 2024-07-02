@@ -150,7 +150,7 @@ function PointRank() {
             <Image alt="" src={studentAvatar || ''} width={60} height={60} />
             <div className={style.txt_student_name}>{studentName}</div>
           </div>
-          <div className={style.txt_earn_points}>{earnPoints}</div>
+          <div className={style.txt_earn_points}>{earnPoints && Math.floor(earnPoints * 10) / 10}</div>
           <div className={style.txt_completed}>{completed}</div>
         </div>
       )

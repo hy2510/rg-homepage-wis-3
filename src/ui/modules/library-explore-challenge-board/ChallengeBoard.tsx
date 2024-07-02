@@ -476,7 +476,7 @@ const ChallengePointProgress = ({
         </div>
         <div className={style.row_b}>
           {/* 프로그래스 인포 */}
-          <div className={style.txt_d}>{currentEarnPoint.toFixed(2)}</div>
+          <div className={style.txt_d}>{currentEarnPoint.toFixed(1)}</div>
           <div className={style.comment}>/ {finalGoalPoint}P</div>
         </div>
       </div>
@@ -528,7 +528,7 @@ const ChallengeDayProgress = ({
             recommendDailyPoints > 0 &&
             recommendDailyPoints <= 150 && (
               <div className={style.comment}>
-                / 매일 평균 {recommendDailyPoints.toFixed(2)}P 획득 권장
+                / 매일 평균 {recommendDailyPoints.toFixed(1)}P 획득 권장
               </div>
             )}
         </div>

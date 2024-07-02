@@ -185,9 +185,13 @@ function NationSelect({
   const onSelectNationListener = (nation: string, customerId: string) => {
     onSelectNation && onSelectNation(nation, customerId)
   }
+
+  const t261 = t('t261');
+
   return (
     <div className={style.country_selection}>
-      <div className={style.txt_sentence}>{t('t261')}</div>
+      {/* <div className={style.txt_sentence}>{t('t261')}</div> */}
+      <div className={style.txt_sentence} dangerouslySetInnerHTML={{ __html: t261 }} ></div>
       {nations.map((nation) => {
         return (
           <div

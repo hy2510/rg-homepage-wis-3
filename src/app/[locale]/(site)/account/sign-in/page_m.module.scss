@@ -139,7 +139,7 @@
   gap: var(--space-m);
   @media (prefers-color-scheme: dark) {
     background-color: #0c0541;
-    border: 2px solid rgba($color: #ffffff, $alpha: 0.15);
+    // border: 2px solid rgba($color: #ffffff, $alpha: 0.15);
   }
   .txt_school_name {
     font-size: var(--text-d-2);

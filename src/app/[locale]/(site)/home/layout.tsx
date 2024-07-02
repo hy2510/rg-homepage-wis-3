@@ -87,7 +87,7 @@ export default function Layout({ children }: { children?: ReactNode }) {
 
   return (
     <div className={style.home}>
-      <div className="container" style={{ paddingBottom: 0 }}>
+      <div className="container" style={{ paddingBottom: 0, paddingTop: 0, }}>
         {isLogin && studyEndDay <= 7 && (
           <AlertBar>
             <div
@@ -97,6 +97,7 @@ export default function Layout({ children }: { children?: ReactNode }) {
                 flexDirection: 'row',
                 gap: '20px',
                 color: 'red',
+                marginTop: '20px',
               }}>
               <div>{paymentMessage}</div>
               <div

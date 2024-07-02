@@ -73,6 +73,8 @@ export function StreakModal({
       ? `${continuousDay}일 달성하였습니다!`
       : `${nextItemDay}일 달성까지 ${CONTINUOUS_DAY_STEP - (continuousDay % CONTINUOUS_DAY_STEP)}일 남았어요!`
 
+  const t175 = t('t175')
+
   return (
     <Modal
       compact
@@ -146,7 +148,7 @@ export function StreakModal({
                   <span>{continuousDay}</span>
                 </div>
                 <div className={style.txt_l}>
-                  <span className="color-blue">{t('t175')}</span>
+                  <span className="color-blue" dangerouslySetInnerHTML={{ __html: t175}}></span>
                 </div>
               </div>
             </div>

@@ -68,32 +68,49 @@ function HistoryLayout() {
     undefined,
   )
 
+  const historyStudy = useHistoryStudy().basic.payload
+  const performanceReportUrl = historyStudy.performanceReport
+  const onPerformanceReportUrl = () => {
+    if (performanceReportUrl) {
+      window.open(performanceReportUrl)
+    }
+  }
+  const t415 = t('t415')
+
   return (
     <main className={style.quick_view}>
-      <Dropdown title={t('t408', { num: range })}>
-        <DropdownItem onClick={() => onRangeChange(7)}>
-          {t('t408', { num: 7 })}
-        </DropdownItem>
-        <DropdownItem onClick={() => onRangeChange(14)}>
-          {t('t408', { num: 14 })}
-        </DropdownItem>
-        <DropdownItem onClick={() => onRangeChange(30)}>
-          {t('t408', { num: 30 })}
-        </DropdownItem>
-      </Dropdown>
+      <div className={style.top}>
+        <Dropdown title={t('t408', { num: range })}>
+          <DropdownItem onClick={() => onRangeChange(7)}>
+            {t('t408', { num: 7 })}
+          </DropdownItem>
+          <DropdownItem onClick={() => onRangeChange(14)}>
+            {t('t408', { num: 14 })}
+          </DropdownItem>
+          <DropdownItem onClick={() => onRangeChange(30)}>
+            {t('t408', { num: 30 })}
+          </DropdownItem>
+        </Dropdown>
+        <div className={style.days}>학습일수 00 days</div>
+      </div>
       <Pills>
-        <PillItem active={tab === 'all'} onClick={() => setTab('all')}>
-          {`${t('t412', { num: allCount })}`}
-        </PillItem>
-        <PillItem active={tab === 'passed'} onClick={() => setTab('passed')}>
-          {`${t('t413', { num: passedCount })}`}
-        </PillItem>
-        <PillItem active={tab === 'failed'} onClick={() => setTab('failed')}>
-          {`${t('t414', { num: failedCount })}`}
-        </PillItem>
+        <div style={{width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '15px'}}>
+          <div style={{display: 'flex', gap: '15px'}}>
+            <PillItem active={tab === 'all'} onClick={() => setTab('all')}>
+              {`${t('t412', { num: allCount })}`}
+            </PillItem>
+            <PillItem active={tab === 'passed'} onClick={() => setTab('passed')}>
+              {`${t('t413', { num: passedCount })}`}
+            </PillItem>
+            <PillItem active={tab === 'failed'} onClick={() => setTab('failed')}>
+              {`${t('t414', { num: failedCount })}`}
+            </PillItem>
+          </div>
+          { history.length !== 0 && <div className={style.performance_link} onClick={onPerformanceReportUrl}>Performance</div> }
+        </div>
       </Pills>
       {!history || history.length === 0 ? (
-        <EmptyMessage>{t('t415')}</EmptyMessage>
+        <EmptyMessage><div dangerouslySetInnerHTML={{__html: t415}}></div></EmptyMessage>
       ) : (
         <QuickReportsList>
           {history

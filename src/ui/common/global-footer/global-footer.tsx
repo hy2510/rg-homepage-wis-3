@@ -14,10 +14,10 @@ export default function Gfooter() {
   return (
     <div className={style.g_footer}>
       <div className="container">
-        <div className={style.row_a}>
-          {/* <span>{t('t321')}</span>
-          <span>{'1599-0533'}</span> */}
-        </div>
+        {/* <div className={style.row_a}>
+          <span>{t('t321')}</span>
+          <span>{'1599-0533'}</span>
+        </div> */}
         <div className={style.row_b}>
           <div>{t('t028')}</div>
           <div>{t('t029')}</div>

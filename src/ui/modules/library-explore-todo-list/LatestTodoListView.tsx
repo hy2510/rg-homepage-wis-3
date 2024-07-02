@@ -2,13 +2,16 @@ import { useState } from 'react'
 import { TodosResponse } from '@/repository/client/library/todo/todo'
 import { BookCover } from '../library-book-cover/book-cover'
 import { ExpTodoList } from './todo-list'
+import { SearchLevelBookResponse } from '@/repository/client/library/search/search-level'
 
 export default function LatestTodoListView({
   todos,
   isLabelRgPoint,
+  books,
 }: {
   todos: TodosResponse
   isLabelRgPoint?: boolean
+  books: SearchLevelBookResponse
 }) {
   const todoData = todos.todo.filter((_, i) => i < 5)
 
@@ -30,7 +33,7 @@ export default function LatestTodoListView({
         {todoData.map((book, i) => {
           const isInprogressTodo =
             book.statusCode !== '025001' || book.answerCount !== 0
-          const earnPoint = undefined //book.bookPoint
+          const earnPoint = book.bookPoint
           const bookCode = book.levelName
           return (
             <BookCover
@@ -63,6 +66,7 @@ export default function LatestTodoListView({
               levelRoundId={book.levelRoundId}
               studyId={book.studyId}
               studentHistoryId={book.studentHistoryId}
+              // assignDate={book.openDate}
             />
           )
         })}

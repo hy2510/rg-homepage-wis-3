@@ -52,6 +52,8 @@
         justify-content: center;
       }
       .book_image_src {
+        min-width: 100px;
+        width: 100%;
         cursor: pointer;
         filter: contrast(103%);
         border-radius: var(--round-m);
@@ -66,7 +68,8 @@
       font-size: var(--text-s);
       text-align: center;
       color: var(--gray1);
-      margin-bottom: var(--space-xs);
+      // margin-bottom: var(--space-xs);
+      font-size: 0.9em;
       &.point {
         color: var(--blue);
         font-weight: 600;
@@ -93,7 +96,6 @@
       .point {
         color: var(--black);
         font-weight: 600;
-        font-size: 0.9em;
       }
     }
   }

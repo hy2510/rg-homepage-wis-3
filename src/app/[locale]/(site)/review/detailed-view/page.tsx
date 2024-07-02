@@ -172,64 +172,67 @@ function HistoryLayout() {
           }
         }}
       />
-      <Dropdown
-        title={
-          view === 'read'
-            ? 'My Read'
-            : view === 'speak'
-              ? 'My Speak'
-              : 'Writing Activity'
-        }>
-        <DropdownItem
-          onClick={() => {
-            if (view !== 'read') {
-              fetchReport({
-                startDate: option.startDate,
-                endDate: option.endDate,
-                keyword: '',
-                status: 'All',
-              })
-              setView('read')
-              setStartDate(option.startDate)
-              setEndDate(option.endDate)
-              setKeyword('')
-            }
-          }}>
-          My Read
-        </DropdownItem>
-        <DropdownItem
-          onClick={() => {
-            if (view !== 'speak') {
-              fetchSpeaking({
-                startDate: option.startDate,
-                endDate: option.endDate,
-                status: 'All',
-              })
-              setView('speak')
-              setStartDate(option.startDate)
-              setEndDate(option.endDate)
-            }
-          }}>
-          My Speak
-        </DropdownItem>
-        <DropdownItem
-          onClick={() => {
-            if (view !== 'write') {
-              fetchReport({
-                startDate: option.startDate,
-                endDate: option.endDate,
-                keyword: '',
-                status: 'Writing',
-              })
-              setView('write')
-              setStartDate(option.startDate)
-              setEndDate(option.endDate)
-              setKeyword('')
-            }
-          }}>
-          Writing Activity
-        </DropdownItem>
-      </Dropdown>
+      <div className={style.top}>
+        <Dropdown
+          title={
+            view === 'read'
+              ? 'My Read'
+              : view === 'speak'
+                ? 'My Speak'
+                : 'Writing Activity'
+          }>
+          <DropdownItem
+            onClick={() => {
+              if (view !== 'read') {
+                fetchReport({
+                  startDate: option.startDate,
+                  endDate: option.endDate,
+                  keyword: '',
+                  status: 'All',
+                })
+                setView('read')
+                setStartDate(option.startDate)
+                setEndDate(option.endDate)
+                setKeyword('')
+              }
+            }}>
+            My Read
+          </DropdownItem>
+          <DropdownItem
+            onClick={() => {
+              if (view !== 'speak') {
+                fetchSpeaking({
+                  startDate: option.startDate,
+                  endDate: option.endDate,
+                  status: 'All',
+                })
+                setView('speak')
+                setStartDate(option.startDate)
+                setEndDate(option.endDate)
+              }
+            }}>
+            My Speak
+          </DropdownItem>
+          <DropdownItem
+            onClick={() => {
+              if (view !== 'write') {
+                fetchReport({
+                  startDate: option.startDate,
+                  endDate: option.endDate,
+                  keyword: '',
+                  status: 'Writing',
+                })
+                setView('write')
+                setStartDate(option.startDate)
+                setEndDate(option.endDate)
+                setKeyword('')
+              }
+            }}>
+            Writing Activity
+          </DropdownItem>
+        </Dropdown>
+        {view == 'read' && <div className={style.days}>학습일수 00 days</div>}
+      </div>
       {view === 'read' && <ReadList />}
       {view === 'speak' && <SpeakList />}
       {view === 'write' && <WriteList />}
@@ -326,30 +329,39 @@ function ReadList() {
   // TODO : 개발용 Flag.  Export, Download 작업 개발:
   const isDevAction = false
 
+  const style = useStyle(STYLE_ID)
+
+  const t415 = t('t415')
+
   return (
     <>
       <Pills>
-        <PillItem
-          active={tab === 'all'}
-          onClick={() => {
-            setTab('all')
-          }}>
-          {t('t412', { num: allCount })}
-        </PillItem>
-        <PillItem
-          active={tab === 'passed'}
-          onClick={() => {
-            setTab('passed')
-          }}>
-          {t('t416', { num1: passedCount, num2: earnPoints })}
-        </PillItem>
-        <PillItem
-          active={tab === 'failed'}
-          onClick={() => {
-            setTab('failed')
-          }}>
-          {t('t414', { num: failedCount })}
-        </PillItem>
+        <div style={{width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '15px'}}>
+          <div style={{display: 'flex', gap: '15px'}}>
+            <PillItem
+              active={tab === 'all'}
+              onClick={() => {
+                setTab('all')
+              }}>
+              {t('t412', { num: allCount })}
+            </PillItem>
+            <PillItem
+              active={tab === 'passed'}
+              onClick={() => {
+                setTab('passed')
+              }}>
+              {t('t416', { num1: passedCount, num2: earnPoints })}
+            </PillItem>
+            <PillItem
+              active={tab === 'failed'}
+              onClick={() => {
+                setTab('failed')
+              }}>
+              {t('t414', { num: failedCount })}
+            </PillItem>
+          </div>
+          { history.length !== 0 && <div className={style.performance_link} onClick={onPerformanceReportUrl}>Performance</div> }
+        </div>
       </Pills>
       <div
         onClick={() => {
@@ -390,7 +402,7 @@ function ReadList() {
         )}
       </div>
       {!list || list.length === 0 ? (
-        <EmptyMessage>{t('t415')}</EmptyMessage>
+        <EmptyMessage><div dangerouslySetInnerHTML={{__html: t415}}></div></EmptyMessage>
       ) : (
         <DetailedReportsList>
           {list.map((book, i) => {

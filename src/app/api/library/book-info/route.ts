@@ -36,7 +36,7 @@ export async function GET(request: NextRequest) {
     return RouteResponse.response(payload, status)
   }
 
-  let SecondRgPoint = Number((payload.RgPoint * 0.5).toFixed(2))
+  let SecondRgPoint = Number((payload.RgPoint * 0.5).toFixed(1))
   let UserRgPoint = 0
   let InfoType = 'book'
   let StudyTypeFullEasyYn =

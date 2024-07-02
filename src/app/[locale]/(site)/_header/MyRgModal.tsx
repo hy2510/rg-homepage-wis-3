@@ -399,7 +399,7 @@ export function MyRg({
         studentName={student.name}
         userAvatar={avatarImage}
         totalPassed={student.brCount}
-        totalEarnPoints={Number(student.rgPoint.toFixed(2))}
+        totalEarnPoints={Number(student.rgPoint.toFixed(1))}
         onClick={onClickChooseAvatar}
       />
       <MyRgAssignmentInfo
@@ -608,6 +608,14 @@ const MyRgEtc = ({
   // @language 'common'
   const { t } = useTranslation()
 
+  // 고개사별 PreK 사용여부 (DodoAbc만: 1, PreK만: 2, 둘다 사용: 3)
+  const customerPreKUseStatus: number = 3;
+  const mp3Url = {
+    dodo: "https://www.readinggate.com/Library/DodoABCWorkSheetMP3Info",
+    pk: "https://wcfresource.a1edu.com/NewSystem/AppMobile/webview/randing/prek_workbook_mp3/",
+  }
+  const [viewPreKMp3Menu, setViewPreKMp3Menu] = useState(false);
+
   return (
     <div className={style.my_rg_etc}>
       <div className={style.etc_item}>
@@ -633,11 +641,38 @@ const MyRgEtc = ({
       <div className={style.etc_item} onClick={onClickChatbot}>
         <Image
           alt=""
-          src=" /src/images/@my-rg-modal/chatbot.svg"
+          src="/src/images/@my-rg-modal/chatbot.svg"
           width={50}
           height={50}
         />
         <div className={style.txt_l}>{t('t057')}</div>
+      </div>
+      {/* DODO ABC를 사용하고 있는 고객사의 경우 */}
+      <div className={style.etc_item}>
+        <div className={style.mp3_button} onClick={
+          () => {
+            customerPreKUseStatus == 1 
+            ? window.open(mp3Url.dodo, '_blank') 
+            : customerPreKUseStatus == 2 
+            ? window.open(mp3Url.pk, '_blank')
+            : setViewPreKMp3Menu(true)
+          }
+        }>
+          <Image
+            alt=""
+            src="/src/images/@my-rg-modal/mp3.svg"
+            width={50}
+            height={50}
+          />
+          <div className={style.txt_l}>WB MP3</div>
+        </div>
+        { viewPreKMp3Menu &&
+            <div className={style.menu}>
+              <div className={style.btn_del} onClick={()=>{setViewPreKMp3Menu(false)}}></div>
+              <div className={style.menu_item} onClick={()=>{window.open(mp3Url.dodo, '_blank')}}>DODO ABC Workbook MP3</div>
+              <div className={style.menu_item} onClick={()=>{window.open(mp3Url.pk, '_blank')}}>PreK Workbook MP3</div>
+            </div>
+        }
       </div>
     </div>
   )
@@ -690,7 +725,7 @@ export function MyProfile({
         studentName={student.name}
         userAvatar={avatarImage}
         totalPassed={student.brCount}
-        totalEarnPoints={Number(student.rgPoint.toFixed(2))}
+        totalEarnPoints={student.rgPoint}
         onClick={onClickEditProfile}
       />
       <AwardListContainer>
@@ -782,7 +817,7 @@ const TotalStudyScore = ({
         </div>
         <div className={style.col_b}>
           <div className={style.txt_l}>{t('t060')}</div>
-          <div className={style.txt_d}>{totalEarnPoints}P</div>
+          <div className={style.txt_d}>{Math.floor(totalEarnPoints * 10) / 10}P</div>
         </div>
       </div>
     </div>
@@ -1620,6 +1655,9 @@ const CurrentStudyLevel = () => {
       fetchLevelChange(level)
     }
   }
+
+  const t129 = t('t129')
+
   return (
     <>
       <div className={style.current_study_level}>
@@ -1682,7 +1720,7 @@ const CurrentStudyLevel = () => {
       {/* 레벨을 셀렉트 박스에서 변경했을 때 활성화 됨 */}
       {level !== defaultLevel && (
         <div className={style.change_current_study_level}>
-          <div className={style.txt_p}>{t('t129')}</div>
+          <div className={style.txt_p} dangerouslySetInnerHTML={{ __html: t129}}></div>
           <div className={style.confirm}>
             <div
               className={style.button}
@@ -1767,6 +1805,8 @@ const LevelTestHistory = () => {
     goToLevelTest()
   }
 
+  const t135 = t('t135')
+
   return (
     <>
       <div className={style.level_test_history}>
@@ -1799,7 +1839,7 @@ const LevelTestHistory = () => {
       {/* 레벨 테스트가 가능인 상태일 때 활성화 됨 */}
       {!isLevelTestInfoLoading && levelTestInfo.isAvailableLevelTest && (
         <div className={style.level_test_ready}>
-          <div className={style.txt_p}>{t('t135')}</div>
+          <div className={style.txt_p} dangerouslySetInnerHTML={{__html: t135}}></div>
           <Button shadow onClick={onStartLevelTest}>
             {t('t136')}
           </Button>

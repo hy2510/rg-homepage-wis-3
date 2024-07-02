@@ -283,7 +283,7 @@ const TableRow = ({
       </div>
       <div className={style.txt_present}>{studyDay}</div>
       <div className={style.txt_earn_points}>
-        {earnPoints} / {completed}
+        {earnPoints && Math.floor(earnPoints * 10) / 10} / {completed}
       </div>
     </div>
   )

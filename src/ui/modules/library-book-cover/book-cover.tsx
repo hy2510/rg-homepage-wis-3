@@ -124,6 +124,7 @@ export function BookCover({
                   src="/src/images/@book-cover/in_progress.svg"
                   width={34}
                   height={34}
+                  style={{width: '34px', height: '34px'}}
                 />
               </div>
             )}
@@ -205,7 +206,7 @@ export function BookCover({
           )}
           {assignDate && (
             <div className={style.tag}>
-              <span>{isHomework ? `(${assignDate})` : `+${assignDate}`}</span>
+              <span>{isHomework ? `(${assignDate})` : `${assignDate}`}</span>
             </div>
           )}
         </div>

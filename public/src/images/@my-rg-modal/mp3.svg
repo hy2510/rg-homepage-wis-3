@@ -1,0 +1,24 @@
+<svg width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon 44X44" clip-path="url(#clip0_6155_29339)">
+<rect id="Rectangle 407" x="6.5" width="32" height="44.5714" rx="3" fill="url(#paint0_linear_6155_29339)"/>
+<rect id="Rectangle 408" x="10.5" y="5" width="24" height="12" rx="1" fill="#14A1FD"/>
+<g id="Mask group">
+<mask id="mask0_6155_29339" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="10" y="5" width="25" height="12">
+<rect id="Rectangle 411" x="10.5" y="5" width="24" height="12" rx="1" fill="#14A1FD"/>
+</mask>
+<g mask="url(#mask0_6155_29339)">
+<rect id="Rectangle 410" opacity="0.5" x="24.2295" y="-1" width="5.11537" height="26" transform="rotate(34.5068 24.2295 -1)" fill="white" fill-opacity="0.2"/>
+</g>
+</g>
+<circle id="Ellipse 344" cx="22.5" cy="31" r="5.5" stroke="#2378FA" stroke-width="5"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_6155_29339" x1="22.5" y1="0" x2="22.5" y2="44.5714" gradientUnits="userSpaceOnUse">
+<stop stop-color="#EFEFEF"/>
+<stop offset="1" stop-color="#DCDBDE"/>
+</linearGradient>
+<clipPath id="clip0_6155_29339">
+<rect width="44" height="44" fill="white" transform="translate(0.5)"/>
+</clipPath>
+</defs>
+</svg>

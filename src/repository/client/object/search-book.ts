@@ -53,7 +53,7 @@ export function makeSearchBook(json?: any): SearchBook {
     levelRoundImage: RenewType.renewString(json?.LevelRoundImage),
     workSheetPath: RenewType.renewString(json?.WorkSheetPath),
     bookPoint: json?.BookPoint
-      ? Number(RenewType.renewNumber(json?.BookPoint).toFixed(2))
+      ? Number(RenewType.renewNumber(json?.BookPoint).toFixed(1))
       : 0,
     iSBN: RenewType.renewString(json?.ISBN),
     animationPath: RenewType.renewString(json?.AnimationPath),

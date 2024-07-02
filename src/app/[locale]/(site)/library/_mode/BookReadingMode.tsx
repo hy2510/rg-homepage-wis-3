@@ -287,7 +287,7 @@ const BookReadingMode = () => {
           />
         </>
       )}
-      {todos.count > 0 && <LatestTodoListView todos={todos} />}
+      {todos.count > 0 && <LatestTodoListView todos={todos} books={books} />}
       {viewLevelSelector && (
         <LevelSelector
           _viewLevelSelector={_viewLevelSelector}

@@ -170,7 +170,7 @@
 .my_rg_etc {
   padding: 0 var(--space-m);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-m);
   height: 100px;
   .etc_item {
@@ -180,8 +180,50 @@
     align-items: center;
     justify-content: center;
     gap: var(--space-xs);
+    position: relative;
     .txt_l {
       font-size: var(--text-s);
+    }
+    a, .mp3_button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xs);
+    }
+    .menu {
+      position: absolute;
+      min-width: 240px;
+      width: fit-content;
+      right: 0;
+      border: 1px solid var(--gray2);
+      border-radius: var(--round-l);
+      box-shadow: 0 1px 10px var(--gray2);
+      background-color: var(--white);
+      z-index: 1;
+      .menu_item {
+        padding: var(--space-s);
+        border-bottom: 1px solid var(--gray2);
+        position: relative;
+        z-index: 2;
+        &:nth-last-child(1) {
+          border-bottom: none;
+        }
+      }
+      .btn_del {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        background-image: url('/src/images/delete-icons/x_black.svg');
+        background-size: 20px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: var(--gray3);
+        border-radius: 100px;
+        top: -20px;
+        right: -20px;
+        z-index: 3;
+      }
     }
   }
 }

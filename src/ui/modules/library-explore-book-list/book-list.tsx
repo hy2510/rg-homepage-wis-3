@@ -31,6 +31,8 @@ export function BookList({
   // @Language 'common'
   const { t } = useTranslation()
 
+  const t496 = t('t496')
+
   return (
     <div className={style.book_list}>
       <div className={style.row_a}>
@@ -48,7 +50,7 @@ export function BookList({
       </div>
       {alertMessage && <AlertBar>{alertMessage}</AlertBar>}
       {bookCount == 0 ? (
-        <EmptyMessage>{t('t496')}</EmptyMessage>
+        <EmptyMessage><div dangerouslySetInnerHTML={{__html: t496}}></div></EmptyMessage>
       ) : (
         <div className={style.row_b}>{children}</div>
       )}

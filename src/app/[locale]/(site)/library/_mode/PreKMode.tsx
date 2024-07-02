@@ -55,7 +55,7 @@ const PreKMode = () => {
     const point = currentLevelPoint[0]
     if (point.remainingRgPoint > 0) {
       pointProgress = Number(
-        ((point.myRgPoint / point.requiredRgPoint) * 100).toFixed(2),
+        ((point.myRgPoint / point.requiredRgPoint) * 100).toFixed(1),
       )
     } else {
       pointProgress = 100

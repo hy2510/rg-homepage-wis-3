@@ -72,6 +72,7 @@ function SearchLayout({ keyword }: { keyword: string }) {
 
   const [bookInfo, setBookInfo] = useState<string | undefined>(undefined)
   const [tab, setTab] = useState<'ebook' | 'pbook'>('ebook')
+  const t391 = t('t391')
 
   return (
     <main className={style.search_result}>
@@ -79,7 +80,7 @@ function SearchLayout({ keyword }: { keyword: string }) {
         {`${keyword} ${t('t265')}`}
       </BackLink>
       {!firstSearchLoading && eBookCount <= 0 && pBookCount <= 0 ? (
-        <EmptyMessage>{t('t391')}</EmptyMessage>
+        <EmptyMessage><div dangerouslySetInnerHTML={{__html: t391}}></div></EmptyMessage>
       ) : (
         <Nav>
           {eBookCount > 0 && (

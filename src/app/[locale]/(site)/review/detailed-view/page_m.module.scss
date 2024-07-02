@@ -2,4 +2,33 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-l);
+  .top {
+    display: flex;
+    align-items: end;
+    gap: var(--space-xxs);
+    .days {
+      color: var(--gray1);
+      font-weight: 500;
+    }
+  }
+  .performance_link {
+    cursor: pointer;
+    font-size: var(--text-s);
+    font-weight: 500;
+    color: var(--blue);
+    position: relative;
+    margin-left: 30px;
+    margin-right: 10px;
+    &::after {
+      content: "";
+      position: absolute;
+      top: calc(50% - 10px);
+      right: calc(100% + 5px);
+      width: 20px;
+      height: 20px;
+      background-image: url("/src/images/@ranking/download.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
 }

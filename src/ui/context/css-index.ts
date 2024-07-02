@@ -154,6 +154,8 @@ import page_quick_view_m from '@/app/[locale]/(site)/review/(quick-view)/page_m.
 import page_detailed_view from '@/app/[locale]/(site)/review/detailed-view/page.module.scss'
 import page_detailed_view_m from '@/app/[locale]/(site)/review/detailed-view/page_m.module.scss'
 import page_trial from '@/app/[locale]/(site)/trial/page.module.scss'
+import page_level_master_board from '@/app/[locale]/(site)/ranking/level-master-board/page.module.scss'
+import page_level_master_board_m from '@/app/[locale]/(site)/ranking/level-master-board/page_m.module.scss'
 
 export type CssStyle = { readonly [key: string]: string }
 export default function findStyle(id: string): {
@@ -352,6 +354,8 @@ export default function findStyle(id: string): {
       return { pc: review_nav_bar, mobile: review_nav_bar_m }
     case 'quick_view_reports':
       return { pc: quick_view_reports, mobile: quick_view_reports_m }
+    case 'page_level_master_board':
+      return { pc: page_level_master_board, mobile: page_level_master_board_m }
     default:
       throw new Error('CSS Index Not Found.')
   }

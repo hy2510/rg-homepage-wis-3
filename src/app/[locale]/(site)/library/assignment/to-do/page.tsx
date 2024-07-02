@@ -259,6 +259,7 @@ export default function Page() {
                     isExportChecked={isChecked}
                     isExportCheckable={isCheckable}
                     onExportCheckedChange={onCheckedChange}
+                    earnPoint={book.bookPoint}
                   />
                 )
               })}
