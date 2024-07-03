@@ -91,24 +91,28 @@ function HistoryLayout() {
             {t('t408', { num: 30 })}
           </DropdownItem>
         </Dropdown>
-        <div className={style.days}>학습일수 00 days</div>
       </div>
-      <Pills>
-        <div style={{width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '15px'}}>
-          <div style={{display: 'flex', gap: '15px'}}>
-            <PillItem active={tab === 'all'} onClick={() => setTab('all')}>
-              {`${t('t412', { num: allCount })}`}
-            </PillItem>
-            <PillItem active={tab === 'passed'} onClick={() => setTab('passed')}>
-              {`${t('t413', { num: passedCount })}`}
-            </PillItem>
-            <PillItem active={tab === 'failed'} onClick={() => setTab('failed')}>
-              {`${t('t414', { num: failedCount })}`}
-            </PillItem>
-          </div>
-          { history.length !== 0 && <div className={style.performance_link} onClick={onPerformanceReportUrl}>Performance</div> }
+      <div>
+        <div className={style.days}>
+          <div className={style.days_data}>• 학습일수 00 days</div>
         </div>
-      </Pills>
+        <Pills>
+          <div style={{width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '15px'}}>
+            <div style={{display: 'flex', gap: '15px'}}>
+              <PillItem active={tab === 'all'} onClick={() => setTab('all')}>
+                {`${t('t412', { num: allCount })}`}
+              </PillItem>
+              <PillItem active={tab === 'passed'} onClick={() => setTab('passed')}>
+                {`${t('t413', { num: passedCount })}`}
+              </PillItem>
+              <PillItem active={tab === 'failed'} onClick={() => setTab('failed')}>
+                {`${t('t414', { num: failedCount })}`}
+              </PillItem>
+            </div>
+            { history.length !== 0 && <div className={style.performance_link} onClick={onPerformanceReportUrl}>Performance</div> }
+          </div>
+        </Pills>
+      </div>
       {!history || history.length === 0 ? (
         <EmptyMessage><div dangerouslySetInnerHTML={{__html: t415}}></div></EmptyMessage>
       ) : (

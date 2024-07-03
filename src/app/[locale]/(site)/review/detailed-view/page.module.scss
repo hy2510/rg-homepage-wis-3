@@ -31,4 +31,16 @@
       background-repeat: no-repeat;
     }
   }
+  .days {
+    position: relative;
+    margin-top: 20px;
+    .days_data {
+      color: var(--gray1);
+      font-size: var(--text-s);
+      font-weight: 500;
+      position: absolute;
+      top: -45px;
+      left: 0;
+    }
+  }
 }

@@ -231,7 +231,7 @@ function HistoryLayout() {
             Writing Activity
           </DropdownItem>
         </Dropdown>
-        {view == 'read' && <div className={style.days}>학습일수 00 days</div>}
+        {/* {view == 'read' && <div className={style.days}>학습일수 00 days</div>} */}
       </div>
       {view === 'read' && <ReadList />}
       {view === 'speak' && <SpeakList />}
@@ -335,35 +335,40 @@ function ReadList() {
 
   return (
     <>
-      <Pills>
-        <div style={{width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '15px'}}>
-          <div style={{display: 'flex', gap: '15px'}}>
-            <PillItem
-              active={tab === 'all'}
-              onClick={() => {
-                setTab('all')
-              }}>
-              {t('t412', { num: allCount })}
-            </PillItem>
-            <PillItem
-              active={tab === 'passed'}
-              onClick={() => {
-                setTab('passed')
-              }}>
-              {t('t416', { num1: passedCount, num2: earnPoints })}
-            </PillItem>
-            <PillItem
-              active={tab === 'failed'}
-              onClick={() => {
-                setTab('failed')
-              }}>
-              {t('t414', { num: failedCount })}
-            </PillItem>
-          </div>
-          { history.length !== 0 && <div className={style.performance_link} onClick={onPerformanceReportUrl}>Performance</div> }
+      <div>
+        <div className={style.days}>
+          <div className={style.days_data}>• 학습일수 00 days</div>
         </div>
-      </Pills>
-      <div
+        <Pills>
+          <div style={{width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '15px', position: 'relative'}}>
+            <div style={{display: 'flex', gap: '15px'}}>
+              <PillItem
+                active={tab === 'all'}
+                onClick={() => {
+                  setTab('all')
+                }}>
+                {t('t412', { num: allCount })}
+              </PillItem>
+              <PillItem
+                active={tab === 'passed'}
+                onClick={() => {
+                  setTab('passed')
+                }}>
+                {t('t416', { num1: passedCount, num2: earnPoints })}
+              </PillItem>
+              <PillItem
+                active={tab === 'failed'}
+                onClick={() => {
+                  setTab('failed')
+                }}>
+                {t('t414', { num: failedCount })}
+              </PillItem>
+            </div>
+            { history.length !== 0 && <div className={style.performance_link} onClick={onPerformanceReportUrl}>Performance</div> }
+          </div>
+        </Pills>
+      </div>
+      {/* <div
         onClick={() => {
           setSelectMode(!isSelectMode)
         }}>
@@ -400,7 +405,7 @@ function ReadList() {
         {isDevAction && performanceReportUrl && (
           <div onClick={onPerformanceReportUrl}>퍼포먼스 리포트</div>
         )}
-      </div>
+      </div> */}
       {!list || list.length === 0 ? (
         <EmptyMessage><div dangerouslySetInnerHTML={{__html: t415}}></div></EmptyMessage>
       ) : (
