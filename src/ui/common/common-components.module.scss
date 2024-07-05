@@ -399,7 +399,7 @@
       background-color: var(--red);
     }
     .tool_tip {
-      min-width: 95px;
+      min-width: 100px;
       position: absolute;
       top: calc(100% + 10px);
       // left: calc(100% - 40px);
@@ -409,7 +409,7 @@
       font-size: var(--text-xs);
       text-align: center;
       padding: var(--space-xxs);
-      padding-bottom: 10px;
+      padding-bottom: 8px;
       border-radius: var(--round-s);
       background-color: var(--red);
       &::after {

@@ -91,6 +91,9 @@
       .point {
         color: var(--black);
         font-weight: 500;
+        @media (prefers-color-scheme: dark) {
+          color: var(--white);
+        }
       }
     }
   }

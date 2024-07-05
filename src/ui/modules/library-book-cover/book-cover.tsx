@@ -198,7 +198,7 @@ export function BookCover({
                 {isShowPoint && (
                   <>
                     <div className={style.line}></div>
-                    <span className={style.point}>{`${coverPoint}P`}</span>
+                    <span className={style.point}>{`${Math.floor(coverPoint * 10) / 10}P`}</span>
                   </>
                 )}
               </span>

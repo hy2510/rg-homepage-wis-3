@@ -36,7 +36,7 @@ next-env.d.ts
 
 # public
 public/public/*
-public/study/*
+public/*
 public/rg-study-result/*
 
 # custom file
