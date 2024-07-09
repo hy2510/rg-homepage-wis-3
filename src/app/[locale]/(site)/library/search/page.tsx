@@ -76,9 +76,14 @@ function SearchLayout({ keyword }: { keyword: string }) {
 
   return (
     <main className={style.search_result}>
-      <BackLink href={SITE_PATH.LIBRARY.HOME} largeFont>
-        {`${keyword} ${t('t265')}`}
-      </BackLink>
+      <div className={style.top}>
+        <BackLink href={SITE_PATH.LIBRARY.HOME} largeFont>
+          <div>
+            {`${keyword} ${t('t265')}`}
+          </div>
+        </BackLink>
+        <div className={style.btn_link}>{t('t372')}</div>
+      </div>
       {!firstSearchLoading && eBookCount <= 0 && pBookCount <= 0 ? (
         <EmptyMessage><div dangerouslySetInnerHTML={{__html: t391}}></div></EmptyMessage>
       ) : (

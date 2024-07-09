@@ -2,6 +2,17 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-l);
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-m);
+    .btn_link {
+      cursor: pointer;
+      color: var(--blue);
+      text-align: end;
+    }
+  }
   .row_a,
   .row_b {
     display: flex;

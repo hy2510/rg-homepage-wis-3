@@ -13,6 +13,7 @@ import { BackLink } from '@/ui/common/common-components'
 import { useStyle } from '@/ui/context/StyleContext'
 import LoadingScreen from '@/ui/modules/LoadingScreen'
 import { BookCover } from '@/ui/modules/library-book-cover/book-cover'
+import useTranslation from '@/localization/client/useTranslations'
 
 const STYLE_ID = 'page_new_books'
 
@@ -51,11 +52,16 @@ function NewBookLayout({ keyword }: { keyword: string }) {
 
   const [bookInfo, setBookInfo] = useState<string | undefined>(undefined)
 
+  const { t } = useTranslation()
+
   return (
     <main className={style.search_result}>
-      <BackLink href={SITE_PATH.LIBRARY.HOME} largeFont>
-        {`${option.year}. ${option.month} New Books`}
-      </BackLink>
+      <div className={style.top}>
+        <BackLink href={SITE_PATH.LIBRARY.HOME} largeFont>
+          {`${option.year}. ${option.month} New Books`}
+        </BackLink>
+        <div className={style.btn_link}>{t('t372')}</div>
+      </div>
       {/* <Dropdown title={`${option.year}. ${option.month}`}>
         <DropdownItem> {`${option.year}. ${option.month}`}</DropdownItem>
       </Dropdown> */}
