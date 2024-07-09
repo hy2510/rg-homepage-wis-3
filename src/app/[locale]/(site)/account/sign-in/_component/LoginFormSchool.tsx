@@ -169,11 +169,13 @@ export default function LoginFormSchool({
         {customHeader}
         {tab === 'Class' ? (
           <>
-            <div>
+            <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px'}}>
               <select
                 style={{
-                  marginLeft: '10px',
-                  fontSize: 'medium',
+                  padding: '8px 12px',
+                  border: '2px solid #dae1ea',
+                  borderRadius: '8px',
+                  width: '100%'
                 }}
                 value={classGroup}
                 onChange={(e) => {
@@ -192,9 +194,10 @@ export default function LoginFormSchool({
               </select>
               <select
                 style={{
-                  marginLeft: '20px',
-                  marginRight: '10px',
-                  fontSize: 'medium',
+                  padding: '8px 12px',
+                  border: '2px solid #dae1ea',
+                  borderRadius: '8px',
+                  width: '100%'
                 }}
                 value={classOne}
                 onChange={(e) => {
