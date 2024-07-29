@@ -36,8 +36,8 @@ next-env.d.ts
 
 # public
 public/public/*
-public/*
 public/rg-study-result/*
+public/study/*
 
 # custom file
 devserver.sh
