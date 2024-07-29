@@ -68,6 +68,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        &.active {
+          background-image: url("/src/images/@streak-modal/red_fire.svg");
+        }
         span {
           font-size: var(--text-xl);
         }

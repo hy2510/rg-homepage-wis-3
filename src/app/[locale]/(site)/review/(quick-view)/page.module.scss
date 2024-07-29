@@ -43,4 +43,23 @@
       left: 0;
     }
   }
+  .more {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+      width: 100%;
+      max-width: 300px;
+      background-color: rgba(218, 225, 234, 0.3);
+      padding: var(--space-s) var(--space-m);
+      color: var(--gray1);
+      font-weight: 500;
+      font-size: var(--text-m);
+      border-radius: var(--round-full);
+      @media (prefers-color-scheme: dark) {
+        background-color: rgba($color: #ffffff, $alpha: 0.15);
+      }
+    }
+  }
 }

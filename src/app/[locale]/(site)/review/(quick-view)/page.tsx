@@ -116,54 +116,59 @@ function HistoryLayout() {
       {!history || history.length === 0 ? (
         <EmptyMessage><div dangerouslySetInnerHTML={{__html: t415}}></div></EmptyMessage>
       ) : (
-        <QuickReportsList>
-          {history
-            .filter((item) => {
-              if (tab === 'passed') {
-                return item.average >= 70
-              } else if (tab === 'failed') {
-                return item.average < 70
-              } else {
-                return <tr></tr>
-              }
-            })
-            .map((a, i) => {
-              return (
-                <QuickReportItem
-                  key={`history_${a.completeDate}_${a.bookId}_${i}`}
-                  title={a.title}
-                  bookCode={a.levelName}
-                  isPassed={a.average > 70}
-                  imgSrc={a.surfaceImagePath}
-                  studyDate={a.completeDate}
-                  totalScore={a.average}
-                  completedInfo={a.fullEasyName}
-                  earnPoints={a.rgPoint}
-                  onClick={() => {
-                    setSelectBookInfo(a.studyId)
-                  }}>
-                  {selectedBookInfo && selectedBookInfo === a.studyId && (
-                    <ReviewAssessmentReport
-                      studyId={a.studyId}
-                      studentHistoryId={a.studentHistoryId}
-                      levelRoundId={a.levelRoundId}
-                      title={a.title}
-                      bookImgSrc={a.surfaceImagePath}
-                      bookCode={a.levelName}
-                      studyDate={a.completeDate}
-                      totalScore={a.average}
-                      isPassed={a.average > 70}
-                      completedInfo={a.fullEasyName}
-                      earnPoints={a.rgPoint}
-                      onClickDelete={() => {
-                        setSelectBookInfo(undefined)
-                      }}
-                    />
-                  )}
-                </QuickReportItem>
-              )
-            })}
-        </QuickReportsList>
+        <>
+          <QuickReportsList>
+            {history
+              .filter((item) => {
+                if (tab === 'passed') {
+                  return item.average >= 70
+                } else if (tab === 'failed') {
+                  return item.average < 70
+                } else {
+                  return <tr></tr>
+                }
+              })
+              .map((a, i) => {
+                return (
+                  <QuickReportItem
+                    key={`history_${a.completeDate}_${a.bookId}_${i}`}
+                    title={a.title}
+                    bookCode={a.levelName}
+                    isPassed={a.average > 70}
+                    imgSrc={a.surfaceImagePath}
+                    studyDate={a.completeDate}
+                    totalScore={a.average}
+                    completedInfo={a.fullEasyName}
+                    earnPoints={a.rgPoint}
+                    onClick={() => {
+                      setSelectBookInfo(a.studyId)
+                    }}>
+                    {selectedBookInfo && selectedBookInfo === a.studyId && (
+                      <ReviewAssessmentReport
+                        studyId={a.studyId}
+                        studentHistoryId={a.studentHistoryId}
+                        levelRoundId={a.levelRoundId}
+                        title={a.title}
+                        bookImgSrc={a.surfaceImagePath}
+                        bookCode={a.levelName}
+                        studyDate={a.completeDate}
+                        totalScore={a.average}
+                        isPassed={a.average > 70}
+                        completedInfo={a.fullEasyName}
+                        earnPoints={a.rgPoint}
+                        onClickDelete={() => {
+                          setSelectBookInfo(undefined)
+                        }}
+                      />
+                    )}
+                  </QuickReportItem>
+                )
+              })}
+          </QuickReportsList>
+          <p className={style.more}>
+            <button>MORE</button>
+          </p>
+        </>
       )}
       {/* <Pagination>
         <PaginationItem active={true}>1</PaginationItem>

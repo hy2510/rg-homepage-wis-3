@@ -409,55 +409,60 @@ function ReadList() {
       {!list || list.length === 0 ? (
         <EmptyMessage><div dangerouslySetInnerHTML={{__html: t415}}></div></EmptyMessage>
       ) : (
-        <DetailedReportsList>
-          {list.map((book, i) => {
-            const isCheckable = true
-            const isChecked = isSelectedItem(book.studyId)
-            const onCheckedChange = setItemSelectedChange
+        <>
+          <DetailedReportsList>
+            {list.map((book, i) => {
+              const isCheckable = true
+              const isChecked = isSelectedItem(book.studyId)
+              const onCheckedChange = setItemSelectedChange
 
-            return (
-              <DetailedReportItem
-                key={`history_${book.completeDate}_${book.bookId}_${i}`}
-                title={book.title}
-                bookCode={book.levelName}
-                isPassed={book.average > 70}
-                imgSrc={book.surfaceImagePath}
-                studyDate={book.completeDate}
-                totalScore={book.average}
-                completedInfo={book.fullEasyName}
-                earnPoints={book.rgPoint}
-                onClick={() => {
-                  setSelectBookInfo(book.studyId)
-                }}
-                studyId={book.studyId}
-                studentHistoryId={book.studentHistoryId}
-                levelRoundId={book.levelRoundId}
-                isExportMode={isSelectMode}
-                isExportChecked={isChecked}
-                isExportCheckable={isCheckable}
-                onExportCheckedChange={onCheckedChange}>
-                {selectedBookInfo && selectedBookInfo === book.studyId && (
-                  <ReviewAssessmentReport
-                    studyId={book.studyId}
-                    studentHistoryId={book.studentHistoryId}
-                    levelRoundId={book.levelRoundId}
-                    title={book.title}
-                    bookImgSrc={book.surfaceImagePath}
-                    bookCode={book.levelName}
-                    studyDate={book.completeDate}
-                    totalScore={book.average}
-                    isPassed={book.average > 70}
-                    completedInfo={book.fullEasyName}
-                    earnPoints={book.rgPoint}
-                    onClickDelete={() => {
-                      setSelectBookInfo(undefined)
-                    }}
-                  />
-                )}
-              </DetailedReportItem>
-            )
-          })}
-        </DetailedReportsList>
+              return (
+                <DetailedReportItem
+                  key={`history_${book.completeDate}_${book.bookId}_${i}`}
+                  title={book.title}
+                  bookCode={book.levelName}
+                  isPassed={book.average > 70}
+                  imgSrc={book.surfaceImagePath}
+                  studyDate={book.completeDate}
+                  totalScore={book.average}
+                  completedInfo={book.fullEasyName}
+                  earnPoints={book.rgPoint}
+                  onClick={() => {
+                    setSelectBookInfo(book.studyId)
+                  }}
+                  studyId={book.studyId}
+                  studentHistoryId={book.studentHistoryId}
+                  levelRoundId={book.levelRoundId}
+                  isExportMode={isSelectMode}
+                  isExportChecked={isChecked}
+                  isExportCheckable={isCheckable}
+                  onExportCheckedChange={onCheckedChange}>
+                  {selectedBookInfo && selectedBookInfo === book.studyId && (
+                    <ReviewAssessmentReport
+                      studyId={book.studyId}
+                      studentHistoryId={book.studentHistoryId}
+                      levelRoundId={book.levelRoundId}
+                      title={book.title}
+                      bookImgSrc={book.surfaceImagePath}
+                      bookCode={book.levelName}
+                      studyDate={book.completeDate}
+                      totalScore={book.average}
+                      isPassed={book.average > 70}
+                      completedInfo={book.fullEasyName}
+                      earnPoints={book.rgPoint}
+                      onClickDelete={() => {
+                        setSelectBookInfo(undefined)
+                      }}
+                    />
+                  )}
+                </DetailedReportItem>
+              )
+            })}
+          </DetailedReportsList>
+          <p className={style.more}>
+            <button>MORE</button>
+          </p>
+        </>
       )}
       {isSelectStudentHistory && (
         <StudentHistorySelectModal

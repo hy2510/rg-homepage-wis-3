@@ -51,8 +51,10 @@ export const QuickReportItem = ({
           className={style.book_cover_img}
         />
         {isPassed ? (
-          <div className={style.pass_mark}></div>
-        ) : (
+          // <div className={style.pass_mark}></div>
+          <div className={`${style.pass_mark} ${earnPoints == 0 ? style.third : ''}`}></div>
+          ) : (
+            // <div className={style.fail_mark}></div>
           <div className={style.fail_mark}></div>
         )}
       </div>

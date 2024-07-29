@@ -35,6 +35,9 @@
       @include mark;
       background-color: var(--blue);
       background-image: url("/src/images/check-icons/check_white.svg");
+      &.third {
+        background-color: var(--gray1);
+      }
     }
     .fail_mark {
       @include mark;

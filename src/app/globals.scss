@@ -1,5 +1,6 @@
 :root {
-  --container-width: 1280px;
+  // --container-width: 1280px;
+  --container-width: 1168px;
   --white: #fff;
   --black: #000;
   --gray-dark: #666666;
@@ -47,6 +48,37 @@
   }
 }
 
+@font-face {
+  font-family: 'SDGdGulim';
+  src: url('/src/font/SDRGGothicNeoRoundTTF-bBd.woff2') format('woff2'),
+       url('/src/font/SDRGGothicNeoRoundTTF-bBd.woff') format('woff'),
+       url('/src/font/SDRGGothicNeoRoundTTF-bBd.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('/src/font/Comfortaa-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/src/font/Quicksand-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'IBMPlexSansKR-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('/src/font/Outfit-VariableFont_wght.ttf') format('truetype');
+}
+
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     color: #ffffff;
@@ -63,7 +95,8 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Noto Sans KR', sans-serif;
+  // font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Quicksand', 'IBMPlexSansKR', sans-serif;
   &::-webkit-scrollbar {
     background-color: transparent;
     width: 6px;

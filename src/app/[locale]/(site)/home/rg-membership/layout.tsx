@@ -28,7 +28,16 @@ export default function Layout({ children }: { children?: ReactNode }) {
           href={SITE_PATH.HOME.MEMBERSHIP_INTRODUCE}>
           {t('t335')}
         </NavItem>
-        {/* <NavItem active={false}>멤버십 구매</NavItem> */}
+        <NavItem
+          active={pathname.indexOf(SITE_PATH.HOME.MEMBERSHIP_PURCHASE) != -1}
+          href={SITE_PATH.HOME.MEMBERSHIP_PURCHASE}>
+          이용권 구매
+        </NavItem>
+        <NavItem
+          active={pathname.indexOf(SITE_PATH.HOME.MEMBERSHIP_PAYMENT_HISTORY) != -1}
+          href={SITE_PATH.HOME.MEMBERSHIP_PAYMENT_HISTORY}>
+          구매 내역
+        </NavItem>
         <NavItem
           active={
             pathname.indexOf(SITE_PATH.HOME.MEMBERSHIP_REFUND_POLICY) != -1

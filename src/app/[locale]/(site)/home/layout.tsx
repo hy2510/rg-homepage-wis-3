@@ -87,30 +87,29 @@ export default function Layout({ children }: { children?: ReactNode }) {
 
   return (
     <div className={style.home}>
-      <div className="container" style={{ paddingBottom: 0, paddingTop: 0, }}>
         {isLogin && studyEndDay <= 7 && (
-          <AlertBar>
-            <div
-              style={{
-                width: '100%',
-                display: 'flex',
-                flexDirection: 'row',
-                gap: '20px',
-                color: 'red',
-                marginTop: '20px',
-              }}>
-              <div>{paymentMessage}</div>
+          <div className="container" style={{ paddingBottom: 0, paddingTop: 20, }}>
+            <AlertBar>
               <div
-                style={{ cursor: 'pointer' }}
-                onClick={() => {
-                  // TODO - 결제
+                style={{
+                  width: '100%',
+                  display: 'flex',
+                  flexDirection: 'row',
+                  gap: '20px',
+                  color: 'red',
                 }}>
-                <b>{t('t193')}</b>
+                <div>{paymentMessage}</div>
+                <div
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => {
+                    // TODO - 결제
+                  }}>
+                  <b>{t('t193')}</b>
+                </div>
               </div>
-            </div>
-          </AlertBar>
+            </AlertBar>
+          </div>
         )}
-      </div>
       {connectMainRgNews ? <></> : <HomeNavBar />}
       {children}
     </div>

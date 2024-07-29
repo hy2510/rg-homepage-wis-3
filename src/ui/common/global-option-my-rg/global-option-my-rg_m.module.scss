@@ -239,8 +239,11 @@
   // margin-bottom: var(--space-l);
   padding: 0 var(--space-s);
   .student_info {
-    background-color: var(--blue);
-    padding: var(--space-m);
+    background-image: url('/src/images/@kids-dodo-abc/bg_item_bottom_1_dark.svg');
+    background-size: auto 75px;
+    background-position: center bottom;
+    // background-color: var(--blue);
+    padding: var(--space-s);
     position: relative;
     border-radius: var(--round-m) var(--round-m) 0 0;
     @media (prefers-color-scheme: dark) {
@@ -260,11 +263,33 @@
         font-weight: 600;
       }
     }
-    .user_avatar {
-      width: 120px;
-      height: 120px;
+    .current_reading_unit {
       position: absolute;
-      right: 10px;
+      bottom: 3px;
+      right: 23px;
+      z-index: 0;
+      transform: rotateY(180deg);
+      img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+    // .user_avatar {
+    //   width: 120px;
+    //   height: 120px;
+    //   position: absolute;
+    //   right: 10px;
+    //   bottom: 0;
+    //   img {
+    //     width: 100%;
+    //     height: auto;
+    //   }
+    // }
+    .user_avatar {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      right: 68px;
       bottom: 0;
       img {
         width: 100%;
@@ -406,6 +431,16 @@
 // 아바타 수정
 .choose_avatar {
   padding: var(--space-m);
+  display: grid;
+  gap: var(--space-s);
+  .txt_label {
+    font-size: var(--text-l);
+    font-weight: 600;
+  }
+  .txt_comment {
+    font-size: var(--text-s);
+    color: var(--gray1);
+  }
   .choose_avatar_container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

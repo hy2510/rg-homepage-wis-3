@@ -8,6 +8,7 @@ import { useStudentContinuousStudy } from '@/client/store/student/continuous-stu
 import { useStudentInfo } from '@/client/store/student/info/selector'
 import { AlertBar, EmptyMessage, Modal } from '@/ui/common/common-components'
 import { useStyle } from '@/ui/context/StyleContext'
+import StreakFireBig from '@/ui/modules/StreakFireBig'
 
 /** 연속 학습일 아이템은 최대 300일 까지만 획득 가능 */
 const CONTINUOUS_MAX_DAY = 300
@@ -144,7 +145,7 @@ export function StreakModal({
                   {t('t174')}
                   <span className="color-blue">{t('t171')}</span>
                 </div>
-                <div className={style.score}>
+                <div className={`${style.score} ${continuousDay > 0 ? style.active : ''} ${continuousDay > 0 ? 'heartbeat' : ''}`}>
                   <span>{continuousDay}</span>
                 </div>
                 <div className={style.txt_l}>

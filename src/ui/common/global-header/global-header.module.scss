@@ -12,6 +12,9 @@
   @media (prefers-color-scheme: dark) {
     background-color: #0c0541;
   }
+  &.dodo_abc {
+    background-color: #0c0541;
+  }
   .global_header_container {
     min-width: 1024px;
     height: var(--header-height);
@@ -129,7 +132,7 @@
       .month {
         width: 36px;
         // color: #65b6ff;
-        color: #00a0fd;
+        color: #006dad;
         font-size: var(--text-xxs);
         font-weight: 800;
         line-height: 8px;
@@ -141,7 +144,7 @@
       .today {
         width: 36px;
         // color: #65b6ff;
-        color: #00a0fd;
+        color: #006dad;
         font-size: var(--text-xs);
         font-weight: 800;
         line-height: 10px;
@@ -160,6 +163,37 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+  }
+  .streak {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    .txt_days {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 5px;
+      color: #006dad;
+      font-size: 0.85em;
+      font-weight: bold;
+      @media (prefers-color-scheme: dark) {
+        color: #0c0541;
+      }
+    }
+    img {
+      position: absolute;
+      top: calc(50% - 13px);
+      left: calc(50% - 13px);;
+      z-index: 1;
+      width: 26px;
+      height: 26px;
     }
   }
   .new_dot {

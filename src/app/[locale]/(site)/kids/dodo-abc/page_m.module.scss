@@ -1,0 +1,751 @@
+.kids_dodo_abc {
+    min-height: calc(100dvh - 80px);
+    background-color: #0c0541;
+    background-repeat: repeat-x, no-repeat;
+    background-position: top 30% center, bottom center;
+    background-attachment: fixed, fixed;
+    background-size: auto, contain;
+    position: relative;
+
+    &.alphabet {
+        background-image: url('/src/images/@kids-dodo-abc/stars01.png'), 
+        url('/src/images/@kids-dodo-abc/aplabet_bg.png');
+        // url('/src/images/@kids-dodo-abc/bg_item_bottom_1_dark_1.svg'),;
+        animation: moveBackground1 0.3s;
+        animation-fill-mode: forwards;
+    }
+    &.phonics_1 {
+        background-image: url('/src/images/@kids-dodo-abc/stars01.png'), 
+        url('/src/images/@kids-dodo-abc/phonics_1_bg.png');
+        animation: moveBackground2 0.3s;
+        animation-fill-mode: forwards;
+    }
+    &.phonics_2 {
+        background-image: url('/src/images/@kids-dodo-abc/stars01.png'), 
+        url('/src/images/@kids-dodo-abc/phonics_2_bg.png');
+        animation: moveBackground3 0.3s;
+        animation-fill-mode: forwards;
+    }
+    &.sight_word_1 {
+        background-image: url('/src/images/@kids-dodo-abc/stars01.png'), 
+        url('/src/images/@kids-dodo-abc/sight_word_1_bg.png');
+        animation: moveBackground4 0.3s;
+        animation-fill-mode: forwards;
+    }
+    &.sight_word_2 {
+        background-image: url('/src/images/@kids-dodo-abc/stars01.png'), 
+        url('/src/images/@kids-dodo-abc/sight_word_2_bg.png');
+        animation: moveBackground5 0.3s;
+        animation-fill-mode: forwards;
+    }
+    &.song_alphabet {
+        background-image: url('/src/images/@kids-dodo-abc/stars01.png'), 
+        url('/src/images/@kids-dodo-abc/song_alphabet_bg.png');
+        animation: moveBackground6 0.3s;
+        animation-fill-mode: forwards;
+    }
+    &.song_phonics {
+        background-image: url('/src/images/@kids-dodo-abc/stars01.png'), 
+        url('/src/images/@kids-dodo-abc/song_phonics_bg.png');
+        animation: moveBackground7 0.3s;
+        animation-fill-mode: forwards;
+    }
+    &.song_nulsery {
+        background-image: url('/src/images/@kids-dodo-abc/stars01.png'), 
+        url('/src/images/@kids-dodo-abc/song_nursery_bg.png');
+        animation: moveBackground8 0.3s;
+        animation-fill-mode: forwards;
+    }
+    &.game_alphabet {
+        background-image: url('/src/images/@kids-dodo-abc/stars01.png'), 
+        url('/src/images/@kids-dodo-abc/game_alphabet_bg.png');
+        animation: moveBackground9 0.3s;
+        animation-fill-mode: forwards;
+    }
+    &.game_phonics {
+        background-image: url('/src/images/@kids-dodo-abc/stars01.png'), 
+        url('/src/images/@kids-dodo-abc/game_phonics_bg.png');
+        animation: moveBackground10 0.3s;
+        animation-fill-mode: forwards;
+    }
+    &.game_sight_word_1 {
+        background-image: url('/src/images/@kids-dodo-abc/stars01.png'), 
+        url('/src/images/@kids-dodo-abc/game_sight_word_1_bg.png');
+        animation: moveBackground11 0.3s;
+        animation-fill-mode: forwards;
+    }
+    &.game_sight_word_2 {
+        background-image: url('/src/images/@kids-dodo-abc/stars01.png'), 
+        url('/src/images/@kids-dodo-abc/game_sight_word_2_bg.png');
+        animation: moveBackground12 0.3s;
+        animation-fill-mode: forwards;
+    }
+
+    @mixin moveBackground {
+        from {
+            background-position: 0 0, bottom center;
+            background-size: auto, auto 90%;
+        }
+        to {
+            background-position: 0 -3%, bottom center;
+            background-size: auto, auto 100%;
+        }
+    }
+
+    @keyframes moveBackground1 {
+        @include moveBackground()
+    }
+    @keyframes moveBackground2 {
+        @include moveBackground()
+    }
+    @keyframes moveBackground3 {
+        @include moveBackground()
+    }
+    @keyframes moveBackground4 {
+        @include moveBackground()
+    }
+    @keyframes moveBackground5 {
+        @include moveBackground()
+    }
+    @keyframes moveBackground6 {
+        @include moveBackground()
+    }
+    @keyframes moveBackground7 {
+        @include moveBackground()
+    }
+    @keyframes moveBackground8 {
+        @include moveBackground()
+    }
+    @keyframes moveBackground9 {
+        @include moveBackground()
+    }
+    @keyframes moveBackground10 {
+        @include moveBackground()
+    }
+    @keyframes moveBackground11 {
+        @include moveBackground()
+    }
+    @keyframes moveBackground12 {
+        @include moveBackground()
+    }
+
+    .nav {
+        display: flex;
+        gap: 15px;
+        color: #fff;
+        margin: 15px 0;
+        // background-color: #25074F;
+        &.items_center {
+            justify-content: center;
+        }
+        .nav_item {
+            cursor: pointer;
+            font-family: 'SDGdGulim', sans-serif;
+            font-size: 1.25em;
+            opacity: 0.2;
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+
+    .logo {
+        width: 100%;
+        height: 70px;
+        margin: auto;
+        background-image: url('/src/images/@kids-dodo-abc/logo.png');
+        background-repeat: no-repeat;
+        background-size: auto 70px;
+        background-position: center;
+        margin-top: 50px !important;
+    }
+
+    .book_list {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+        padding-bottom: 50px;
+    }
+
+    
+}
+
+.category {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    overflow-x: scroll;
+    .category_item {
+        cursor: pointer;
+        width: 100%;
+        min-width: 180px;
+        height: 120px;
+        background-color: rgba($color: #000, $alpha: 0.3);
+        border-radius: 20px;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        position: relative;
+        margin-top: 40px;
+        transition: all 0.2s;
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        &.active {
+            background-color: rgba($color: #fff, $alpha: 0.2);
+        }
+        // &:hover {
+        //     transform: scale(1.05);
+        // }
+        .img_land {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 30px;
+            height: 130px;
+            background-size: auto 110px;
+            background-repeat: no-repeat;
+            background-position: bottom center;
+            opacity: 0.5;
+            transition: all 0.2s;
+            &.active {
+                background-size: contain;
+                opacity: 1;
+            }
+            &.alphabet {
+                background-image: url('/src/images/@kids-dodo-abc/m_planet01.png');
+                &.active {
+                    background-image: url('/src/images/@kids-dodo-abc/m_planet01_active.png');
+                }
+            }
+            &.phonics_1 {
+                background-image: url('/src/images/@kids-dodo-abc/m_planet02.png');
+                &.active {
+                    background-image: url('/src/images/@kids-dodo-abc/m_planet02_active.png');
+                }
+            }
+            &.phonics_2 {
+                background-image: url('/src/images/@kids-dodo-abc/m_planet03.png');
+                &.active {
+                    background-image: url('/src/images/@kids-dodo-abc/m_planet03_active.png');
+                }
+            }
+            &.sight_word_1 {
+                background-image: url('/src/images/@kids-dodo-abc/m_planet04.png');
+                &.active {
+                    background-image: url('/src/images/@kids-dodo-abc/m_planet04_active.png');
+                }
+            }
+            &.sight_word_2 {
+                background-image: url('/src/images/@kids-dodo-abc/m_planet05.png');
+                &.active {
+                    background-image: url('/src/images/@kids-dodo-abc/m_planet05_active.png');
+                }
+            }
+        }
+        .txt_status {
+            color: #fff;
+            font-family: 'SDGdGulim', sans-serif;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.movie_thumbnail {
+    cursor: pointer;
+    min-height: 240px;
+    position: relative;
+    border-radius: 20px;
+    background-color: #FCAF17;
+    border: 4px solid #FF8E1F;
+    overflow: hidden;
+    .tag {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: fit-content;
+        border-radius: 0 0 20px 0;
+        height: 40px;
+        padding: 10px;
+        padding-right: 15px;
+        background-color: #FF8E1F;
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        .ico_movie {
+            width: 20px;
+            height: 20px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url('/src/images/@kids-dodo-abc/ico-film.svg');
+        }
+        .txt_tag {
+            font-size: 1.1em;
+            color: #472303;
+            font-family: 'SDGdGulim', sans-serif;
+        }                
+    }
+    .img_thumbnail {
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+.study_thumbnail {
+    cursor: pointer;
+    position: relative;
+    border-radius: 20px;
+    background-color: #25074F;
+    border: 4px solid #240444;
+    position: relative;
+    &.active {
+        background-color: #FCAF17;
+        border: 4px solid #FF8E1F;
+        .img_thumbnail {
+            border-radius: 18px 18px 0 0;
+            overflow: hidden;
+            img {
+                display: block;
+                width: 100%;
+                height: fit-content;
+                filter: grayscale(0);
+                opacity: 1;
+            }
+        }
+        .txt_study_title {
+            min-height: 60px;
+            padding: 15px;
+            font-family: 'SDGdGulim', sans-serif;
+            // font-size: 2.2em;
+            color: #472303;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn_download {
+            background-color: #472303;
+            opacity: 1;
+        }
+    }
+    &.passed {
+        background-color: #FF8E1F;
+    }
+    &.passed_all {
+        border: 4px solid #2CCD70 !important;
+    }
+    .ico_passed_1 {
+        width: 40px;
+        height: 40px;
+        background-image: url('/src/images/@kids-dodo-abc/passed_1.svg');
+        background-size: 40px;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 100px;
+        overflow: hidden;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        z-index: 1;
+    }
+    .ico_passed_all {
+        width: 40px;
+        height: 40px;
+        background-image: url('/src/images/@kids-dodo-abc/passed_all.svg');
+        background-size: 40px;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 100px;
+        overflow: hidden;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        z-index: 1;
+    }
+    .img_thumbnail {
+        border-radius: 18px 18px 0 0;
+        overflow: hidden;
+        img {
+            display: block;
+            width: 100%;
+            height: fit-content;
+            filter: grayscale(1);
+            opacity: 0.5;
+        }
+    }
+    .txt_study_title {
+        min-height: 60px;
+        padding: 15px;
+        font-family: 'SDGdGulim', sans-serif;
+        font-size: 1.5em;
+        color: rgba($color: #fff, $alpha: 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .btn_download {
+        width: 40px;
+        height: 40px;
+        // background-color: rgba($color: #fff, $alpha: 0.2);
+        background-color: #240444;
+        background-image: url('/src/images/@kids-dodo-abc/ico-download.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 100px;
+        position: absolute;
+        right: -10px;
+        bottom: -10px;
+        z-index: 1;
+        // opacity: 0.5;
+    }
+}
+
+.next_pick_bar {
+    height: 80px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 55px;
+    z-index: 2;
+    .container {
+        width: 100%;
+        max-width: 1280px;
+        height: 100%;
+        margin: auto;
+        background-color: #FCAF17;
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0 0 20px #0c0541;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+        .col_1 {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            .txt_label {
+                color: rgba($color: #fff, $alpha: 0.75);
+                font-family: 'SDGdGulim', sans-serif;
+                margin-bottom: 5px;
+            }
+            .txt_title {
+                color: #472303;
+                font-family: 'SDGdGulim', sans-serif;
+                font-size: 1.8em;
+            }
+        }
+        .col_2 {
+            .btn_start {
+                cursor: pointer;
+                width: 40px;
+                height: 40px;
+                background-color: #472303;
+                margin-right: 20px;
+                border-radius: 100px;
+                background-image: url('/src/images/@kids-dodo-abc/ico-arrow-right.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 30px;
+                transition: all 0.2s;
+                box-shadow: 0 2px 0 #231100;
+                &:active {
+                    transform: scale(0.95);
+                }
+            }
+        }
+    }
+}
+
+.song_category {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    overflow-x: scroll;
+    .category_item {
+        cursor: pointer;
+        min-width: 180px;
+        height: 120px;
+        background-color: rgba($color: #000, $alpha: 0.3);
+        border-radius: 20px;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        position: relative;
+        margin-top: 40px;
+        transition: all 0.2s;
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        &.active {
+            background-color: rgba($color: #fff, $alpha: 0.2);
+        }
+        &:hover {
+            transform: scale(1.05);
+        }
+        .img_land {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 30px;
+            height: 130px;
+            background-size: auto 110px;
+            background-repeat: no-repeat;
+            background-position: bottom center;
+            opacity: 0.5;
+            transition: all 0.2s;
+            &.active {
+                background-size: contain;
+                opacity: 1;
+            }
+            &.alphabet {
+                background-image: url('/src/images/@kids-dodo-abc/song_alpahbet_ctegory_off.png');
+                &.active {
+                    background-image: url('/src/images/@kids-dodo-abc/song_alpahbet_ctegory_on.png');
+                }
+            }
+            &.phonics {
+                background-image: url('/src/images/@kids-dodo-abc/song_phonics_ctegory_off.png');
+                &.active {
+                    background-image: url('/src/images/@kids-dodo-abc/song_phonics_ctegory_on.png');
+                }
+            }
+            &.nursery {
+                background-image: url('/src/images/@kids-dodo-abc/song_nursery_ctegory_off.png');
+                &.active {
+                    background-image: url('/src/images/@kids-dodo-abc/song_nursery_ctegory_on.png');
+                }
+            }
+        }
+        .txt_status {
+            color: #fff;
+            font-family: 'SDGdGulim', sans-serif;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.song_thumbnail {
+    cursor: pointer;
+    position: relative;
+    border-radius: 20px;
+    background-color: #ffa9c5;
+    border: 4px solid #e14477;
+    position: relative;
+    &.active {
+        .img_thumbnail {
+            border-radius: 18px 18px 0 0;
+            overflow: hidden;
+            img {
+                display: block;
+                width: 100%;
+                height: fit-content;
+                filter: grayscale(0);
+                opacity: 1;
+            }
+        }
+        .txt_study_title {
+            min-height: 60px;
+            padding: 15px;
+            font-family: 'SDGdGulim', sans-serif;
+            // font-size: 2.2em;
+            color: #472303;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    &.passed {
+        background-color: #ffa9c5;
+    }
+    .ico_passed_1 {
+        width: 40px;
+        height: 40px;
+        background-image: url('/src/images/@kids-dodo-abc/passed_1.svg');
+        background-size: 40px;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 100px;
+        overflow: hidden;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        z-index: 1;
+    }
+    .ico_passed_all {
+        width: 40px;
+        height: 40px;
+        background-image: url('/src/images/@kids-dodo-abc/passed_all.svg');
+        background-size: 40px;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 100px;
+        overflow: hidden;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        z-index: 1;
+    }
+    .img_thumbnail {
+        border-radius: 18px 18px 0 0;
+        overflow: hidden;
+        img {
+            display: block;
+            width: 100%;
+            height: fit-content;
+            filter: grayscale(1);
+            opacity: 0.5;
+        }
+    }
+    .txt_study_title {
+        min-height: 60px;
+        padding: 15px;
+        font-family: 'SDGdGulim', sans-serif;
+        font-size: 1.5em;
+        color: rgba($color: #fff, $alpha: 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.game_category {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    overflow-x: scroll;
+    .category_item {
+        cursor: pointer;
+        min-width: 180px;
+        height: 120px;
+        background-color: rgba($color: #000, $alpha: 0.3);
+        border-radius: 20px;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        position: relative;
+        margin-top: 40px;
+        transition: all 0.2s;
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        &.active {
+            background-color: rgba($color: #fff, $alpha: 0.2);
+        }
+        &:hover {
+            transform: scale(1.05);
+        }
+        .img_land {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 30px;
+            height: 130px;
+            background-size: auto 110px;
+            background-repeat: no-repeat;
+            background-position: bottom center;
+            opacity: 0.5;
+            transition: all 0.2s;
+            &.active {
+                background-size: contain;
+                opacity: 1;
+            }
+            &.alphabet {
+                background-image: url('/src/images/@kids-dodo-abc/game_alphabet_category.png');
+                &.active {
+                    background-image: url('/src/images/@kids-dodo-abc/game_alphabet_category.png');
+                }
+            }
+            &.phonics {
+                background-image: url('/src/images/@kids-dodo-abc/game_phonics_category.png');
+                &.active {
+                    background-image: url('/src/images/@kids-dodo-abc/game_phonics_category.png');
+                }
+            }
+            &.sight_word_1 {
+                background-image: url('/src/images/@kids-dodo-abc/game_sight_word_1_category.png');
+                &.active {
+                    background-image: url('/src/images/@kids-dodo-abc/game_sight_word_1_category.png');
+                }
+            }
+            &.sight_word_2 {
+                background-image: url('/src/images/@kids-dodo-abc/game_sight_word_2_category.png');
+                &.active {
+                    background-image: url('/src/images/@kids-dodo-abc/game_sight_word_2_category.png');
+                }
+            }
+        }
+        .txt_status {
+            color: #fff;
+            font-family: 'SDGdGulim', sans-serif;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.game_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding-bottom: 50px;
+}
+
+.game_thumbnail {
+    cursor: default;
+    position: relative;
+    border-radius: 20px;
+    border: 4px solid rgba($color: #fff, $alpha: 0.5);
+    background-color: #ffa9c5;
+    position: relative;
+    opacity: 0.5;
+    &.active {
+        cursor: pointer;
+        opacity: 1;
+        .img_thumbnail {
+            img {
+                display: block;
+                width: 100%;
+                height: fit-content;
+                filter: grayscale(0);
+                opacity: 1;
+            }
+        }
+    }
+    .ico_passed_1 {
+        width: 40px;
+        height: 40px;
+        background-image: url('/src/images/@kids-dodo-abc/passed_1.svg');
+        background-size: 40px;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 100px;
+        overflow: hidden;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        z-index: 1;
+    }
+    .ico_passed_all {
+        width: 40px;
+        height: 40px;
+        background-image: url('/src/images/@kids-dodo-abc/passed_all.svg');
+        background-size: 40px;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 100px;
+        overflow: hidden;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        z-index: 1;
+    }
+    .img_thumbnail {
+        border-radius: 18px;
+        overflow: hidden;
+        img {
+            display: block;
+            width: 100%;
+            height: fit-content;
+            filter: grayscale(1);
+            opacity: 0.8;
+        }
+    }
+}

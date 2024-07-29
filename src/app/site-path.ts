@@ -13,6 +13,10 @@ const HOME = {
   CUSTOMER_INTERVIEW: '/home/customer-review/interview',
   SNS_REVIEW: '/home/customer-review/sns',
   MEMBERSHIP_INTRODUCE: '/home/rg-membership/introduction',
+  MEMBERSHIP_PURCHASE: '/home/rg-membership/payment/purchase',
+  MEMBERSHIP_PURCHASE_VN: '/home/rg-membership/payment/purchase-vn',
+  MEMBERSHIP_PURCHASE_SCHOOL: '/home/rg-membership/payment/purchase-school',
+  MEMBERSHIP_PAYMENT_HISTORY: '/home/rg-membership/payment-history',
   MEMBERSHIP_REFUND_POLICY: '/home/rg-membership/refund-policy',
   MEMBERSHIP_SERVICE_TERM: '/home/rg-membership/terms-of-service',
   MEMBERSHIP_PRIVACY_POLICY: '/home/rg-membership/privacy-policy',
@@ -28,6 +32,10 @@ const ACCOUNT = {
   CHANGE_PASSWORD: '/account/change-password',
   PURCHASE_ANDROID: '/account/purchase/android',
   PURCHASE_IOS: '/account/purchase/ios',
+}
+const KIDS = {
+  DODO_ABC: '/kids/dodo-abc',
+  PRE_K: '/kids/prek',
 }
 const LIBRARY = {
   HOME: '/library',
@@ -45,6 +53,7 @@ const LIBRARY = {
   SERIES: '/library/series',
   THEME: '/library/theme',
   MOVIE_BOOK: '/library/movie-book',
+  KIDS: '/kids',
 }
 const REVIEW = {
   SIMPLE: '/review',
@@ -102,6 +111,7 @@ export function getValidatePath(path: string): string {
 const SITE_PATH = {
   HOME,
   ACCOUNT,
+  KIDS,
   LIBRARY,
   REVIEW,
   RANKING,

@@ -102,7 +102,7 @@ export const DetailedReportItem = ({
           style={{ backgroundColor: '#ccc' }}
         />
       </div>
-      <div className={`${style.report} ${isPassed ? style.pass : style.fail}`}>
+      <div className={`${style.report} ${isPassed ? earnPoints == 0 ? '' : style.pass : style.fail}`}>
         <div className={style.report_container}>
           <div className={style.col1}>
             <div className={style.book_code}>{bookCode}</div>
@@ -252,7 +252,8 @@ export const WritingReportItem = ({
           style={{ backgroundColor: '#ccc' }}
         />
       </div>
-      <div className={`${style.report} ${isPassed ? style.pass : style.fail}`}>
+      {/* <div className={`${style.report} ${isPassed ? style.pass : style.fail}`}> */}
+      <div className={style.report}>
         <div className={style.report_container}>
           <div className={style.col1}>
             <div className={style.book_code}>{bookCode}</div>

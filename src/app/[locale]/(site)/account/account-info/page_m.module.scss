@@ -152,11 +152,93 @@
       }
     }
     .body_contents {
-      padding: var(--space-m);
+      padding: var(--space-s);
       border-top: 2px solid var(--gray2);
       @media (prefers-color-scheme: dark) {
         border-top: 2px solid rgba($color: #ffffff, $alpha: 0.15);
       }
     }
+  }
+}
+
+.edit_phone_number {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  .row_1,
+  .row_2 {
+    position: relative;
+    .btn_edit {
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      gap: var(--space-m);
+      color: var(--gray1);
+      position: absolute;
+      top: calc(50% - 20px);
+      right: 15px;
+      font-size: var(--text-s);
+      -webkit-tap-highlight-color: transparent;
+      cursor: default;
+      .text_blue {
+        cursor: pointer;
+        color: var(--blue);
+      }
+    }
+  }
+  .txt_message {
+    font-size: var(--text-s);
+    color: var(--gray1);
+  }
+}
+
+.pause_subscription {
+  display: grid;
+  gap: var(--space-xs);
+  .row {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--gray3);
+    padding: var(--space-s);
+    border-radius: var(--round-m);
+    font-size: var(--text-s);
+    @media (prefers-color-scheme: dark) {
+      background-color: #00000030;
+    }
+    .txt_1 {
+      color: var(--gray1);
+    }
+    .txt_2 {
+      font-weight: 500;
+    }
+  }
+  .txt_p {
+    padding: var(--space-xs);
+    font-size: var(--text-s);
+  }
+  .btn_link {
+    cursor: pointer;
+    padding: var(--space-xs);
+    padding-top: 0;
+    font-size: var(--text-s);
+    color: var(--blue);
+    width: fit-content;
+    margin-left: auto;
+  }
+}
+
+.account_termination {
+  .txt_p {
+    padding: var(--space-xs);
+    font-size: var(--text-s);
+  }
+  .btn_link {
+    cursor: pointer;
+    padding: var(--space-xs);
+    padding-top: 0;
+    font-size: var(--text-s);
+    color: var(--gray1);
+    width: fit-content;
+    margin-left: auto;
   }
 }

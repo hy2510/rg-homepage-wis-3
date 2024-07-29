@@ -1,0 +1,617 @@
+.kids_top {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: auto;
+    position: relative;
+    .kids_top_nav {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 1;
+        width: calc(100% - 40px);
+        display: flex;
+        gap: 15px;
+        color: #fff;
+        &.items_center {
+            justify-content: center;
+        }
+        .nav_item {
+            cursor: pointer;
+            font-family: 'SDGdGulim', sans-serif;
+            font-size: 1.25em;
+            opacity: 0.2;
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.kids_prek {
+    min-height: calc(100dvh - 80px);
+    // background-color: #fff;
+    background-image: url('/src/images/@kids-prek/prek_bg.svg');
+    background-repeat: repeat-x;
+    background-position: top center;
+    background-attachment: fixed;
+    background-size: auto;
+    position: relative;
+    animation: linear 200s infinite cloud;
+    @keyframes cloud {
+        0% {
+        background-position: top -30px right 0;
+        }
+        100% {
+        background-position: top -30px right -5187px;
+        }
+    }
+    @media (prefers-color-scheme: dark) {
+        background-image: none;
+    }
+    .nav {
+        display: flex;
+        gap: 15px;
+        color: #2a4165;
+        margin: 15px 0;
+        &.items_center {
+            justify-content: center;
+        }
+        @media (prefers-color-scheme: dark) {
+            color: #fff;
+        }
+        .nav_item {
+            cursor: pointer;
+            font-family: 'SDGdGulim', sans-serif;
+            font-size: 1.25em;
+            opacity: 0.2;
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+    .logo {
+        width: 100%;
+        height: 100px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+        .img_logo {
+            width: 100%;
+            height: 100px;
+            position: absolute;
+            margin: auto;
+            background-image: url('/src/images/@kids-prek/logo.svg');
+            background-repeat: no-repeat;
+            background-size: auto 100px;
+            background-position: center;
+            animation: motion 1s linear 0s infinite alternate;
+            top: 0;
+            @keyframes motion {
+                0% {top: 0px;}
+                100% {top: 10px;}
+            }
+        }        
+        
+    }
+
+    .book_list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding-bottom: 50px;
+    }
+
+    
+}
+
+.category {
+    display: flex;
+    gap: 15px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    overflow-x: scroll;
+    .category_item {
+        cursor: pointer;
+        width: 100%;
+        min-width: 180px;
+        height: 100px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        transition: all 0.2s;
+        position: relative;
+        @media (prefers-color-scheme: dark) {
+            opacity: 0.7;
+        }
+        &.active {
+            opacity: 1;
+            &::after {
+                content: "";
+                width: 0;
+                height: 0;
+                position: absolute;
+                top: 100%;
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+            }
+            .txt_category_name {
+                // animation: heartbeat 2s ease-in-out infinite both;
+                animation: jello-horizontal 0.9s both;
+
+                @keyframes jello-horizontal {
+                0% {
+                    -webkit-transform: scale3d(1, 1, 1);
+                            transform: scale3d(1, 1, 1);
+                }
+                30% {
+                    -webkit-transform: scale3d(1.25, 0.75, 1);
+                            transform: scale3d(1.25, 0.75, 1);
+                }
+                40% {
+                    -webkit-transform: scale3d(0.75, 1.25, 1);
+                            transform: scale3d(0.75, 1.25, 1);
+                }
+                50% {
+                    -webkit-transform: scale3d(1.15, 0.85, 1);
+                            transform: scale3d(1.15, 0.85, 1);
+                }
+                65% {
+                    -webkit-transform: scale3d(0.95, 1.05, 1);
+                            transform: scale3d(0.95, 1.05, 1);
+                }
+                75% {
+                    -webkit-transform: scale3d(1.05, 0.95, 1);
+                            transform: scale3d(1.05, 0.95, 1);
+                }
+                100% {
+                    -webkit-transform: scale3d(1, 1, 1);
+                            transform: scale3d(1, 1, 1);
+                }
+                }
+
+            }
+        }
+        &.alphabet {
+            background-color: #D9EFDA;
+            &.active {
+                background-color: #3FAE45;
+                &::after {
+                    border-top: 15px solid #3FAE45;
+                }
+                .txt_category_name {
+                    color: #fff;
+                }
+                .txt_status {
+                    color: #D9EFDA;
+                }
+                
+            }
+            .txt_category_name {
+                color: #3FAE45;
+            }
+            .txt_status {
+                color: #3FAE45;
+            }
+        }
+        &.phonics {
+            background-color: #EAF4FA;
+            &::after {
+                border-top: 15px solid #2B93D2;
+            }
+            &.active {
+                background-color: #2B93D2;
+                .txt_category_name {
+                    color: #fff;
+                }
+                .txt_status {
+                    color: #EAF4FA;
+                }
+            }
+            .txt_category_name {
+                color: #2B93D2;
+            }
+            .txt_status {
+                color: #2B93D2;
+            }
+        }
+        &.word {
+            background-color: #FFF6E5;
+            &::after {
+                border-top: 15px solid #FEA500;
+            }
+            &.active {
+                background-color: #FEA500;
+                .txt_category_name {
+                    color: #fff;
+                }
+                .txt_status {
+                    color: #FFF6E5;
+                }
+            }
+            .txt_category_name {
+                color: #FEA500;
+            }
+            .txt_status {
+                color: #FEA500;
+            }
+        }
+        &.story {
+            background-color: #FCE7E7;
+            &::after {
+                border-top: 15px solid #E31313;
+            }
+            &.active {
+                background-color: #E31313;
+                .txt_category_name {
+                    color: #fff;
+                }
+                .txt_status {
+                    color: #FCE7E7;
+                }
+            }
+            .txt_category_name {
+                color: #E31313;
+            }
+            .txt_status {
+                color: #E31313;
+            }
+        }
+        // &:hover {
+        //     transform: scale(1.05);
+        // }
+        .txt_category_name {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.8em;
+            margin-top: 10px;
+        }
+        .txt_status {
+            font-family: 'SDGdGulim', sans-serif;
+            font-size: 1em;
+        }
+    }
+}
+
+.study_thumbnail {
+    cursor: pointer;
+    position: relative;
+    border-radius: 20px;
+    background-color: #25074F;
+    border: 4px solid #240444;
+    position: relative;
+    &.active {
+        background-color: #fad92c;
+        border: 4px solid #FCAF17;
+        .img_thumbnail {
+            border-radius: 18px 18px 0 0;
+            overflow: hidden;
+            height: 200px;
+            img {
+                display: block;
+                width: 100%;
+                filter: grayscale(0);
+                opacity: 1;
+            }
+        }
+        .txt_study_title {
+            min-height: 40px;
+            padding: 15px;
+            font-family: 'SDGdGulim', sans-serif;
+            color: #472303;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn_download {
+            background-color: #472303;
+            opacity: 1;
+        }
+    }
+    &.passed {
+        background-color: #FF8E1F;
+    }
+    &.passed_all {
+        border: 4px solid #2CCD70 !important;
+    }
+    .ico_passed_1 {
+        width: 40px;
+        height: 40px;
+        background-image: url('/src/images/@kids-dodo-abc/passed_1.svg');
+        background-size: 40px;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 100px;
+        overflow: hidden;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        z-index: 1;
+    }
+    .ico_passed_all {
+        width: 40px;
+        height: 40px;
+        background-image: url('/src/images/@kids-dodo-abc/passed_all.svg');
+        background-size: 40px;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 100px;
+        overflow: hidden;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        z-index: 1;
+    }
+    .img_thumbnail {
+        border-radius: 18px 18px 0 0;
+        overflow: hidden;
+        img {
+            display: block;
+            width: 100%;
+            height: fit-content;
+            filter: grayscale(1);
+            opacity: 0.5;
+        }
+    }
+    .txt_study_title {
+        min-height: 60px;
+        padding: 15px;
+        font-family: 'SDGdGulim', sans-serif;
+        font-size: 1em;
+        color: rgba($color: #fff, $alpha: 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .btn_download {
+        width: 40px;
+        height: 40px;
+        // background-color: rgba($color: #fff, $alpha: 0.2);
+        background-color: #240444;
+        background-image: url('/src/images/@kids-dodo-abc/ico-download.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 100px;
+        position: absolute;
+        right: -15px;
+        bottom: -15px;
+        z-index: 1;
+        // opacity: 0.5;
+    }
+}
+
+.next_pick_bar {
+    height: 80px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 55px;
+    z-index: 2;
+    .container {
+        width: 100%;
+        max-width: 1280px;
+        height: 100%;
+        margin: auto;
+        background-color: #3FAE45;
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0 0 10px #00000090;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+        .col_1 {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            .txt_label {
+                color: rgba($color: #fff, $alpha: 0.75);
+                font-family: 'SDGdGulim', sans-serif;
+                margin-bottom: 5px;
+            }
+            .txt_title {
+                color: #fff;
+                font-family: 'SDGdGulim', sans-serif;
+                font-size: 1.8em;
+            }
+        }
+        .col_2 {
+            .btn_start {
+                cursor: pointer;
+                width: 40px;
+                height: 40px;
+                background-color: #E31313;
+                margin-right: 20px;
+                border-radius: 100px;
+                box-shadow: 0 2px 0 #670808;
+                background-image: url('/src/images/@kids-dodo-abc/ico-arrow-right.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 30px;
+                transition: all 0.2s;
+                &:active {
+                    transform: scale(0.95);
+                }
+            }
+        }
+    }
+}
+
+.song_category {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    .category_item {
+        cursor: pointer;
+        width: 100%;
+        height: 120px;
+        background-color: rgba($color: #000, $alpha: 0.3);
+        border-radius: 20px;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        position: relative;
+        margin-top: 40px;
+        transition: all 0.2s;
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        &.active {
+            background-color: rgba($color: #fff, $alpha: 0.2);
+        }
+        &:hover {
+            transform: scale(1.05);
+        }
+        .img_land {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 30px;
+            height: 130px;
+            background-size: auto 110px;
+            background-repeat: no-repeat;
+            background-position: bottom center;
+            opacity: 0.5;
+            transition: all 0.2s;
+            &.active {
+                background-size: contain;
+                opacity: 1;
+            }
+            &.alphabet {
+                background-image: url('/src/images/@kids-dodo-abc/song_alpahbet_ctegory_off.png');
+                &.active {
+                    background-image: url('/src/images/@kids-dodo-abc/song_alpahbet_ctegory_on.png');
+                }
+            }
+            &.phonics {
+                background-image: url('/src/images/@kids-dodo-abc/song_phonics_ctegory_off.png');
+                &.active {
+                    background-image: url('/src/images/@kids-dodo-abc/song_phonics_ctegory_on.png');
+                }
+            }
+            &.nursery {
+                background-image: url('/src/images/@kids-dodo-abc/song_nursery_ctegory_off.png');
+                &.active {
+                    background-image: url('/src/images/@kids-dodo-abc/song_nursery_ctegory_on.png');
+                }
+            }
+        }
+        .txt_status {
+            color: #fff;
+            font-family: 'SDGdGulim', sans-serif;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.song_thumbnail {
+    cursor: pointer;
+    position: relative;
+    border-radius: 20px;
+    background-color: #ffa9c5;
+    border: 4px solid #e14477;
+    height: 100%;
+    min-height: 220px;
+    &.active {
+        .img_thumbnail {
+            border-radius: 18px 18px 0 0;
+            overflow: hidden;
+            img {
+                display: block;
+                width: 100%;
+                height: fit-content;
+                filter: grayscale(0);
+                opacity: 1;
+            }
+        }
+        .txt_study_title {
+            min-height: 60px;
+            padding: 15px;
+            font-family: 'SDGdGulim', sans-serif;
+            // font-size: 2.2em;
+            color: #472303;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    &.passed {
+        background-color: #ffa9c5;
+    }
+    .ico_passed_1 {
+        width: 40px;
+        height: 40px;
+        background-image: url('/src/images/@kids-dodo-abc/passed_1.svg');
+        background-size: 40px;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 100px;
+        overflow: hidden;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        z-index: 1;
+    }
+    .ico_passed_all {
+        width: 40px;
+        height: 40px;
+        background-image: url('/src/images/@kids-dodo-abc/passed_all.svg');
+        background-size: 40px;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 100px;
+        overflow: hidden;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        z-index: 1;
+    }
+    .img_thumbnail {
+        border-radius: 18px 18px 0 0;
+        overflow: hidden;
+        img {
+            display: block;
+            width: 100%;
+            height: fit-content;
+            filter: grayscale(1);
+            opacity: 0.5;
+        }
+    }
+    .txt_study_title {
+        min-height: 60px;
+        padding: 15px;
+        font-family: 'SDGdGulim', sans-serif;
+        font-size: 1.5em;
+        color: rgba($color: #fff, $alpha: 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .btn_download {
+        width: 40px;
+        height: 40px;
+        // background-color: rgba($color: #fff, $alpha: 0.2);
+        background-color: #240444;
+        background-image: url('/src/images/@kids-dodo-abc/ico-download.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 100px;
+        position: absolute;
+        right: -10px;
+        bottom: -10px;
+        z-index: 1;
+        // opacity: 0.5;
+    }
+}
+
+.song_book_list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    padding-bottom: 50px;
+    margin-top: 40px;
+}
+

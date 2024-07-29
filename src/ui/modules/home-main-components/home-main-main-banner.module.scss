@@ -4,11 +4,14 @@
     @media screen and (max-width: 1024px) {
       height: 280px;
     }
-    @media (min-width: 1025px) and (max-width: 1180px) {
-      height: 320px;
-    }
-    @media (min-width: 1181px) {
-      height: 360px;
+    // @media (min-width: 1025px) and (max-width: 1180px) {
+    //   height: 320px;
+    // }
+    // @media (min-width: 1181px) {
+    //   height: 360px;
+    // }
+    @media (min-width: 1025px) {
+      height: 300px;
     }
   }
   @media (orientation: portrait) {

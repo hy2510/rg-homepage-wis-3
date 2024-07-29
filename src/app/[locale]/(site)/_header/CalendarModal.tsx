@@ -611,13 +611,15 @@ const CalendarDetailDay = ({
     )
   }
   return (
-    <div className={style.cal_item}>
+    <div className={`${style.cal_item} ${isSuccess && style.goal}`}>
       <div className={style.date}>{day}</div>
       <div className={style.result}>
         <div
           className={`${style.passed} ${type === 'passed' && book > 0 ? style.active : ''} ${
             style.goal
-          }`}>
+          }`}
+          style={{opacity: `${book || point == 0 && 0}`}}
+          >
           {type === 'passed' && (
             <Image
               alt={''}
@@ -639,7 +641,9 @@ const CalendarDetailDay = ({
         <div
           className={`${style.earn_point} ${type === 'point' && point > 0.0 ? style.active : ''} ${
             style.goal
-          }`}>
+          }`}
+          style={{opacity: `${book || point == 0 && 0}`}}
+          >
           {type === 'point' && (
             <Image
               alt={''}

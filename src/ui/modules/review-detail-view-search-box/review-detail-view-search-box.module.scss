@@ -11,35 +11,106 @@
     border: 2px solid rgba(255, 255, 255, 0.15);
     background-color: #0c0541;
   }
-  .column1 {
+  .search_type {
     display: flex;
-    gap: var(--space-m);
-    .period {
+    align-items: center;
+    gap: var(--space-xs);
+    .txt_label {
+      font-size: var(--text-s);
+      font-weight: 500;
+    }
+    .column1 {
       display: flex;
-      align-items: center;
-      gap: var(--space-xs);
-      .start_date,
-      .end_date {
-        min-height: 50px;
-        border: 2px solid var(--gray2);
-        border-radius: var(--round-m);
-        background-color: var(--white);
-        padding: var(--space-xxs);
-        overflow: hidden;
-        @media (prefers-color-scheme: dark) {
-          background-color: transparent;
+      gap: var(--space-m);
+      .period {
+        display: flex;
+        align-items: center;
+        gap: var(--space-xs);
+        .start_date,
+        .end_date {
+          min-height: 50px;
+          border: 2px solid var(--gray2);
+          border-radius: var(--round-m);
+          background-color: var(--white);
+          padding: var(--space-xxs);
+          overflow: hidden;
+          @media (prefers-color-scheme: dark) {
+            background-color: transparent;
+          }
+        }
+        .start_date {
+          &.deactive {
+            cursor: pointer;
+            background-color: transparent;
+            position: relative;
+            @media (prefers-color-scheme: dark) {
+              border: 2px solid rgba(255, 255, 255, 0.15);
+            }
+            &::after {
+              content: 'Start Date';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              -webkit-backdrop-filter: blur(100px);
+              backdrop-filter: blur(100px);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: var(--text-xs);
+              font-weight: 500;
+              color: var(--gray1);
+            }
+          }
+        }
+        .end_date {
+          &.deactive {
+            cursor: pointer;
+            background-color: transparent;
+            position: relative;
+            @media (prefers-color-scheme: dark) {
+              border: 2px solid rgba(255, 255, 255, 0.15);
+            }
+            &::after {
+              content: 'All Dates';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              -webkit-backdrop-filter: blur(100px);
+              backdrop-filter: blur(100px);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: var(--text-xs);
+              font-weight: 500;
+              color: var(--gray1);
+            }
+          }
         }
       }
-    }
-    .search_bar {
-      min-height: 50px;
-      display: flex;
-      padding: var(--space-xxs) var(--space-xs);
-      border-radius: var(--round-m);
-      border: 2px solid var(--gray2);
-      input {
-        background-color: transparent;
-        font-size: var(--text-s);
+      .search_bar {
+        min-height: 50px;
+        display: flex;
+        padding: var(--space-xxs) var(--space-xs);
+        border-radius: var(--round-m);
+        border: 2px solid var(--gray2);
+        @media (prefers-color-scheme: dark) {
+          border: 2px solid rgba(255, 255, 255, 0.15);
+        }
+        &.active {
+          background-color: var(--white);
+          @media (prefers-color-scheme: dark) {
+            background-color: transparent;
+            border: 2px solid var(--white);
+          }
+        }
+        input {
+          background-color: transparent;
+          font-size: var(--text-s);
+        }
       }
     }
   }
@@ -61,7 +132,7 @@
     .button_text {
       font-size: var(--text-d-1);
       font-weight: 500;
-      margin-bottom: 3px;
+      // margin-bottom: 3px;
       margin-right: var(--space-s);
       color: var(--white);
     }

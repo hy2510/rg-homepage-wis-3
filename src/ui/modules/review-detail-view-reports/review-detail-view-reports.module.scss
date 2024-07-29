@@ -32,6 +32,11 @@
     bottom: 0;
     border-radius: 0 0 var(--round-m) var(--round-l);
     z-index: 0;
+    border-top: 2px solid var(--gray2);
+    background-color: var(--gray3);
+    @media (prefers-color-scheme: dark) {
+      background-color: #00000020;
+    }
     &.pass {
       background-color: var(--light);
       border-top: 2px solid var(--blue);
@@ -197,6 +202,11 @@
     bottom: 0;
     border-radius: 0 0 var(--round-m) var(--round-l);
     z-index: 0;
+    border-top: 2px solid var(--gray2);
+    background-color: var(--gray3);
+    @media (prefers-color-scheme: dark) {
+      background-color: #00000020;
+    }
     &.pass {
       background-color: var(--light);
       border-top: 2px solid var(--blue);

@@ -225,6 +225,29 @@ export default function Page() {
             saveMessage={t('t197')}
           />
           {/* 전화번호가 없는 경우 */}
+
+          {/* 전화번호를 변경할 경우 */}
+          <div className={style.edit_phone_number}>
+            <div className={style.row_1}>
+              <div className={style.btn_edit}>
+                <div className={style.text_blue}>
+                  인증번호 받기
+                </div>
+              </div>
+              <TextField
+                hint={'변경할 전화번호 (- 없이 입력)'}
+                password
+              />
+            </div>
+            <div className={style.txt_message}>* 입력한 전화번호로 인증번호를 발송했습니다.</div>
+            <div className={style.row_2}>
+              <div className={style.btn_edit}>
+                <div className={style.text_blue}>입력</div>
+              </div>
+              <TextField hint={'인증번호 입력 (10:00)'} />
+            </div>
+            <div className={style.txt_message}>* 입력한 인증번호가 정확하지 않습니다. 올바른 인증번호를 입력해 주세요.</div>
+          </div>
         </div>
         <div className={style.check}>
           {/* 전화번호가 없는 경우 체크박스를 눌렀을 때 경고창 출력: 학습 리포트, 소식 등 알림을 받으려면 수신할 휴대전화번호가 필요합니다. 연락처 칸에서 휴대전화번호를 등록해 주세요. [확인] */}
@@ -242,9 +265,9 @@ export default function Page() {
           </span>
         </div>
         <div className={style.accordion_box}>
-          <AccordionItem headerContents={t('t199')} bodyContents={'-'} />
-          <AccordionItem headerContents={t('t200')} bodyContents={'-'} />
-          <AccordionItem headerContents={t('t201')} bodyContents={'-'} />
+          {/* <AccordionItem headerContents={t('t199')} bodyContents={'-'} /> */}
+          <AccordionItem headerContents={t('t200')} bodyContents={<PauseSubscription />} />
+          <AccordionItem headerContents={t('t201')} bodyContents={<AccountTermination />} />
         </div>
 
         <div>
@@ -398,7 +421,7 @@ const AccordionItem = ({
   bodyContents,
 }: {
   headerContents?: string
-  bodyContents?: string
+  bodyContents?: any
 }) => {
   const style = useStyle(STYLE_ID)
 
@@ -418,4 +441,40 @@ const AccordionItem = ({
       <div className={style.body_contents}>{bodyContents}</div>
     </div>
   )
+}
+
+// 학습 일시중지
+const PauseSubscription = () => {
+  const style = useStyle(STYLE_ID)
+  
+  return <>
+    <div className={style.pause_subscription}>
+      <div className={style.row}>
+        <div className={style.txt_1}>학습 상태</div>
+        <div className={style.txt_2}>Study in progress</div>
+      </div>
+      <div className={style.row}>
+        <div className={style.txt_1}>일시중지 횟수</div>
+        <div className={style.txt_2}>0/3</div>
+      </div>
+      <div className={style.row}>
+        <div className={style.txt_1}>일시중지 기간</div>
+        <div className={style.txt_2}>-</div>
+      </div>
+      <div className={style.txt_p}>학습 일시 중지는 연 3회까지 사용할 수 있습니다(신청 당일은 해지 불가) 1회 신청 시 30일간 잔여 학습일 수 차감을 막을 수 있으며, 일시 중지 기간 안에 해지할 수도 있습니다. (단, 학습 일시 중지 신청 당일은 해지가 안 됩니다)</div>
+      <div className={style.btn_link}>30일 일시중지 신청</div>
+    </div>
+  </>
+}
+
+// 회원 탈퇴
+const AccountTermination = () => {
+  const style = useStyle(STYLE_ID)
+
+  return <>
+    <div className={style.account_termination}>
+      <div className={style.txt_p}>회원 탈퇴를 하면 계정이 완전히 삭제되어 학습 기록이 모두 사라지니 주의해 주세요. 결제 기간이 남아 있는 경우에는 회원 탈퇴가 불가능하니, 탈퇴를 진행하려면 고객센터에 문의해 주세요.</div>
+      <div className={style.btn_link} onClick={() => {alert('결제한 기간이 남아있습니다.')}}>회원 탈퇴</div>
+    </div>
+  </>
 }

@@ -114,6 +114,14 @@ import page_rg_news_m from '@/app/[locale]/(site)/home/main/rg-news/page_m.modul
 import page_home from '@/app/[locale]/(site)/home/page.module.scss'
 import page_home_m from '@/app/[locale]/(site)/home/page_m.module.scss'
 import page_rg_membership from '@/app/[locale]/(site)/home/rg-membership/page.module.scss'
+import page_purchase from '@/app/[locale]/(site)/home/rg-membership/payment/purchase/page.module.scss'
+import page_purchase_m from '@/app/[locale]/(site)/home/rg-membership/payment/purchase/page_m.module.scss'
+import page_purchase_vn from '@/app/[locale]/(site)/home/rg-membership/payment/purchase-vn/page.module.scss'
+import page_purchase_vn_m from '@/app/[locale]/(site)/home/rg-membership/payment/purchase-vn/page_m.module.scss'
+import page_purchase_school from '@/app/[locale]/(site)/home/rg-membership/payment/purchase-school/page.module.scss'
+import page_purchase_school_m from '@/app/[locale]/(site)/home/rg-membership/payment/purchase-school/page_m.module.scss'
+import page_payment_history from '@/app/[locale]/(site)/home/rg-membership/payment-history/page.module.scss'
+import page_payment_history_m from '@/app/[locale]/(site)/home/rg-membership/payment-history/page_m.module.scss'
 import page_favorite from '@/app/[locale]/(site)/library/assignment/favorite/page.module.scss'
 import page_favorite_m from '@/app/[locale]/(site)/library/assignment/favorite/page_m.module.scss'
 import page_to_do from '@/app/[locale]/(site)/library/assignment/to-do/page.module.scss'
@@ -156,6 +164,10 @@ import page_detailed_view_m from '@/app/[locale]/(site)/review/detailed-view/pag
 import page_trial from '@/app/[locale]/(site)/trial/page.module.scss'
 import page_level_master_board from '@/app/[locale]/(site)/ranking/level-master-board/page.module.scss'
 import page_level_master_board_m from '@/app/[locale]/(site)/ranking/level-master-board/page_m.module.scss'
+import page_kids_dodo_abc from '@/app/[locale]/(site)/kids/dodo-abc/page.module.scss'
+import page_kids_dodo_abc_m from '@/app/[locale]/(site)/kids/dodo-abc/page_m.module.scss'
+import page_kids_prek from '@/app/[locale]/(site)/kids/prek/page.module.scss'
+import page_kids_prek_m from '@/app/[locale]/(site)/kids/prek/page_m.module.scss'
 
 export type CssStyle = { readonly [key: string]: string }
 export default function findStyle(id: string): {
@@ -207,6 +219,14 @@ export default function findStyle(id: string): {
       return { pc: page_home, mobile: page_home_m }
     case 'page_rg_membership':
       return { pc: page_rg_membership, mobile: undefined }
+    case 'page_purchase':
+      return { pc: page_purchase, mobile: page_purchase_m }
+    case 'page_purchase_vn':
+      return { pc: page_purchase_vn, mobile: page_purchase_vn_m }
+    case 'page_purchase_school':
+      return { pc: page_purchase_school, mobile: page_purchase_school_m }
+    case 'page_payment_history':
+      return { pc: page_payment_history, mobile: page_payment_history_m }
     case 'page_favorite':
       return { pc: page_favorite, mobile: page_favorite_m }
     case 'page_to_do':
@@ -356,6 +376,10 @@ export default function findStyle(id: string): {
       return { pc: quick_view_reports, mobile: quick_view_reports_m }
     case 'page_level_master_board':
       return { pc: page_level_master_board, mobile: page_level_master_board_m }
+    case 'page_kids_dodo_abc':
+      return { pc: page_kids_dodo_abc, mobile: page_kids_dodo_abc_m }
+    case 'page_kids_prek':
+      return { pc: page_kids_prek, mobile: page_kids_prek_m }
     default:
       throw new Error('CSS Index Not Found.')
   }

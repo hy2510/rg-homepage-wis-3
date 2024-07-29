@@ -20,6 +20,8 @@ import { MyRgModal } from './MyRgModal'
 import { NoticeModal } from './NoticeModal'
 import { QuestModal } from './QuestModal'
 import { StreakModal } from './StreakModal'
+import { useStudentContinuousStudy } from '@/client/store/student/continuous-study/selector'
+import StreakFire from '@/ui/modules/StreakFire'
 
 const STYLE_ID = 'global_header'
 
@@ -54,6 +56,18 @@ const MENU = {
     mobileDarkIconOn: '/src/images/@global-header/trial_on_mobile_white.svg',
     mobileDarkIconOff: '/src/images/@global-header/trial_off_mobile_white.svg',
     name: '체험',
+  },
+  kids: {
+    key: '/kids',
+    href: SITE_PATH.KIDS.DODO_ABC,
+    icon: '/src/images/@global-header/kids.svg',
+    mobileIconOn: '/src/images/@global-header/kids_m_on.svg',
+    mobileIconOff: '/src/images/@global-header/kids_m_off.svg',
+    mobileDarkIconOn:
+      '/src/images/@global-header/kids_m_on_white.svg',
+    mobileDarkIconOff:
+      '/src/images/@global-header/kids_m_off_white.svg',
+    name: '기초',
   },
   study: {
     key: '/library',
@@ -126,7 +140,7 @@ export default function Gheader() {
   }
   return (
     <>
-      <div className={style.global_header}>
+      <div className={`${style.global_header} ${pathname.indexOf(MENU.kids.href) != -1 && style.dodo_abc}`}>
         <div className={`${style.global_header_container} container`}>
           <div className={style.company_logo}>
             <a href={SITE_PATH.HOME.MAIN}>
@@ -228,15 +242,17 @@ function GnbLogOn({
       {!isMobile && (
         <div className={style.gnb_log_off}>
           <GnbButton
-            active={pathname.indexOf(MENU.home.key) != -1}
-            imgSrc={MENU.home.icon}
-            menuName={t('t028')}
-            href={MENU.home.href}
-          />
+            active={pathname.indexOf(MENU.kids.key) != -1}
+            imgSrc={MENU.kids.icon}
+            // menuName={t('t028')}
+            menuName={'기초'}
+            href={MENU.kids.href}
+          />  
           <GnbButton
             active={pathname.indexOf(MENU.study.key) != -1}
             imgSrc={MENU.study.icon}
-            menuName={t('t031')}
+            // menuName={t('t031')}
+            menuName={'도서'}
             href={MENU.study.href}
           />
           <GnbButton
@@ -254,6 +270,12 @@ function GnbLogOn({
         </div>
       )}
       <div className={style.option_buttons}>
+        {/* <OptionButton
+            imgSrc="/src/images/@global-header/refresh.svg"
+            onClick={() => {
+              location.reload();
+            }}
+        /> */}
         <OptionButton
           isCalendar
           onClick={() => {
@@ -261,7 +283,7 @@ function GnbLogOn({
           }}
         />
         <OptionButton
-          imgSrc="/src/images/@global-header/streak.svg"
+          isStreak
           onClick={() => {
             onClick('streak')
           }}
@@ -316,7 +338,7 @@ const GnbLogOnMobile = ({ pathname }: { pathname: string }) => {
 
   return (
     <div className={style.gnb_log_on_mobile}>
-      <MenuButton
+      {/* <MenuButton
         active={pathname.indexOf(MENU.home.key) != -1}
         imgSrcBtnOff={
           isDarkMode ? MENU.home.mobileDarkIconOff : MENU.home.mobileIconOff
@@ -326,6 +348,17 @@ const GnbLogOnMobile = ({ pathname }: { pathname: string }) => {
         }
         name={t('t028')}
         href={MENU.home.href}
+      /> */}
+      <MenuButton
+        active={pathname.indexOf(MENU.kids.key) != -1}
+        imgSrcBtnOff={
+          isDarkMode ? MENU.kids.mobileDarkIconOff : MENU.kids.mobileIconOff
+        }
+        imgSrcBtnOn={
+          isDarkMode ? MENU.kids.mobileDarkIconOn : MENU.kids.mobileIconOn
+        }
+        name={'기초'}
+        href={MENU.kids.href}
       />
       <MenuButton
         active={pathname.indexOf(MENU.study.key) != -1}
@@ -335,7 +368,8 @@ const GnbLogOnMobile = ({ pathname }: { pathname: string }) => {
         imgSrcBtnOn={
           isDarkMode ? MENU.study.mobileDarkIconOn : MENU.study.mobileIconOn
         }
-        name={t('t031')}
+        // name={t('t031')}
+        name={'도서'}
         href={MENU.study.href}
       />
       <SearchButton
@@ -492,12 +526,14 @@ const GnbButton = ({
 // 옵션 버튼
 const OptionButton = ({
   isCalendar,
+  isStreak,
   isAvatar,
   isNotice,
   onClick,
   imgSrc = '',
 }: {
   isCalendar?: boolean
+  isStreak?: boolean
   isAvatar?: boolean
   isNotice?: boolean
   onClick: () => void
@@ -523,6 +559,8 @@ const OptionButton = ({
   ]
   const mon = monthNames[date.getMonth()]
 
+  const continuousDay = useStudentContinuousStudy()
+
   return (
     <>
       {isCalendar ? (
@@ -540,6 +578,22 @@ const OptionButton = ({
                 height={36}
               />
             </div>
+          </div>
+        </div>
+      ) : isStreak ? (
+        <div className={style.option_button} onClick={onClick}>
+          <div className={style.streak}>
+            { continuousDay == 0 ? <>
+                <div className={style.txt_days}></div>
+                <Image alt="" src={'/src/images/@global-header/streak.svg'} width={26} height={26} />
+              </>   
+              : <>
+                {continuousDay > 5000 ? <div className={style.txt_days} style={{color: '#fff'}}>Max</div> : <div className={style.txt_days} style={{color: '#fff'}}>{continuousDay}</div>}
+                <StreakFire />
+                {/* <Image alt="" src={'/src/images/@global-header/streak_on.svg'} className='heartbeat' width={26} height={26} /> */}
+              </>
+            }
+            
           </div>
         </div>
       ) : isAvatar ? (

@@ -40,6 +40,8 @@ import { useStudentTodayStudy } from '@/client/store/student/today-study/selecto
 import {
   AlertBar,
   Button,
+  Dropdown,
+  DropdownItem,
   EmptyMessage,
   Modal,
   Nav,
@@ -664,7 +666,7 @@ const MyRgEtc = ({
             width={50}
             height={50}
           />
-          <div className={style.txt_l}>WB MP3</div>
+          <div className={style.txt_l}>Workbook</div>
         </div>
         { viewPreKMp3Menu &&
             <div className={style.menu}>
@@ -798,8 +800,12 @@ const TotalStudyScore = ({
         <div className={style.student_name}>
           <div className={style.txt_l}>{studentName}</div>
         </div>
+        {/* 내 리딩유닛 */}
+        <div className={style.current_reading_unit}>
+          <Image alt="" src={'https://wcfresource.a1edu.com/newsystem/image/character/subcharacter/chello_17.png'} width={100} height={100} />
+        </div>
         <div className={style.user_avatar}>
-          <Image alt="" src={userAvatar} width={150} height={150} />
+          <Image alt="" src={userAvatar} width={100} height={100} />
         </div>
         <div className={style.edit_button} onClick={onClick}>
           <Image
@@ -980,6 +986,13 @@ export function ChooseAvatar({
   }
   return (
     <div className={style.choose_avatar}>
+      <div className={style.txt_label}>학습 캐릭터</div>
+      <div className={style.txt_comment}>{`학습 캐릭터는 '퀘스트'에서 새로운 친구의 스토리를 잠금 해제할 때마다 자동으로 추가 됩니다.`}</div>
+      <SelectBox>
+        <SelectBoxItem>Baro</SelectBoxItem>
+        <SelectBoxItem>Chello</SelectBoxItem>
+      </SelectBox>
+      <div className={style.txt_label}>내 아바타</div>
       <div className={style.choose_avatar_container}>
         {avatar.avatars.map((avatar) => {
           return (

@@ -1,0 +1,40 @@
+.payment_history {
+    .t_header {
+        background-color: var(--gray3);
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        justify-items: center;
+        border: 1.5px solid var(--gray3);
+        border-radius: var(--round-m) var(--round-m) 0 0;
+        .th_item {
+            padding: var(--space-xxs);
+            font-size: var(--text-s);
+            font-weight: 500;
+        }
+    }
+    .t_body {
+        border: 1.5px solid var(--gray3);
+        border-radius: 0 0 var(--round-m) var(--round-m);
+        .tr {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            justify-items: center;
+            border-bottom: 1.5px solid var(--gray3);
+            &:nth-last-child(1) {
+                border-bottom: 0;
+            }
+            .td_item {
+                padding: var(--space-s) var(--space-xxs);
+                font-size: var(--text-s);
+                font-weight: 500;
+            }
+        }
+        .empty_message {
+            min-height: 200px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
