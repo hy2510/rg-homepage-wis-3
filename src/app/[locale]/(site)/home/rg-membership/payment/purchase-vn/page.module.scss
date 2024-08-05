@@ -7,6 +7,9 @@
         padding: var(--space-s);
         border-radius: var(--round-m);
         margin-bottom: var(--space-m);
+        @media (prefers-color-scheme: dark) {
+            background-color: rgba($color: #fff, $alpha: 0.15);
+        }
         .user_name {
             font-size: var(--text-m);
             font-weight: 500;
@@ -66,6 +69,9 @@
                         background-color: var(--gray3);
                         padding: var(--space-s);
                         border-radius: var(--round-m);
+                        @media (prefers-color-scheme: dark) {
+                            background-color: rgba($color: #fff, $alpha: 0.15);
+                        }
                     }
                 }
                 .contact_info {
@@ -154,6 +160,9 @@
                 border-radius: var(--round-m);
                 display: grid;
                 gap: var(--space-xs);
+                @media (prefers-color-scheme: dark) {
+                    background-color: rgba($color: #00a0fd, $alpha: 0.3);
+                }
                 .row {
                     display: flex;
                     justify-content: space-between;
@@ -182,6 +191,9 @@
                     .col_1 {
                         color: var(--black);
                         font-weight: 500;
+                        @media (prefers-color-scheme: dark) {
+                            color: var(--white);
+                        }
                     }
                     .col_2 {
                         color: var(--blue);
@@ -206,6 +218,9 @@
     justify-content: center;
     gap: var(--space-xxs);
     position: relative;
+    @media (prefers-color-scheme: dark) {
+        border: 2px solid rgba($color: #fff, $alpha: 0.15);
+    }
     &.active {
         border: 2px solid var(--blue);
         .tag {
@@ -223,6 +238,10 @@
         font-weight: 600;
         letter-spacing: -0.75px;
         padding: var(--space-xxs) var(--space-s);
+        @media (prefers-color-scheme: dark) {
+            background: rgba($color: #fff, $alpha: 0.15);
+            border-radius: 0 8px 0 var(--round-m);
+        }
     }
     .title {
         font-size: var(--text-l);
@@ -248,8 +267,14 @@
     justify-content: center;
     border: 1.5px solid var(--gray3);
     border-radius: var(--round-m);
+    @media (prefers-color-scheme: dark) {
+        border: 1.5px solid rgba($color: #fff, $alpha: 0.15);
+    }
     &.active {
         border: 1.5px solid var(--blue);
         background-color: var(--light);
+        @media (prefers-color-scheme: dark) {
+            background-color: rgba($color: #000, $alpha: 0.3);
+        }
     }
 }

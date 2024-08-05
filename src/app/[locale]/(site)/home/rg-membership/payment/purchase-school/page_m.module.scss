@@ -1,0 +1,118 @@
+.purchase_school {
+    overflow-x: scroll;
+    .t_header {
+        min-width: 600px;
+        background-color: var(--gray3);
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        justify-items: center;
+        border: 1.5px solid var(--gray3);
+        border-radius: var(--round-m) var(--round-m) 0 0;
+        @media (prefers-color-scheme: dark) {
+            background-color: rgba($color: #fff, $alpha: 0.15);
+            border: none;
+        }
+        .th_item {
+            padding: var(--space-xxs);
+            font-size: var(--text-s);
+            font-weight: 500;
+        }
+    }
+    .t_body {
+        min-width: 600px;
+        border: 1.5px solid var(--gray3);
+        border-radius: 0 0 var(--round-m) var(--round-m);
+        @media (prefers-color-scheme: dark) {
+            border: 1.5px solid rgba($color: #fff, $alpha: 0.15);
+        }
+        .tr {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            justify-items: center;
+            border-bottom: 1.5px solid var(--gray3);
+            @media (prefers-color-scheme: dark) {
+                border-bottom: 1.5px solid rgba($color: #fff, $alpha: 0.15);
+            }
+            &:nth-last-child(1) {
+                border-bottom: 0;
+            }
+            .td_item {
+                padding: var(--space-s) var(--space-xxs);
+                font-size: var(--text-s);
+                font-weight: 500;
+            }
+        }
+        .empty_message {
+            min-height: 200px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+.payment_form {
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+    .select_payment_type {
+        cursor: pointer;
+        position: relative;
+        padding-right: 20px;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            background-image: url("/src/images/arrow-icons/chev_down_gray.svg");
+            background-size: 16px 16px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .select_box {
+            position: absolute;
+            top: 25px;
+            right: 0;
+            background-color: var(--white);
+            border: 1.5px solid var(--gray3);
+            border-radius: var(--round-m);
+            min-width: 120px;
+            @media (prefers-color-scheme: dark) {
+                background-color: var(--black);
+            }
+            .select_item {
+                cursor: pointer;
+                padding: var(--space-xs);
+                border-bottom: 1.5px solid var(--gray3);
+                &:nth-last-child(1) {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+    .btn_link {
+        cursor: pointer;
+        color: var(--blue);
+    }
+}
+
+.purchase_form {
+    display: grid;
+    gap: var(--space-s);
+    margin-bottom: var(--space-s);
+    .comment {
+        font-size: var(--text-s);
+        .txt_1 {
+            color: var(--black);
+            @media (prefers-color-scheme: dark) {
+                color: var(--white);
+            }
+        }
+        .txt_2 {
+            color: var(--gray1);
+        }
+    }
+}
