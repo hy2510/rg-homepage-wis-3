@@ -34,6 +34,11 @@ export default function Layout({ children }: { children?: ReactNode }) {
           이용권 구매
         </NavItem>
         <NavItem
+          active={pathname.indexOf(SITE_PATH.HOME.MEMBERSHIP_TICKET) != -1}
+          href={SITE_PATH.HOME.MEMBERSHIP_TICKET}>
+          티켓 등록
+        </NavItem>
+        <NavItem
           active={pathname.indexOf(SITE_PATH.HOME.MEMBERSHIP_PAYMENT_HISTORY) != -1}
           href={SITE_PATH.HOME.MEMBERSHIP_PAYMENT_HISTORY}>
           구매 내역

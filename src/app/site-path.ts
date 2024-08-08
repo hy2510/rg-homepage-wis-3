@@ -16,6 +16,7 @@ const HOME = {
   MEMBERSHIP_PURCHASE: '/home/rg-membership/payment/purchase',
   MEMBERSHIP_PURCHASE_VN: '/home/rg-membership/payment/purchase-vn',
   MEMBERSHIP_PURCHASE_SCHOOL: '/home/rg-membership/payment/purchase-school',
+  MEMBERSHIP_TICKET: '/home/rg-membership/payment/ticket',
   MEMBERSHIP_PAYMENT_HISTORY: '/home/rg-membership/payment-history',
   MEMBERSHIP_REFUND_POLICY: '/home/rg-membership/refund-policy',
   MEMBERSHIP_SERVICE_TERM: '/home/rg-membership/terms-of-service',

@@ -120,6 +120,8 @@ import page_purchase_vn from '@/app/[locale]/(site)/home/rg-membership/payment/p
 import page_purchase_vn_m from '@/app/[locale]/(site)/home/rg-membership/payment/purchase-vn/page_m.module.scss'
 import page_purchase_school from '@/app/[locale]/(site)/home/rg-membership/payment/purchase-school/page.module.scss'
 import page_purchase_school_m from '@/app/[locale]/(site)/home/rg-membership/payment/purchase-school/page_m.module.scss'
+import page_ticket from '@/app/[locale]/(site)/home/rg-membership/payment/ticket/page.module.scss'
+import page_ticket_m from '@/app/[locale]/(site)/home/rg-membership/payment/ticket/page_m.module.scss'
 import page_payment_history from '@/app/[locale]/(site)/home/rg-membership/payment-history/page.module.scss'
 import page_payment_history_m from '@/app/[locale]/(site)/home/rg-membership/payment-history/page_m.module.scss'
 import page_favorite from '@/app/[locale]/(site)/library/assignment/favorite/page.module.scss'
@@ -225,6 +227,8 @@ export default function findStyle(id: string): {
       return { pc: page_purchase_vn, mobile: page_purchase_vn_m }
     case 'page_purchase_school':
       return { pc: page_purchase_school, mobile: page_purchase_school_m }
+    case 'page_ticket':
+      return { pc: page_ticket, mobile: page_ticket_m }
     case 'page_payment_history':
       return { pc: page_payment_history, mobile: page_payment_history_m }
     case 'page_favorite':
