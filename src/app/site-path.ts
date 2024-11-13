@@ -1,5 +1,8 @@
 import { supportLanguages } from '@/localization/localize-config'
 
+const ABOUT = {
+  ABOUT: '/about',
+}
 const HOME = {
   MAIN: '/home/main',
   NOTICE: '/home/main/rg-news/notice',
@@ -110,6 +113,7 @@ export function getValidatePath(path: string): string {
 }
 
 const SITE_PATH = {
+  ABOUT,
   HOME,
   ACCOUNT,
   KIDS,

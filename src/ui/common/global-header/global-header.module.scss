@@ -15,6 +15,9 @@
   &.dodo_abc {
     background-color: #0c0541;
   }
+  &.about {
+    background-color: transparent;
+  }
   .global_header_container {
     min-width: 1024px;
     height: var(--header-height);

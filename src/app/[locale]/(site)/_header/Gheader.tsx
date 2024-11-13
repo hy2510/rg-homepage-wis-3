@@ -38,7 +38,7 @@ const MENU = {
   },
   about: {
     key: '/about',
-    href: SITE_PATH.HOME.MAIN,
+    href: SITE_PATH.ABOUT.ABOUT,
     icon: '/src/images/@global-header/about_rg.svg',
     mobileIconOn: '/src/images/@global-header/about_rg_on_mobile.svg',
     mobileIconOff: '/src/images/@global-header/about_rg_off_mobile.svg',
@@ -140,7 +140,7 @@ export default function Gheader() {
   }
   return (
     <>
-      <div className={`${style.global_header} ${pathname.indexOf(MENU.kids.href) != -1 && style.dodo_abc}`}>
+      <div className={`${style.global_header} ${pathname.indexOf(MENU.kids.href) != -1 && style.dodo_abc} ${pathname.indexOf(MENU.about.href) != -1 && style.about}`}>
         <div className={`${style.global_header_container} container`}>
           <div className={style.company_logo}>
             <a href={SITE_PATH.HOME.MAIN}>
